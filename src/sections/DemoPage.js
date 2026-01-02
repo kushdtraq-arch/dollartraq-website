@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import VideoHeroSection from "@/components/common/Front";
 import ContactForm from "@/components/common/ContactForm";
 
@@ -11,7 +11,11 @@ export default function DemoPage() {
 
 	const router = useRouter()
 
-		const demoFields = [
+	const [error_message, setErrorMessage] = useState('')
+		const [country_code, setCountryCode] = useState('')
+		const [submitting, setSubmitting] = useState(false)
+
+	const demoFields = [
 	{ label: "First Name", name: "first_name", validation: { required: "First Name is required" } },
 	{ label: "Last Name", name: "last_name", validation: { required: "Last Name is required" } },
 	{ label: "Email", name: "email", type: "email", validation: { required: "Email is required" } },
@@ -61,8 +65,11 @@ export default function DemoPage() {
   ];
 
   	const handleDemoSubmit = (data) => {
+
+		setSubmitting(true)
 		let formData = new FormData();
 
+		formData.append('c_code', country_code)
 		formData.append('query_page', 'demo')
 
 		for(let field in data){
@@ -121,9 +128,14 @@ export default function DemoPage() {
 		</div>
 
 		<ContactForm
-		  fields={demoFields}
-		  buttonLabel="Request Demo"
-		  onSubmit={handleDemoSubmit}
+		  	fields={demoFields}
+		  	buttonLabel="Request Demo"
+		  	onSubmit={handleDemoSubmit}
+		  	submitting={submitting}
+			setCountryCode={(code) => {
+
+				setCountryCode(code)
+			}}
 		/>
 	  </div>
 	</>

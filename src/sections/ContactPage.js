@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import VideoHeroSection from "@/components/common/Front";
 import ContactForm from "@/components/common/ContactForm";
 
@@ -7,65 +7,68 @@ import { useRouter } from 'next/navigation'
 
 import Api from "@/api/Api";
 
-import Redirect from "./Redirect";
-
 export default function ContactPage() {
 	
 	const router = useRouter()
 
-  const demoFields = [
-	{ label: "First Name", name: "first_name", validation: { required: "First Name is required" } },
-	{ label: "Last Name", name: "last_name", validation: { required: "Last Name is required" } },
-	{ label: "Email", name: "email", type: "email", validation: { required: "Email is required" } },
-	{ label: "Phone", name: "contact" },
-	{ label: "Job Title", name: "job_title" },
-	{ label: "Company", name: "company" },
-	{
-	  label: "Country",
-	  name: "country",
-	  type: "select",
-	  options: ["India", "USA", "UK", "Canada"],
-	  validation: { required: "Country is required" },
-	},
-	{
-	  label: "Business Type",
-	  name: "business_type",
-	  type: "select",
-	  options: ["Shipper", "3PL", "Freight Broker"],
-	},
-	{
-	  label: "Please select features of interest:",
-	  name: "interest",
-	  type: "select",
-	  options: ["Tracking", "Analytics", "Automation"],
-	},
-	{
-	  label: "How did you hear about us?",
-	  name: "source",
-	  type: "select",
-	  options: ["Google", "LinkedIn", "Referral", "Other"],
-	},
-	{
-	  label:
-		"Please tell us about your company and the type of solution you would like to discuss:",
-	  name: "message",
-	  type: "textarea",
-	  rows: 4,
-	  fullWidth: true,
-	  validation: { required: "Message is required" },
-	},
-	{
-	  label: "Subscribe to email updates. Opt out at any time.",
-	  name: "subscribe",
-	  type: "checkbox",
-	  fullWidth: true,
-	},
-  ];
+	const [error_message, setErrorMessage] = useState('')
+	const [country_code, setCountryCode] = useState('')
+	const [submitting, setSubmitting] = useState(false)
+
+  	const demoFields = [
+		{ label: "First Name", name: "first_name", validation: { required: "First Name is required" } },
+		{ label: "Last Name", name: "last_name", validation: { required: "Last Name is required" } },
+		{ label: "Email", name: "email", type: "email", validation: { required: "Email is required" } },
+		{ label: "Phone", name: "contact", type: 'number', validation: { required: "Contact is required", } },
+		{ label: "Job Title", name: "job_title" },
+		{ label: "Company", name: "company" },
+		{
+			label: "Country",
+			name: "country",
+			type: "select",
+			options: ["India", "USA", "UK", "Canada"],
+			validation: { required: "Country is required" },
+		},
+		{
+			label: "Business Type",
+			name: "business_type",
+			type: "select",
+			options: ["Shipper", "3PL", "Freight Broker"],
+		},
+		{
+			label: "Please select features of interest:",
+			name: "interest",
+			type: "select",
+			options: ["Tracking", "Analytics", "Automation"],
+		},
+		{
+			label: "How did you hear about us?",
+			name: "source",
+			type: "select",
+			options: ["Google", "LinkedIn", "Referral", "Other"],
+		},
+		{
+	  		label: "Please tell us about your company and the type of solution you would like to discuss:",
+			name: "message",
+			type: "textarea",
+			rows: 4,
+			fullWidth: true,
+			validation: { required: "Message is required" },
+		},
+		{
+			label: "Subscribe to email updates. Opt out at any time.",
+			name: "subscribe",
+			type: "checkbox",
+			fullWidth: true,
+		},
+  	];
 
   	const handleDemoSubmit = (data) => {
 		
+		setSubmitting(true)
 		let formData = new FormData();
 
+		formData.append('c_code', country_code)
 		formData.append('query_page', 'contact')
 
 		for(let field in data){
@@ -124,9 +127,14 @@ export default function ContactPage() {
 		</div>
 
 		<ContactForm
-		  fields={demoFields}
-		  buttonLabel="Send Request"
-		  onSubmit={handleDemoSubmit}
+		  	fields={demoFields}
+		  	buttonLabel="Send Request"
+		  	onSubmit={handleDemoSubmit}
+		  	submitting={submitting}
+			setCountryCode={(code) => {
+
+				setCountryCode(code)
+			}}
 		/>
 	  </div>
 	</>

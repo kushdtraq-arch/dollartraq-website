@@ -1,8 +1,9 @@
 "use client";
 
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-export default function ContactForm({ fields = [], buttonLabel = "Submit", onSubmit }) {
+export default function ContactForm({ fields = [], buttonLabel = "Submit", onSubmit, submitting, setCountryCode }) {
   const {
 	register,
 	handleSubmit,
@@ -16,8 +17,10 @@ export default function ContactForm({ fields = [], buttonLabel = "Submit", onSub
 	  console.log("Form submitted:", data);
 	  alert("Form submitted successfully!");
 	}
-	reset();
   };
+
+  const [code_selected, setCodeSelected] = useState('')
+
 
   return (
 	<section className="w-full flex justify-center items-center py-12 px-4 ">
@@ -57,18 +60,36 @@ export default function ContactForm({ fields = [], buttonLabel = "Submit", onSub
 					className={field.fullWidth ? "md:col-span-2" : ""}
 				  >
 					<Label text={field.label} />
-					<select
-					  {...commonProps}
-					  className="w-full px-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
-					>
-					  <option value="">Select...</option>
-					  {field.options?.map((opt, i) => (
-						<option key={i} value={opt}>
-						  {opt}
-						</option>
-					  ))}
-					</select>
-					{errors[field.name] && <Error message={errors[field.name].message} />}
+					<div>
+						<select
+						{...commonProps}
+						onChange={(e) => {
+
+							if(e.target.value == 'India'){
+
+								setCodeSelected(91)
+								setCountryCode(91)
+							}else if(e.target.value == 'USA' || e.target.value == 'Canada'){
+
+								setCodeSelected(1)
+								setCountryCode(1)
+							}else{
+
+								setCodeSelected(44)
+								setCountryCode(44)
+							}
+						}}
+						className="w-full px-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
+						>
+						<option value="">Select...</option>
+						{field.options?.map((opt, i) => (
+							<option key={i} value={opt}>
+							{opt}
+							</option>
+						))}
+						</select>
+						{errors[field.name] && <Error message={errors[field.name].message} />}
+					</div>
 				  </div>
 				);
 
@@ -91,13 +112,29 @@ export default function ContactForm({ fields = [], buttonLabel = "Submit", onSub
 				return (
 				  <div key={field.name} className={field.fullWidth ? "md:col-span-2" : ""}>
 					<Label text={field.label} />
-					<input
-					  type={field.type || "text"}
-					  placeholder={field.placeholder || ""}
-					  {...commonProps}
-					  className="w-full px-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
-					/>
-					{errors[field.name] && <Error message={errors[field.name].message} />}
+					<div className="flex items-start justify-center">
+						{field.name === 'contact' &&
+						
+							<select name="c_code" className="mr-2 mt-3" value={code_selected} onChange={(e) => {
+
+								setCodeSelected(e.target.value)
+								setCountryCode(e.target.value)
+							}}>
+								<option value="91">+91</option>
+								<option value="1">+1</option>
+								<option value="44">+44</option>
+							</select>
+						}
+						<div className="w-full">
+							<input
+								type={field.type || "text"}
+								placeholder={field.placeholder || ""}
+								{...commonProps}
+								className="w-full px-4 py-3 rounded-md bg-white border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
+							/>
+							{errors[field.name] && <Error message={errors[field.name].message} />}
+						</div>
+					</div>
 				  </div>
 				);
 			}
@@ -106,10 +143,11 @@ export default function ContactForm({ fields = [], buttonLabel = "Submit", onSub
 	   
 		  <div className="md:col-span-2 flex justify-start">
 			<button
+				disabled={submitting}
 			  type="submit"
 			  className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md text-sm font-semibold transition-all"
 			>
-			  {buttonLabel}
+			  {submitting ? "Submitting..." : buttonLabel}
 			</button>
 		  </div>
 		</form>

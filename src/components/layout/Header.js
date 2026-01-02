@@ -105,10 +105,17 @@ class Header extends Component {
 					
 					<div className="hidden md:flex gap-2 lg:gap-3 items-center">
 						<Link
-							href="/login"
+							href={process.env.NEXT_PUBLIC_APPLICATION_URL}
+							target="_blank"
 							className="text-[14px] font-medium text-gray-800 px-2 py-1 rounded hover:bg-gray-50 transition"
 						>
 							Login
+						</Link>
+						<Link
+							href="/sign-up"
+							className="text-[14px] font-medium text-gray-800 px-2 py-1 rounded hover:bg-gray-50 transition"
+						>
+							Sign Up
 						</Link>
 						<Link href="/contact">
 							<button className="bg-green-500 hover:bg-green-600 text-white rounded px-4 lg:px-6 py-2 font-semibold transition">
@@ -270,7 +277,8 @@ class Header extends Component {
 							
 							<div className="flex flex-col gap-2 mt-4">
 								<Link
-									href="/login"
+									href={process.env.NEXT_PUBLIC_APPLICATION_URL}
+									target="_blank"
 									className="py-2 px-2 rounded hover:bg-gray-50 text-gray-800"
 									onClick={this.toggleMobileMenu}
 								>
