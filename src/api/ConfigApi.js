@@ -215,7 +215,8 @@ ConfigApi.prototype._getUrl = function (endpoint) {
 		url = '/api-laravel/' + endpoint;
 	}else{
 
-		url = url + endpoint;
+		url = '/api/' + endpoint;
+		// url = url + endpoint;
 	}
 
 	// Include port.

@@ -13,6 +13,14 @@ const nextConfig = {
                     destination: `${process.env.NEXT_PUBLIC_API_URL}/:path*`,
                 },
             ];
+        }else{
+
+            return [
+                {
+                    source: '/api/:path*',
+                    destination: `${process.env.NEXT_PUBLIC_API_URL}/:path*`,
+                },
+            ];
         }
     
         return [];
