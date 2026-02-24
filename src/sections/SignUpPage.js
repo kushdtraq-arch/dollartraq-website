@@ -48,7 +48,7 @@ export default function SignUpPage() {
 			formData.append(field, data[field])
 		}
 
-        let that = this;
+        // let that = this;
 
         Api.post('customer/account/signup', formData, function(data){
             

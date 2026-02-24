@@ -192,6 +192,36 @@ class Footer extends Component {
 									FAQs
 								</Link>
 							</nav>
+
+							<h4 className="font-bold mb-4 mt-6 text-lg md:text-xl">
+								Legal & Compliance
+							</h4>
+							<nav className="flex flex-col gap-2 md:gap-4">
+								<Link
+									href="/privacy-policy"
+									className="hover:underline"
+								>
+									Privacy Policy
+								</Link>
+								<Link
+									href="/terms-of-service"
+									className="hover:underline"
+								>
+									Terms of Service
+								</Link>
+								<Link
+									href="/cookie-policy"
+									className="hover:underline"
+								>
+									Cookie Policy
+								</Link>
+								<Link
+									href="/gdpr-ccpa"
+									className="hover:underline"
+								>
+									GDPR / CCPA Compliance
+								</Link>
+							</nav>
 						</div>
 
 						<div className="text-sm">
@@ -225,35 +255,16 @@ class Footer extends Component {
 								</Link>
 							</nav>
 
-							<h4 className="font-bold mb-4 text-lg md:text-xl">
-								Legal & Compliance
+							<h4 className="font-bold mb-4 mt-6 text-lg md:text-xl">
+								Reach Us
 							</h4>
-							<nav className="flex flex-col gap-2 md:gap-4">
-								<Link
-									href="/privacy-policy"
-									className="hover:underline"
-								>
-									Privacy Policy
-								</Link>
-								<Link
-									href="/terms-of-service"
-									className="hover:underline"
-								>
-									Terms of Service
-								</Link>
-								<Link
-									href="/cookie-policy"
-									className="hover:underline"
-								>
-									Cookie Policy
-								</Link>
-								<Link
-									href="/gdpr-ccpa"
-									className="hover:underline"
-								>
-									GDPR / CCPA Compliance
-								</Link>
-							</nav>
+							<address className="text-md font-normal">
+								1309 Coffeen Avenue
+								<br />
+								STE 1200 Sheridan
+								<br />
+								Wyoming 82801
+							</address>
 						</div>
 					</div>
 				</div>
