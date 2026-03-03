@@ -168,7 +168,7 @@ export default function ManufacturePage() {
 			avatar: "/avatar1.png",
 		},
 	];
-		const carrierFeatures = [
+	const carrierFeatures = [
 		{
 			label: "Real-Time Tracking",
 			image: "/images/map.png",
@@ -195,13 +195,13 @@ export default function ManufacturePage() {
 							label: "Get a Demo",
 							variant: "primary",
 							onClick: () => {},
-							href:"/demo",
+							href: "/demo",
 						},
 						{
 							label: "Contact Us",
 							variant: "secondary",
 							onClick: () => {},
-							href:"/contact",
+							href: "/contact",
 						},
 					]}
 					showCompanySection={false}
@@ -230,7 +230,6 @@ export default function ManufacturePage() {
 								"challenges",
 							]}
 							description="We combine smart operations with real-world reliability to move what matters — faster, safer, and smarter."
-							
 							align="left"
 							spacingTop="mt-0"
 							spacingBottom="mb-6"
@@ -293,7 +292,7 @@ export default function ManufacturePage() {
 										avatar={avatar}
 										enhanced={true}
 									/>
-								)
+								),
 							)}
 						</div>
 
@@ -348,7 +347,6 @@ export default function ManufacturePage() {
 						descriptionColorClass: "text-white text-sm font-light",
 					}}
 					descriptionBelowList="We analyze and redesign logistics networks to improve efficiency, reduce emissions, and build resilience. From route planning to warehouse integration, we turn complex systems into strategic assets."
-					
 				/>
 			</section>
 			<section className="w-full bg-white py-10 px-4">
@@ -382,22 +380,19 @@ export default function ManufacturePage() {
 					variant="banner"
 					imageSrc="/images/truck2.webp"
 					useVideo={false}
-					titleLines={[
-						"",
-						
-					]}
+					titleLines={[""]}
 					subtitle="Dollar traq is purpose built to provide end-to-end visibility through every stage of the transportation journey, all from a single provider."
 					buttons={[
 						{
 							label: "Get a Demo",
 							variant: "primary",
-							href:"/demo"
+							href: "/demo",
 						},
 						{
 							label: "Contact Us",
 							variant: "secondary",
 							className: "bg-white",
-							href:"/contact"
+							href: "/contact",
 						},
 					]}
 					showCompanySection={false}

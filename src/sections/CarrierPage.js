@@ -13,11 +13,13 @@ export default function CarrierPage() {
 	const statsData = [
 		{
 			title: "Reliable Fleet Access",
-			subtitle: "Operational help is designed to keep your trucks on the road without interruptions.",
+			subtitle:
+				"Operational help is designed to keep your trucks on the road without interruptions.",
 		},
 		{
 			title: "Drivers With Real Experience",
-			subtitle: "Drivers who respect timelines and understand what safe, efficient movement looks like.",
+			subtitle:
+				"Drivers who respect timelines and understand what safe, efficient movement looks like.",
 		},
 		{
 			title: "Carriers Built on Consistency",
@@ -26,7 +28,8 @@ export default function CarrierPage() {
 		},
 		{
 			title: "Partners Who Support Your Growth",
-			subtitle: "People committed to helping you move freight smoothly and on schedule.",
+			subtitle:
+				"People committed to helping you move freight smoothly and on schedule.",
 		},
 	];
 
@@ -110,7 +113,7 @@ export default function CarrierPage() {
 			avatar: "/avatar1.png",
 		},
 	];
-		const carrierFeatures = [
+	const carrierFeatures = [
 		{
 			label: "Real-Time Tracking",
 			image: "/images/map.png",
@@ -138,20 +141,20 @@ export default function CarrierPage() {
 							label: "Explore the Platform",
 							variant: "primary",
 							onClick: () => {},
-							href:"/demo",
+							href: "/demo",
 						},
 						{
 							label: "Connect With Our Team",
 							variant: "secondary",
 							onClick: () => {},
-							href:"/contact",
+							href: "/contact",
 						},
 					]}
 					showCompanySection={false}
 				/>
 			</section>
 			<section className="w-full mx-auto bg-white py-16 px-20 flex flex-col lg:flex-row gap-y-10 lg:gap-x-20 items-center">
-				<div className="flex-1 w-full flex justify-center">
+				<div className="flex-1 w-full  flex justify-center">
 					<img
 						src="/images/boxes.webp"
 						alt="Boxes"
@@ -167,10 +170,9 @@ export default function CarrierPage() {
 							"the Freight That Fits Them",
 						]}
 						description="Work with the network built on reliability, steady communication, and partnerships that hold up under pressure."
-						
 						align="left"
 						spacingTop="mt-0"
-						spacingBottom="mb-6"
+						spacingBottom="mb-1"
 					/>
 
 					<StatsList items={statsData} />
@@ -187,7 +189,7 @@ export default function CarrierPage() {
 								"Simplify Operations. Maximize Efficiency.",
 							]}
 							description="Streamline workflows, cut manual effort, and gain efficiency with technology built for carriers."
-					        /* buttons={[
+							/* buttons={[
 								{
 									label: "Get A Demo",
 									variant: "green",
@@ -254,7 +256,6 @@ export default function CarrierPage() {
 						descriptionColorClass: "text-white text-sm font-light",
 					}}
 					descriptionBelowList="We analyze and redesign logistics networks to improve efficiency, reduce emissions, and build resilience. From route planning to warehouse integration, we turn complex systems into strategic assets."
-				
 				/>
 			</section>
 			<section className="w-full bg-white py-16 flex  flex-col items-center">
@@ -262,20 +263,20 @@ export default function CarrierPage() {
 					listItems={["Trust and Differentiators"]}
 					headingLines={[
 						"Tools That Help Carriers Work Quicker,",
-						"Stay Organized & Keep Control"
+						"Stay Organized & Keep Control",
 					]}
 					description="DollarTraq brings dispatch, communication, and tracking into one smooth workflow so carriers work with less friction and more certainty."
 					align="center"
 					spacingBottom="mb-8"
 				/>
-				<div className="w-full max-w-[1160px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+				<div className="w-full max-w-[1160px] grid  grid-cols-1  sm:grid-cols-2  md:grid-cols-2  xl:grid-cols-4  gap-8 md:pl-10">
 					{featuresList.map((feature, idx) => (
 						<FeatureCard key={idx} {...feature} />
 					))}
 				</div>
 			</section>
 			<hr className=" border-gray-300" />
-			<section className="w-full bg-white py-10 px-4">
+			<section className="w-full bg-white py-8 px-4 sm:px-6">
 				<div className="w-full max-w-[1160px] mx-auto">
 					<ContentBlock
 						listItems={["Testimonials"]}
@@ -285,40 +286,45 @@ export default function CarrierPage() {
 						spacingTop="mt-4"
 						spacingBottom="mb-4"
 					/>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-						<div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+					<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+						<div className="lg:col-span-2 order-1 lg:order-1 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
 							{testimonials.map((t, idx) => (
 								<TestimonialCard key={idx} {...t} />
 							))}
 						</div>
-						<div className="rounded-xl overflow-hidden flex items-center h-full min-h-[260px]">
-							<img
-								src="/truck-testimonial.webp"
-								alt="Testimonial visual"
-								className="w-full h-full object-cover rounded-xl"
-							/>
+						<div className="lg:col-span-1 order-2 flex justify-center lg:justify-start">
+							<div className="rounded-xl overflow-hidden w-full max-w-sm lg:max-w-none h-[280px] sm:h-[360px]">
+								<img
+									src="/truck-testimonial.webp"
+									alt="Testimonial visual"
+									className="w-full h-full object-cover rounded-xl"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+
 			<VideoHeroSection
 				variant="banner"
 				imageSrc="/images/boxes2.webp"
 				useVideo={false}
-				titleLines={["Clarity That Makes Every Freight Movement Easier"]}
+				titleLines={[
+					"Clarity That Makes Every Freight Movement Easier",
+				]}
 				subtitle="Carriers use DollarTraq to manage shipments, understand what needs attention, and keep operations balanced, without hunting through multiple systems."
 				buttons={[
 					{
 						label: "Get a Demo",
 						variant: "primary",
 						className: "bg-blue-700 hover:bg-blue-800 text-white",
-						href:"/demo",
+						href: "/demo",
 					},
 					{
 						label: "Contact Us",
 						variant: "secondary",
 						className: "bg-white text-[#1566D6] border-0",
-						href:"/contact",
+						href: "/contact",
 					},
 				]}
 				showCompanySection={false}

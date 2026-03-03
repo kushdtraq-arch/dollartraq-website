@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 
 const AnimateViewAppear = dynamic(
 	() => import("@/components/animation/AnimateViewAppear"),
-	{ ssr: false }
+	{ ssr: false },
 );
 
 const cards = [

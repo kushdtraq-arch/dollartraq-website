@@ -40,7 +40,14 @@ body {
 .content-wrapper ol{padding-left:40px; font-size:13px; list-style-type:decimal; margin-top:10px;}
 .content-wrapper ol li{margin-bottom:5px;}
 
-.content-wrapper ul{padding-left:40px; font-size:13px; list-style-type:disc; margin-top:10px;}
+.content-wrapper ul{padding-left:40px; font-size:14px; list-style-type:disc; margin-top:10px;}
 .content-wrapper ul li{margin-bottom:5px;}
 
 .content-wrapper h3{font-weight:bold; font-size:15px; margin-top:20px; color:rgba(0,0,0,.8)}
+
+.faq-answer{}
+.faq-answer ul{list-style-type:disc; padding-left:20px; font-size:13px; margin-top:10px; margin-bottom:10px;}
+
+html, body {
+  overflow-x: hidden;
+}

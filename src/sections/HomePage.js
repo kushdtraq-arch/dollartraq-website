@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 
 const AnimateViewAppear = dynamic(
 	() => import("@/components/animation/AnimateViewAppear"),
-	{ ssr: false }
+	{ ssr: false },
 );
 
 export default function HomePage() {
@@ -35,16 +35,28 @@ export default function HomePage() {
 	];
 
 	const solutionsList = [
-		{ number: 1, title: "Retail & E-commerce", imageSrc: "/images/retail.webp" },
-		{ number: 2, title: "Manufacturing", imageSrc: "/images/manufacturing.webp" },
-		
+		{
+			number: 1,
+			title: "Retail & E-commerce",
+			imageSrc: "/images/retail.webp",
+		},
+		{
+			number: 2,
+			title: "Manufacturing",
+			imageSrc: "/images/manufacturing.webp",
+		},
+
 		{
 			number: 3,
 			title: "Freight Forwarding",
 			imageSrc: "/images/freight-forwarding.webp",
 		},
 		{ number: 4, title: "3PL & Brokerage", imageSrc: "/images/3pl.webp" },
-		{ number: 5, title: "Pharma & Healthcare", imageSrc: "/images/pharma-new.webp" },
+		{
+			number: 5,
+			title: "Pharma & Healthcare",
+			imageSrc: "/images/pharma-new.webp",
+		},
 	];
 
 	const featuresList = [
@@ -154,8 +166,16 @@ export default function HomePage() {
 			image: "/images/map1.jpg",
 			link: "/services/shippers",
 		},
-		{ label: "For Freight Brokers & 3PLs", image: "/images/map1.jpg", link: "/services/3pls-freight-brokers",},
-		{ label: "Carriers", image: "/images/map1.jpg", link: "/services/carriers" },
+		{
+			label: "For Freight Brokers & 3PLs",
+			image: "/images/map1.jpg",
+			link: "/services/3pls-freight-brokers",
+		},
+		{
+			label: "Carriers",
+			image: "/images/map1.jpg",
+			link: "/services/carriers",
+		},
 		{ label: "For Forwarders", image: "/images/map1.jpg" },
 	];
 
@@ -177,13 +197,13 @@ export default function HomePage() {
 							label: "Get a Demo",
 							variant: "primary",
 							onClick: () => {},
-							href:"/demo",
+							href: "/demo",
 						},
 						{
 							label: "Contact Us",
 							variant: "secondary",
 							onClick: () => {},
-							href:"/contact",
+							href: "/contact",
 						},
 					]}
 					companyLogos={[
@@ -216,7 +236,6 @@ export default function HomePage() {
 						descriptionColorClass: "text-white text-sm font-light",
 					}}
 					descriptionBelowList="We analyze and redesign logistics networks to improve efficiency, reduce emissions, and build resilience. From route planning to warehouse integration, we turn complex systems into strategic assets."
-					
 				/>
 			</section>
 
@@ -303,7 +322,7 @@ export default function HomePage() {
 										variant: "green",
 										onClick: () =>
 											alert("Know More clicked"),
-										href:"/about",
+										href: "/about",
 									},
 								]}
 								align="left"
@@ -333,7 +352,7 @@ export default function HomePage() {
 									label: "Know More",
 									variant: "green",
 									onClick: () => alert("Know More clicked"),
-									href:"/services/shippers",
+									href: "/services/shippers",
 								},
 							]}
 							align="left"
@@ -366,22 +385,21 @@ export default function HomePage() {
 							label: "Know More",
 							variant: "green",
 							onClick: () => alert("Know More clicked"),
-							href:"/features",
+							href: "/features",
 						},
 					]}
 					align="center"
 					spacingTop="mt-6"
 					spacingBottom="mb-8"
 				/>
-				<div className="w-full max-w-[1160px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+				<div className="w-full max-w-[1160px] grid  grid-cols-1  sm:grid-cols-2  md:grid-cols-2  lg:grid-cols-4  gap-6 md:gap-8">
 					{featuresList.map((feature, idx) => (
 						<FeatureCard key={idx} {...feature} />
 					))}
 				</div>
 			</section>
 			<hr className=" border-gray-300" />
-
-			<section className="w-full bg-white py-10 px-4">
+			<section className="w-full bg-white py-10 px-4 sm:px-6">
 				<div className="w-full max-w-[1160px] mx-auto">
 					<ContentBlock
 						listItems={["Testimonials"]}
@@ -391,25 +409,28 @@ export default function HomePage() {
 						spacingTop="mt-4"
 						spacingBottom="mb-4"
 					/>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-						<div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+					<div className="flex flex-col lg:grid lg:grid-cols-3 lg:gap-8 gap-6">
+						<div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6 order-1 lg:order-none">
 							{testimonials.map((t, idx) => (
 								<TestimonialCard key={idx} {...t} />
 							))}
 						</div>
-						<div className="rounded-xl overflow-hidden flex items-center h-full min-h-[260px]">
-							<img
-								src="/truck-testimonial.webp"
-								alt="Testimonial visual"
-								className="w-full h-full object-cover rounded-xl"
-							/>
+						<div className="lg:col-span-1 order-2 lg:order-none flex justify-center lg:justify-start">
+							<div className="rounded-xl overflow-hidden w-full max-w-sm lg:max-w-none h-[280px] sm:h-[360px]">
+								<img
+									src="/truck-testimonial.webp"
+									alt="Testimonial visual"
+									className="w-full h-full object-cover rounded-xl"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+
 			<hr className=" border-gray-300" />
 
-			<section className="w-full bg-white py-10 px-4">
+			<section className="w-full bg-white py-10 px-4 sm:px-6">
 				<div className="w-full max-w-[1160px] mx-auto">
 					<ContentBlock
 						listItems={["More Information"]}
@@ -419,7 +440,7 @@ export default function HomePage() {
 						spacingTop="mt-4"
 						spacingBottom="mb-4"
 					/>
-					<div className="flex flex-wrap gap-7">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
 						{resources.map((r, idx) => (
 							<ResourceCard key={idx} {...r} />
 						))}
@@ -438,13 +459,13 @@ export default function HomePage() {
 						label: "Get a Demo",
 						variant: "primary",
 						className: "bg-blue-700 hover:bg-blue-800 text-white",
-						href:"/demo",
+						href: "/demo",
 					},
 					{
 						label: "Contact Us",
 						variant: "secondary",
 						className: "bg-white text-[#1566D6] border-0",
-						href:"/contact",
+						href: "/contact",
 					},
 				]}
 				showCompanySection={false}

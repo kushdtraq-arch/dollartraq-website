@@ -12,16 +12,23 @@ export default function AboutPage() {
 	const statsData = [
 		{
 			title: "Stop Losing Money to Avoidable Delays",
-			subtitle: "Detention and demurrage build up because slowdowns go unnoticed. DollarTraq flags issues early so your team can take action before the charges land.",
+			subtitle:
+				"Detention and demurrage build up because slowdowns go unnoticed. DollarTraq flags issues early so your team can take action before the charges land.",
 		},
 		{
 			title: "Share Information Everyone Can Trust",
-			subtitle: "One accurate update cuts out the need for repeated calls, scattered spreadsheets, and jumping between carrier, port, and broker portals.",
+			subtitle:
+				"One accurate update cuts out the need for repeated calls, scattered spreadsheets, and jumping between carrier, port, and broker portals.",
 		},
-		{ title: "Trade Assumptions for Real Understanding", subtitle: "With visibility into port steps, yard flow, and driver movement, your team stays informed and makes choices with confidence." },
+		{
+			title: "Trade Assumptions for Real Understanding",
+			subtitle:
+				"With visibility into port steps, yard flow, and driver movement, your team stays informed and makes choices with confidence.",
+		},
 		{
 			title: "Find the Source of Every Delay",
-			subtitle: "From terminal backups to long dwell or unexpected stops, DollarTraq pinpoints the issue so you know where to act first.",
+			subtitle:
+				"From terminal backups to long dwell or unexpected stops, DollarTraq pinpoints the issue so you know where to act first.",
 		},
 	];
 	const featuresList = [
@@ -85,7 +92,7 @@ export default function AboutPage() {
 			title: "Manufacturing",
 			imageSrc: "/images/manufacturing.webp",
 		},
-		
+
 		{
 			number: 3,
 			title: "Freight Forwarding",
@@ -144,13 +151,13 @@ export default function AboutPage() {
 							label: "Explore the Platform",
 							variant: "primary",
 							onClick: () => {},
-							href:"/demo",
+							href: "/demo",
 						},
 						{
 							label: "Connect With Our Team",
 							variant: "secondary",
 							onClick: () => {},
-							href:"/contact",
+							href: "/contact",
 						},
 					]}
 					companyLogos={[
@@ -190,7 +197,6 @@ export default function AboutPage() {
 								"Cost Your Operation?",
 							]}
 							description="When you can’t see where containers are, or why they’re not moving, fees pile up, customers escalate, and your team ends up working in the dark. DollarTraq removes that uncertainty by giving you clear container milestones, steady movement updates, and early signals when something needs attention."
-							
 							align="left"
 							spacingTop="mt-0"
 							spacingBottom="mb-6"
@@ -217,7 +223,7 @@ export default function AboutPage() {
 					spacingBottom="mb-8"
 				/>
 
-				<div className="w-full max-w-[1160px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+				<div className="w-full max-w-[1160px] mx-auto   grid grid-cols-1   sm:grid-cols-2   md:grid-cols-2   xl:grid-cols-4   gap-6 md:gap-8 px-4 md:px-0 md:pl-10">
 					{featuresList.map((feature, idx) => (
 						<FeatureCard key={idx} {...feature} />
 					))}
@@ -240,7 +246,7 @@ export default function AboutPage() {
 									label: "Discover More",
 									variant: "green",
 									onClick: () => alert("Know More clicked"),
-									href:"/services/shippers",
+									href: "/services/shippers",
 								},
 							]}
 							align="left"
@@ -261,7 +267,7 @@ export default function AboutPage() {
 				</div>
 			</section>
 			<hr className=" border-gray-300" />
-			<section className="w-full bg-white py-10 px-4">
+			<section className="w-full bg-white py-10 px-4 sm:px-6">
 				<div className="w-full max-w-[1160px] mx-auto">
 					<ContentBlock
 						listItems={["More Information"]}
@@ -271,7 +277,7 @@ export default function AboutPage() {
 						spacingTop="mt-4"
 						spacingBottom="mb-4"
 					/>
-					<div className="flex flex-wrap gap-7">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-7">
 						{resources.map((r, idx) => (
 							<ResourceCard key={idx} {...r} />
 						))}

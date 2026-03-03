@@ -9,8 +9,8 @@ class Footer extends Component {
 	render() {
 		return (
 			<footer className="w-full bg-blue-600 pt-14 pb-10 text-white">
-				<div className="w-full max-w-[1300px] mx-auto flex flex-col md:flex-row md:items-start gap-10 md:gap-20 px-4 md:px-0">
-					<div className="flex-shrink-0 w-full md:w-[300px]">
+				<div className="w-full max-w-[1300px] mx-auto flex flex-col md:flex-row xl:items-start xl:justify-between gap-8 xl:gap-12 px-4 xl:px-0">
+					<div className="flex-shrink-0 w-full md:w-[320px] xl:w-[300px]">
 						<div className="mb-5">
 							<img
 								src="/dollar-traq-logo-white.webp"
@@ -18,18 +18,21 @@ class Footer extends Component {
 								className="h-[50px] w-auto"
 							/>
 						</div>
-						<p className="text-md md:text-md mb-6">
+						<p className="text-md mb-6 max-w-[320px]">
 							Guiding industries through sustainable transitions
 							with bold thinking and technical precision.
 						</p>
-					    <Link href="/demo">	<Button
-							variant="secondary"
-							className="bg-white text-blue-700 border-0 px-6 py-2 flex items-center gap-2 mb-6 md:mb-0"
-						>
-							Book a Demo <ArrowRight size={16} />
-						</Button></Link>
+						<Link href="/demo">
+							{" "}
+							<Button
+								variant="secondary"
+								className="bg-white text-blue-700 border-0 px-6 py-2 flex items-center gap-2 mb-6 md:mb-0"
+							>
+								Book a Demo <ArrowRight size={16} />
+							</Button>
+						</Link>
 
-						<nav className="mt-7 flex flex-col gap-3 md:gap-4 font-semibold text-sm">
+						<nav className="mt-7 flex flex-col gap-3 lg:gap-4 font-semibold text-sm">
 							<Link
 								href="/services/shippers"
 								className="hover:underline"
@@ -60,12 +63,12 @@ class Footer extends Component {
 						</nav>
 					</div>
 
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 flex-1">
+					<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 xl:gap-8 flex-1">
 						<div className="text-sm">
 							<h4 className="font-bold mb-4 text-lg md:text-xl">
 								Features
 							</h4>
-							<nav className="flex flex-col gap-2 md:gap-4">
+							<nav className="flex flex-col gap-2 lg:gap-4">
 								<Link
 									href="/real-time-visibility"
 									className="hover:underline"
@@ -175,7 +178,7 @@ class Footer extends Component {
 								>
 									News & Updates
 								</Link>
-								
+
 								<Link
 									href="/videos-webinars"
 									className="hover:underline"

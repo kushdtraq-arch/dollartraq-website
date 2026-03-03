@@ -126,7 +126,7 @@ class FeatureSwitch extends Component {
                         <img
                             src={features[activeIndex].image}
                             alt={features[activeIndex].label}
-                            className="w-full max-w-sm md:max-w-md rounded-lg shadow-md mt-5 md:mt-20"
+                            className="w-full h-auto max-h-[380px] md:max-h-[450px] lg:max-h-[520px] xl:max-h-[560px] object-contain rounded-lg shadow-md mt-5 md:mt-20"
                         />
                     </div>
                 </div>

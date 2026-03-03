@@ -31,13 +31,13 @@ class SolutionFeature extends Component {
 		} = this.props;
 
 		const isFigma = cardStyle === "figma";
-		const cardClasses = isFigma
-			? `w-[410px] rounded-2xl shadow-md border border-gray-200 bg-white ${className}`
-			: `max-w-[420px] ${className}`;
+const cardClasses = isFigma
+    ? `w-full max-w-sm mx-auto px-4 sm:px-0 rounded-2xl shadow-md border border-gray-200 bg-white ${className}`
+    : `w-full max-w-sm mx-auto px-4 sm:px-0 ${className}`;
 
 		const imageClasses = isFigma
 			? "w-full h-[175px] object-cover rounded-2xl"
-			: "w-[580px] h-[320px] object-cover rounded-md shadow-xs ";
+			: "w-full h-48 sm:h-[320px] object-cover rounded-md shadow-xs ";
 
 		const Content = (
 			<div

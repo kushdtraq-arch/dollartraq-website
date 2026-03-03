@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 
 const AnimateViewAppear = dynamic(
 	() => import("@/components/animation/AnimateViewAppear"),
-	{ ssr: false }
+	{ ssr: false },
 );
 
 class Header extends Component {
@@ -16,7 +16,11 @@ class Header extends Component {
 		this.state = {
 			links: [
 				{ page: "about", label: "About", link: "/about" },
-				{ page: "how-it-works", label: "How It Works", link: "/how-it-works" },
+				{
+					page: "how-it-works",
+					label: "How It Works",
+					link: "/how-it-works",
+				},
 				{ page: "solutions", label: "Solutions", link: "/manufacture" },
 				{ page: "features", label: "Features", link: "/features" },
 				{ page: "resources", label: "Resources", link: "/resources" },
@@ -48,12 +52,12 @@ class Header extends Component {
 	};
 
 	render() {
-		const { showSolutionsMenu, mobileMenuOpen, showMobileSolutions } = this.state;
+		const { showSolutionsMenu, mobileMenuOpen, showMobileSolutions } =
+			this.state;
 
 		return (
 			<header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100">
 				<div className="max-w-[1440px] w-full mx-auto flex items-center justify-between h-[80px] px-4 md:px-8 relative">
-					
 					<AnimateViewAppear delay={100} duration={300} y={10}>
 						<Link href="/">
 							<img
@@ -64,8 +68,7 @@ class Header extends Component {
 						</Link>
 					</AnimateViewAppear>
 
-					
-					<nav className="hidden md:flex gap-6 lg:gap-10 text-[14px] font-medium text-gray-800 relative">
+					<nav className="hidden xl:flex gap-6 xl:gap-10 text-[14px] font-medium text-gray-800 relative">
 						{this.state.links.map((_link, index) => (
 							<AnimateViewAppear
 								key={`nav_${index}`}
@@ -79,10 +82,12 @@ class Header extends Component {
 										onMouseEnter={this.handleMouseEnter}
 										onMouseLeave={this.handleMouseLeave}
 									>
-										
 										<button
 											className={`hover:text-blue-700 transition ${
-												this.props.active_page === _link.page ? "text-blue-700" : ""
+												this.props.active_page ===
+												_link.page
+													? "text-blue-700"
+													: ""
 											}`}
 										>
 											{_link.label}
@@ -92,7 +97,10 @@ class Header extends Component {
 									<Link
 										href={_link.link}
 										className={`hover:text-blue-700 ${
-											this.props.active_page === _link.page ? "text-blue-700" : ""
+											this.props.active_page ===
+											_link.page
+												? "text-blue-700"
+												: ""
 										}`}
 									>
 										{_link.label}
@@ -102,8 +110,7 @@ class Header extends Component {
 						))}
 					</nav>
 
-					
-					<div className="hidden md:flex gap-2 lg:gap-3 items-center">
+					<div className="hidden xl:flex gap-2 xl:gap-3 items-center">
 						<Link
 							href={process.env.NEXT_PUBLIC_APPLICATION_URL}
 							target="_blank"
@@ -129,22 +136,23 @@ class Header extends Component {
 						</Link>
 					</div>
 
-					
-					<div className="md:hidden flex items-center">
+					<div className="xl:hidden flex items-center">
 						<button onClick={this.toggleMobileMenu}>
-							{mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+							{mobileMenuOpen ? (
+								<X size={24} />
+							) : (
+								<Menu size={24} />
+							)}
 						</button>
 					</div>
 				</div>
 
-				
 				{showSolutionsMenu && (
 					<div
-						className="absolute top-[80px] left-1/2 -translate-x-1/2 bg-white shadow-xl border border-gray-100 rounded-xl w-[95%] md:w-[800px] lg:w-[950px] z-50 overflow-hidden transition-all duration-200 ease-in-out hidden md:flex flex-col md:flex-row"
+						className="absolute top-[80px] left-1/2 -translate-x-1/2 bg-white shadow-xl border border-gray-100 rounded-xl w-[95%] md:w-[800px] lg:w-[950px] z-50 overflow-hidden transition-all duration-200 ease-in-out hidden xl:flex flex-col xl:flex-row"
 						onMouseEnter={this.handleMouseEnter}
 						onMouseLeave={this.handleMouseLeave}
 					>
-						
 						<div className="w-full md:w-1/2 relative h-[200px] md:h-auto">
 							<img
 								src="/images/3pl.webp"
@@ -157,12 +165,12 @@ class Header extends Component {
 									Empower Your Logistics
 								</h3>
 								<p className="text-xs md:text-sm text-gray-100">
-									Choose your solution to optimize every shipment.
+									Choose your solution to optimize every
+									shipment.
 								</p>
 							</div>
 						</div>
 
-						
 						<div className="w-full md:w-1/2 bg-white p-5 md:p-8 grid gap-4">
 							<Link
 								href="/services/shippers"
@@ -172,8 +180,8 @@ class Header extends Component {
 									Shippers
 								</h4>
 								<p className="text-sm text-gray-600 mt-1 leading-snug">
-									Optimize freight operations with real-time visibility and
-									data-driven insights.
+									Optimize freight operations with real-time
+									visibility and data-driven insights.
 								</p>
 							</Link>
 
@@ -185,8 +193,8 @@ class Header extends Component {
 									3PLs
 								</h4>
 								<p className="text-sm text-gray-600 mt-1 leading-snug">
-									Simplify client management, automation, and logistics
-									coordination.
+									Simplify client management, automation, and
+									logistics coordination.
 								</p>
 							</Link>
 
@@ -198,26 +206,28 @@ class Header extends Component {
 									Carriers
 								</h4>
 								<p className="text-sm text-gray-600 mt-1 leading-snug">
-									Boost efficiency, minimize empty miles, and enhance customer
-									satisfaction.
+									Boost efficiency, minimize empty miles, and
+									enhance customer satisfaction.
 								</p>
 							</Link>
 						</div>
 					</div>
 				)}
 
-				
 				{mobileMenuOpen && (
-					<div className="md:hidden bg-white w-full border-t border-gray-100 shadow-md">
+					<div className="xl:hidden bg-white w-full border-t border-gray-100 shadow-md">
 						<nav className="flex flex-col gap-2 p-4 text-gray-800 font-medium">
 							{this.state.links.map((_link, index) => (
 								<div key={`mobile_${index}`}>
 									{_link.label === "Solutions" ? (
 										<div>
 											<button
-												onClick={this.toggleMobileSolutions}
+												onClick={
+													this.toggleMobileSolutions
+												}
 												className={`w-full flex justify-between items-center py-2 px-2 rounded hover:bg-gray-50 ${
-													this.props.active_page === _link.page
+													this.props.active_page ===
+													_link.page
 														? "text-blue-700"
 														: ""
 												}`}
@@ -226,32 +236,42 @@ class Header extends Component {
 												<ChevronDown
 													size={18}
 													className={`transition-transform ${
-														showMobileSolutions ? "rotate-180" : ""
+														showMobileSolutions
+															? "rotate-180"
+															: ""
 													}`}
 												/>
 											</button>
 
-											
 											{showMobileSolutions && (
 												<div className="pl-4 mt-2 flex flex-col gap-2">
 													<Link
 														href="/services/shippers"
 														className="py-2 px-2 rounded hover:bg-gray-50 text-sm text-gray-700"
-														onClick={this.toggleMobileMenu}
+														onClick={
+															this
+																.toggleMobileMenu
+														}
 													>
 														Shippers
 													</Link>
 													<Link
 														href="/services/3pls-freight-brokers"
 														className="py-2 px-2 rounded hover:bg-gray-50 text-sm text-gray-700"
-														onClick={this.toggleMobileMenu}
+														onClick={
+															this
+																.toggleMobileMenu
+														}
 													>
 														3PLs
 													</Link>
 													<Link
 														href="/services/carriers"
 														className="py-2 px-2 rounded hover:bg-gray-50 text-sm text-gray-700"
-														onClick={this.toggleMobileMenu}
+														onClick={
+															this
+																.toggleMobileMenu
+														}
 													>
 														Carriers
 													</Link>
@@ -262,7 +282,8 @@ class Header extends Component {
 										<Link
 											href={_link.link}
 											className={`py-2 px-2 rounded hover:bg-gray-50 block ${
-												this.props.active_page === _link.page
+												this.props.active_page ===
+												_link.page
 													? "text-blue-700"
 													: ""
 											}`}
@@ -274,10 +295,11 @@ class Header extends Component {
 								</div>
 							))}
 
-							
 							<div className="flex flex-col gap-2 mt-4">
 								<Link
-									href={process.env.NEXT_PUBLIC_APPLICATION_URL}
+									href={
+										process.env.NEXT_PUBLIC_APPLICATION_URL
+									}
 									target="_blank"
 									className="py-2 px-2 rounded hover:bg-gray-50 text-gray-800"
 									onClick={this.toggleMobileMenu}
@@ -285,13 +307,19 @@ class Header extends Component {
 									Login
 								</Link>
 
-								<Link href="/contact" onClick={this.toggleMobileMenu}>
+								<Link
+									href="/contact"
+									onClick={this.toggleMobileMenu}
+								>
 									<button className="bg-green-500 hover:bg-green-600 text-white rounded w-full py-2 font-semibold">
 										Contact
 									</button>
 								</Link>
 
-								<Link href="/demo" onClick={this.toggleMobileMenu}>
+								<Link
+									href="/demo"
+									onClick={this.toggleMobileMenu}
+								>
 									<button className="bg-blue-600 hover:bg-blue-700 text-white rounded w-full py-2 font-semibold mt-1">
 										Demo
 									</button>

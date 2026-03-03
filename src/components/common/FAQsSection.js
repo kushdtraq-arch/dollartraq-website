@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChevronRight, ChevronDown } from "lucide-react";
 
+import RenderHtml from "./RenderHtml";
 
 const FAQSection = ({ title, subtitle, faqItems }) => {
 	const [openIndex, setOpenIndex] = useState(null);
@@ -37,8 +38,10 @@ const FAQSection = ({ title, subtitle, faqItems }) => {
 						</button>
 
 						{openIndex === index && (
-							<div className="px-6 pb-5 text-[15px] text-gray-700">
-								{faq.answer}
+							<div className="px-6 pb-5 text-[15px] text-gray-700 pt-6 faq-answer">
+								<RenderHtml
+									html={faq.answer}
+								/>
 							</div>
 						)}
 					</div>

@@ -1,12 +1,11 @@
 "use client";
 
 import React, { Component } from "react";
-
 import dynamic from "next/dynamic";
 
 const AnimateViewAppear = dynamic(
 	() => import("@/components/animation/AnimateViewAppear"),
-	{ ssr: false }
+	{ ssr: false },
 );
 
 class BlueHeroSection extends Component {
@@ -31,8 +30,8 @@ class BlueHeroSection extends Component {
 				className={`relative w-full flex flex-col ${topPadding} ${className}`}
 				style={{ backgroundColor: bgColor, color: textColor }}
 			>
-				<div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center md:items-start">
-					<div className="flex-1 flex flex-col justify-center gap-3 md:pr-10 text-center md:text-left">
+				<div className="max-w-6xl w-full mx-auto flex flex-col xl:flex-row items-center xl:items-start px-4 xl:px-0">
+					<div className="flex-1 flex flex-col justify-center gap-3 xl:pr-10 text-center xl:text-left">
 						<AnimateViewAppear delay={300}>
 							<h2 className="font-semibold text-4xl md:text-5xl leading-tight">
 								<span className="text-green-300 font-bold">
@@ -52,7 +51,7 @@ class BlueHeroSection extends Component {
 									{description}
 								</p>
 							)}
-							<div className="flex gap-4 mt-6 justify-center md:justify-start">
+							<div className="flex gap-4 mt-4 xl:mt-6 justify-center xl:justify-start">
 								{appStoreUrl && (
 									<a
 										href={appStoreUrl}
@@ -83,11 +82,11 @@ class BlueHeroSection extends Component {
 						</AnimateViewAppear>
 					</div>
 
-					<div className="flex-1 mt-10 md:mt-0 flex justify-center md:justify-end w-full relative">
+					<div className="flex-1 mt-16 xl:mt-0 flex justify-center xl:justify-end w-full relative">
 						<img
 							src={imageSrc}
 							alt={imageAlt || subtitle || titleGreen}
-							className="w-3/4 md:w-auto md:max-h-[500px] object-contain"
+							className="w-[360px] xl:w-auto xl:max-h-[500px] object-contain"
 						/>
 					</div>
 				</div>

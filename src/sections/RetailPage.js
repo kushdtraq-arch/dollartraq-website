@@ -195,20 +195,19 @@ export default function RetailPage() {
 							label: "Get a Demo",
 							variant: "primary",
 							onClick: () => {},
-							href:"/demo",
-
+							href: "/demo",
 						},
 						{
 							label: "Contact Us",
 							variant: "secondary",
 							onClick: () => {},
-							href:"/contact",
+							href: "/contact",
 						},
 					]}
 					showCompanySection={false}
 				/>
 			</section>
-			<section className="w-full bg-blue-600 ">
+			<section className="w-full bg-blue-600 mt-12 ">
 				<div className="flex flex-col md:flex-row items-stretch overflow-hidden">
 					<div className="w-full md:w-1/2 relative">
 						<img
@@ -231,7 +230,6 @@ export default function RetailPage() {
 								"challenges",
 							]}
 							description="We combine smart operations with real-world reliability to move what matters — faster, safer, and smarter."
-						
 							align="left"
 							spacingTop="mt-0"
 							spacingBottom="mb-6"
@@ -256,7 +254,7 @@ export default function RetailPage() {
 					align="center"
 					spacingBottom="mb-8"
 				/>
-				<div className="w-full max-w-[1160px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+				<div className="w-full max-w-[1160px] mx-auto grid  grid-cols-1  sm:grid-cols-2  md:grid-cols-2  xl:grid-cols-4  gap-6 md:gap-8  px-4 md:px-0 md:pl-10">
 					{featuresLists.map((feature, idx) => (
 						<FeatureCard key={idx} {...feature} />
 					))}
@@ -282,8 +280,8 @@ export default function RetailPage() {
 						descriptionColorClass="text-gray-200"
 					/>
 
-					<div className="flex flex-col md:flex-row gap-8 items-start">
-						<div className="flex-1 space-y-8 h-auto md:h-[350px]">
+					<div className="flex flex-col md:flex-row gap-6 lg:gap-8 items-start">
+						<div className="flex-1 space-y-8 h-auto lg:h-[350px]">
 							{testimonials.map(
 								({ text, author, company, avatar }, idx) => (
 									<TestimonialCard
@@ -294,22 +292,21 @@ export default function RetailPage() {
 										avatar={avatar}
 										enhanced={true}
 									/>
-								)
+								),
 							)}
 						</div>
-
-						<div className="rounded-xl overflow-hidden flex items-center w-full md:w-[380px] h-[250px] md:h-[350px]">
+						<div className="rounded-xl overflow-hidden flex items-center w-full md:w-[380px] h-[250px] md:h-[350px] md:self-center">
 							<img
 								src="/images/retail2.webp"
 								alt="Testimonial Visual"
-								className="w-full h-full object-cover "
+								className="w-full h-full object-cover"
 							/>
 						</div>
 					</div>
 				</div>
 			</section>
 			<section className="flex flex-col items-center bg-white py-2">
-				<div className="w-[1160px] max-w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 pb-20 pt-14 px-4">
+				<div className="w-full max-w-[1160px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 pb-20 pt-14 px-4 sm:px-6 lg:px-8">
 					<div>
 						<ContentBlock
 							listItems={["Actionable insights"]}
@@ -324,7 +321,7 @@ export default function RetailPage() {
 						/>
 					</div>
 
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+					<div className="grid grid-cols-1 sm:grid-cols-2 gap-5 self-start">
 						{featuresList.map((feature, idx) => (
 							<FeatureCard key={idx} {...feature} />
 						))}
@@ -347,7 +344,6 @@ export default function RetailPage() {
 						descriptionColorClass: "text-white text-sm font-light",
 					}}
 					descriptionBelowList="We analyze and redesign logistics networks to improve efficiency, reduce emissions, and build resilience. From route planning to warehouse integration, we turn complex systems into strategic assets."
-					
 				/>
 			</section>
 			<section className="w-full bg-white py-10 px-4">
@@ -387,22 +383,19 @@ export default function RetailPage() {
 					variant="banner"
 					imageSrc="/images/retail4.webp"
 					useVideo={false}
-					titleLines={[
-						"",
-						
-					]}
+					titleLines={[""]}
 					subtitle="Dollar traq is purpose built to provide end-to-end visibility through every stage of the transportation journey, all from a single provider."
 					buttons={[
 						{
 							label: "Get a Demo",
 							variant: "primary",
-							href:"/demo"
+							href: "/demo",
 						},
 						{
 							label: "Contact Us",
 							variant: "secondary",
 							className: "bg-white",
-							href:"/contact"
+							href: "/contact",
 						},
 					]}
 					showCompanySection={false}

@@ -100,8 +100,7 @@ export default function FeaturePage() {
 		},
 		{
 			title: "Expand Your Career Options",
-			description:
-				"Tap into more carrier choices to avoid bottlenecks.",
+			description: "Tap into more carrier choices to avoid bottlenecks.",
 			imageSrc: "/images/graph3.webp",
 			imageTop: true,
 			showBadge: false,
@@ -110,8 +109,7 @@ export default function FeaturePage() {
 		},
 		{
 			title: "Automated Booking to Keep Freight Moving",
-			description:
-				"Send error-free tenders that speed up confirmations.",
+			description: "Send error-free tenders that speed up confirmations.",
 			imageSrc: "/images/graph4.webp",
 			imageTop: true,
 			showBadge: false,
@@ -119,13 +117,19 @@ export default function FeaturePage() {
 			bgColor: "#f3f4f6",
 		},
 	];
-		const carrierFeatures = [
+	const carrierFeatures = [
 		{
 			label: "Real-time multimodal visibility",
-			sublabel:"Watch every mode of movement through one reliable interface.",
+			sublabel:
+				"Watch every mode of movement through one reliable interface.",
 			image: "/images/map.png",
 		},
-		{ label: "Actionable insights",sublabel:"Recognize delays and irregular movement early and stay in front of problems.", image: "/images/map.png" },
+		{
+			label: "Actionable insights",
+			sublabel:
+				"Recognize delays and irregular movement early and stay in front of problems.",
+			image: "/images/map.png",
+		},
 		{ label: "Intelligent alerting", image: "/images/map.png" },
 		{ label: "Higher levels of data integrity", image: "/images/map.png" },
 	];
@@ -140,7 +144,7 @@ export default function FeaturePage() {
 					titleLines={[
 						"Built-in intelligence  ",
 						"ensuring every shipment",
-						"moves right"
+						"moves right",
 					]}
 					subtitle="With clearer insight and smarter planning, DollarTraq helps keep freight moving without unnecessary delays."
 					buttons={[
@@ -148,7 +152,7 @@ export default function FeaturePage() {
 							label: "Talk to an Expert",
 							variant: "green",
 							onClick: () => {},
-							href:"/contact",
+							href: "/contact",
 						},
 					]}
 					showCompanySection={false}
@@ -159,7 +163,9 @@ export default function FeaturePage() {
 					features={carrierFeatures}
 					contentBlockProps={{
 						listItems: ["Real Time Visibilty"],
-						headingLines: ["See What’s Happening Across Your Supply Chain"],
+						headingLines: [
+							"See What’s Happening Across Your Supply Chain",
+						],
 						description:
 							"Watch drayage, port work, and over-the-road activity in real time inside one connected system.",
 						align: "left",
@@ -170,7 +176,6 @@ export default function FeaturePage() {
 						descriptionColorClass: "text-white text-sm font-light",
 					}}
 					descriptionBelowList="DollarTraq unifies tracking data and gives you clarity the moment anything changes."
-				
 				/>
 			</section>
 			<section className="flex flex-col items-center bg-white mt-12  px-6">
@@ -232,7 +237,6 @@ export default function FeaturePage() {
 						listItems={["Decision Intelligence For Supply Chains"]}
 						headingLines={[
 							"Clarity That Powers Your Logistics Strategy",
-							
 						]}
 						align="left "
 						spacingTop="mt-0"
@@ -241,8 +245,14 @@ export default function FeaturePage() {
 						description="Tools that help high-volume logistics teams stay ahead of change."
 						descriptionColorClass=" text-black text-xs font-light"
 					/>
-
-					<div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+					<div
+						className="w-full grid 
+  grid-cols-1 
+  sm:grid-cols-2 
+  md:grid-cols-2 
+  xl:grid-cols-4 
+  gap-8 md:pl-10"
+					>
 						{modesList.map((feature, idx) => (
 							<FeatureCard key={idx} {...feature} />
 						))}
@@ -250,7 +260,7 @@ export default function FeaturePage() {
 				</div>
 			</section>
 			<section className="w-full bg-white py-12 flex justify-center">
-				<div className="w-full max-w-[1160px] flex flex-col md:flex-row gap-10 md:gap-36 items-start">
+				<div className="w-full max-w-[1160px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-8 md:gap-20 items-start">
 					<div className="flex-1 md:sticky md:top-[110px] self-start">
 						<ContentBlock
 							listItems={["Transportation Management"]}
@@ -266,7 +276,7 @@ export default function FeaturePage() {
 						/>
 					</div>
 
-					<div className="flex-1 flex flex-col gap-6 md:gap-10">
+					<div className="flex-1 flex flex-col gap-4 md:gap-8 lg:gap-10">
 						{solutionsList.map((solution, index) => (
 							<SolutionFeature
 								key={index}
@@ -301,22 +311,19 @@ export default function FeaturePage() {
 					variant="banner"
 					imageSrc="/images/truck2.webp"
 					useVideo={false}
-					titleLines={[
-						"Complete Clarity Across Every Shipment",
-						
-					]}
+					titleLines={["Complete Clarity Across Every Shipment"]}
 					subtitle="DollarTraq centralizes full-lifecycle tracking, pickup, port workflow, drayage, long-haul, and final delivery into your single, scalable logistics platform."
 					buttons={[
 						{
 							label: "Get a Demo",
 							variant: "primary",
-							href:"/demo",
+							href: "/demo",
 						},
 						{
 							label: "Contact Us",
 							variant: "secondary",
 							className: "bg-white",
-							href:"/contact",
+							href: "/contact",
 						},
 					]}
 					showCompanySection={false}
