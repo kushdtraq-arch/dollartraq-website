@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import Button from "../common/Button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Building, Mail } from "lucide-react";
 
 class Footer extends Component {
 	render() {
@@ -261,13 +261,22 @@ class Footer extends Component {
 							<h4 className="font-bold mb-4 mt-6 text-lg md:text-xl">
 								Reach Us
 							</h4>
-							<address className="text-md font-normal">
-								1309 Coffeen Avenue
-								<br />
-								STE 1200 Sheridan
-								<br />
-								Wyoming 82801
-							</address>
+
+							<div className="flex items-start justify-start">
+								<Building size={18} />
+								<address className="text-md font-normal ml-2">
+									1309 Coffeen Avenue
+									<br />
+									STE 1200 Sheridan
+									<br />
+									Wyoming 82801
+								</address>
+							</div>
+
+							<div className="flex items-start justify-start mt-5">
+								<Mail size={18} />
+								<a href="mailto:info@dollartraq.com" className="ml-2">info@dollartraq.com</a>
+							</div>
 						</div>
 					</div>
 				</div>

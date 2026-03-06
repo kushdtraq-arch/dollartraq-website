@@ -28,7 +28,7 @@ class VideoHeroSection extends Component {
 			companyLogos = [],
 			className = "",
 			companySectionText = "",
-			showCompanySection = true,
+			showCompanySection = false,
 			companyLogoWrapperClassName = "",
 			companyLogoClassName = "",
 			variant = "default",
