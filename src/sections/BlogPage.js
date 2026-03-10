@@ -9,141 +9,7 @@ const AnimateViewAppear = dynamic(
 	{ ssr: false },
 );
 
-const cards = [
-	{
-		id: "a01",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/boy.webp",
-		imageAlt: "Pilot facade",
-		href: "/stories/windows-1",
-		imageRight: true,
-		accent: "amber",
-	},
-	{
-		id: "a02",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/img1.webp",
-		imageAlt: "Retrofit tower",
-		href: "/stories/retrofit-2",
-		imageRight: true,
-		accent: "emerald",
-	},
-	{
-		id: "a03",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/img2.webp",
-		imageAlt: "Glass logistics",
-		href: "/stories/carbon-3",
-		imageRight: true,
-		accent: "sky",
-	},
-	{
-		id: "a04",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/img3.webp",
-		imageAlt: "Test lab",
-		href: "/stories/tests-4",
-		imageRight: true,
-		accent: "rose",
-	},
-	{
-		id: "a05",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/img4.webp",
-		imageAlt: "Daylight facade",
-		href: "/stories/daylight-5",
-		imageRight: true,
-		accent: "amber",
-	},
-	{
-		id: "a06",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/banner.webp",
-		imageAlt: "City code",
-		href: "/stories/codes-6",
-		imageRight: true,
-		accent: "zinc",
-	},
-	{
-		id: "a07",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/truck1.webp",
-		imageAlt: "Furnace line",
-		href: "/stories/furnace-7",
-		imageRight: true,
-		accent: "emerald",
-	},
-	{
-		id: "a08",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/truck2.webp",
-		imageAlt: "Library",
-		href: "/stories/library-8",
-		imageRight: true,
-		accent: "sky",
-	},
-	{
-		id: "a09",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/truck3.webp",
-		imageAlt: "Smart facade",
-		href: "/stories/sensors-9",
-		imageRight: true,
-		accent: "rose",
-	},
-	{
-		id: "a10",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/3pl.webp",
-		imageAlt: "Cost charts",
-		href: "/stories/cost-10",
-		imageRight: true,
-		accent: "amber",
-	},
-	{
-		id: "a11",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/retail.webp",
-		imageAlt: "Safety glass",
-		href: "/stories/safety-11",
-		imageRight: true,
-		accent: "zinc",
-	},
-	{
-		id: "a12",
-		tag: "Blog",
-		title: "Credit‑card thin windows — pilot tower",
-		paragraph: "Ultra‑thin glazing hits multi‑unit housing.",
-		imageSrc: "/images/boxes.webp",
-		imageAlt: "PV facade",
-		href: "/stories/pv-12",
-		imageRight: true,
-		accent: "emerald",
-	},
-];
-function BlogPage() {
+function BlogPage(props){
 	return (
 		<div>
 			<section className="relative isolate overflow-hidden bg-gray-50">
@@ -168,13 +34,24 @@ function BlogPage() {
 			</section>
 			<div className="mx-auto max-w-6xl mt-2 p-6">
 				<div className="grid grid-cols-1 sm:grid-cols-2 items-stretch gap-6">
-					{cards.map((item) => (
-						<FeatureStoryCard
-							key={item.id}
-							{...item}
-							className="min-h-[22rem] h-full"
-						/>
-					))}
+
+					{props.articles.length > 0 &&
+					
+						<>
+							{props.articles.map((article, index) => {
+
+								return (
+
+									<FeatureStoryCard
+										key={article.row_id}
+										{...article}
+										href={`/stories/${article.slug}`}
+										className="min-h-[22rem] h-full"
+									/>
+								)
+							})}
+						</>
+					}
 				</div>
 			</div>
 		</div>

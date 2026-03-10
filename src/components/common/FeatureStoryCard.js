@@ -22,7 +22,7 @@ export default function FeatureStoryCard({
 	tag = "Design",
 	title = "",
 	paragraph = "",
-	imageSrc = "",
+	thumb_url = "",
 	imageAlt = "",
 	href = null,
 	imageRight = true,
@@ -73,14 +73,15 @@ export default function FeatureStoryCard({
 						imageRight ? "" : "md:order-first",
 					].join(" ")}
 				>
-					{imageSrc && (
+					{thumb_url && (
 						<Image
-							src={imageSrc}
-							alt={imageAlt}
+							src={thumb_url}
+							alt={title}
 							fill
 							priority={priority}
 							sizes="(min-width: 768px) 50vw, 100vw"
 							className="object-cover"
+							unoptimized
 						/>
 					)}
 				</div>

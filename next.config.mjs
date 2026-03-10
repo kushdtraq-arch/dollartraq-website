@@ -25,6 +25,17 @@ const nextConfig = {
     
         return [];
     },
+    experimental: {
+        turbopackFileSystemCacheForDev: false,
+    },
+    images: {
+        remotePatterns: [
+            {hostname: 'localhost'},
+            {protocol: 'http', hostname: 'localhost', port: '8000', pathname: '/**'},
+            {protocol: 'http', hostname: '127.0.0.1', port: '8000', pathname: '/**'},
+            {protocol: 'https', hostname: 'apis.dollartraq.com', port: '', pathname: '/**'}
+        ],
+    }
     // env: {
     //     NEXT_PUBLIC_API_URL: NEXT_PUBLIC_API_URL,
     // },
