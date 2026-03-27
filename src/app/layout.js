@@ -2,6 +2,7 @@ import "./globals.css";
 import { Fira_Sans, Poppins } from "next/font/google"; 
 
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 
 const fira_sans = Fira_Sans({
     subsets: ["latin"],
@@ -82,6 +83,8 @@ export default function RootLayout({ children }) {
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
                 {children}
+
+                <Script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"  strategy="afterInteractive" />
             </body>
 
             <GoogleAnalytics gaId="G-KKVV9TZ27X" />

@@ -12,6 +12,8 @@ import FeatureSwitch from "@/components/common/FeatureSwitch";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
+import TrustPilot from "./TrustPilot";
+
 const AnimateViewAppear = dynamic(
 	() => import("@/components/animation/AnimateViewAppear"),
 	{ ssr: false },
@@ -470,6 +472,10 @@ export default function HomePage() {
 				]}
 				showCompanySection={false}
 			/>
+
+			<div className="mb-9">
+				<TrustPilot />
+			</div>
 		</>
 	);
 }
