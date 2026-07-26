@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
-
 :root {
-  --font-fira_sans: 'Fira Sans', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @theme inline {
@@ -11,6 +10,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+@theme {
+  --font-sans: var(--font-montserrat), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,37 +22,26 @@
   }
 }
 
+html {
+  overscroll-behavior-x: none;   
+  overflow-x: hidden;             
+  width: 100%;
+  max-width: 100vw;
+}
+
 body {
-  font-family: var(--font-fira_sans);
+  background: var(--background);
+  color: var(--foreground);
+  overscroll-behavior-x: none;
   
+
+  position: relative;
 }
 
-.font-fira_sans {
-  font-family: var(--font-fira_sans);
-}
 
-.font-poppins {
-  font-family: var(--font-poppins);
-}
 
-.content-wrapper{}
-.content-wrapper p{font-size:14px; color:rgba(0,0,0,.7); margin-bottom:20px;}
 
-.content-wrapper h2{font-weight:bold; font-size:16px; margin-top:30px;}
-.content-wrapper ol{padding-left:40px; font-size:13px; list-style-type:decimal; margin-top:10px;}
-.content-wrapper ol li{margin-bottom:5px;}
-
-.content-wrapper ol li p{margin-bottom:0}
-.content-wrapper ul li p{margin-bottom:0px;}
-
-.content-wrapper ul{padding-left:40px; font-size:14px; list-style-type:disc; margin-top:10px; margin-bottom:20px;}
-.content-wrapper ul li{margin-bottom:5px;}
-
-.content-wrapper h3{font-weight:bold; font-size:15px; margin-top:20px; color:rgba(0,0,0,.8)}
-
-.faq-answer{}
-.faq-answer ul{list-style-type:disc; padding-left:20px; font-size:13px; margin-top:10px; margin-bottom:10px;}
-
-html, body {
-  overflow-x: hidden;
+img, svg, video {
+  max-width: 100%;
+  height: auto;
 }

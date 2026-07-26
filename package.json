@@ -1,5 +1,5 @@
 {
-  "name": "new",
+  "name": "dollar-traq-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,24 +9,23 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@next/third-parties": "^16.1.6",
-    "@react-spring/parallax": "^10.0.3",
-    "@react-spring/web": "^10.0.3",
-    "dompurify": "^3.3.1",
-    "lucide-react": "^0.544.0",
-    "next": "^16.1.1",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "react-hook-form": "^7.63.0",
-    "react-intersection-observer": "^9.16.0",
-    "react-scroll-parallax": "^3.5.0",
-    "react-spring": "^10.0.3"
+    "framer-motion": "^12.42.2",
+    "gsap": "^3.15.0",
+    "lucide-react": "^1.23.0",
+    "next": "16.2.10",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-fast-marquee": "^1.6.5",
+    "react-hook-form": "^7.82.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.5.3",
-    "tailwindcss": "^4"
+    "eslint-config-next": "16.2.10",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
