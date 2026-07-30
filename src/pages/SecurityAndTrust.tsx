@@ -66,10 +66,11 @@ export default function SecurityAndTrust() {
         <main className="w-full min-h-screen bg-[#F6F7F0] ">
 
             <SectionIntro 
+                stickToTop
                 title="The safest AI is the kind that can't act alone."
                 description="Dollar Traq's guarantee isn't a promise to be careful — it's an architecture where the careless action is impossible. Every consequential step halts for a human, every answer is scoped to a role, and every session can be replayed end to end."
-                backgroundColor="#F6F7F0"
-                textColor="text-black"
+                backgroundColor="#015EFF"
+                
 
             />
 

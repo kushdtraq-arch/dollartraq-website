@@ -72,10 +72,11 @@ export default function Pricing() {
         <main className="w-full min-h-screen bg-[#F6F7F0] ">
 
             <SectionIntro 
+                stickToTop
                 title="Priced like a tool. Works like a department."
                 description="Three plans, one flat payment fee, zero hidden line items. Everything below is the complete price list."
-                backgroundColor="#F6F7F0"
-                textColor="text-black"
+                backgroundColor="#015EFF"
+                
 
             />
 

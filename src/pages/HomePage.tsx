@@ -259,7 +259,7 @@ export default function Homepage() {
                 title="From quote to cash — with an AI team that vets carriers before you can."
                 description="Dollar Traq is the AI operating system for US freight brokers — vet and onboard carriers on a 22.7-million-row FMCSA database we own, then pay them on verified delivery through DT Pay. Five accountable agents, KYC-verified carriers, and no payment or send without a human tap."
                 backgroundImageSrc="/images/hero-bg.png"
-                videoThumbnailSrc="/video.mp4"
+                videoThumbnailSrc="/banner.mp4"
                 ctas={[
                     { label: "Meet the agents", href: "/ai-agents", variant: "primary" },
                     { label: "Demo", href: "/demo", variant: "secondary" },

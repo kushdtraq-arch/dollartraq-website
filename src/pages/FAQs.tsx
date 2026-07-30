@@ -12,11 +12,12 @@ export default function FAQs() {
     return (
         <main className="w-full min-h-screen  ">
 
-            <SectionIntro 
+            <SectionIntro  
+                stickToTop
                 title="Straight answers."
                 description="Everything brokers ask before a demo — the product, the data, the payment rail, and the guardrails. If yours isn't here, ask us on the call."
-                backgroundColor="#FAF9F5"
-                textColor="text-black"
+                backgroundColor="#015EFF"
+                
 
             />
             <FaqAccordion

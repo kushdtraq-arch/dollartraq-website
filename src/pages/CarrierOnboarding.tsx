@@ -30,21 +30,21 @@ export default function CarrierOnboarding() {
             columns={4}
             items={[
                 {
-                icon: "/images/hourglass.svg",
+                icon: "/images/kyc.svg",
                 iconAlt: "Hourglass icon",
                 title: "KYC",
                 description:
                     "Business and officer identity verified against authoritative records — the same standard you'd expect before money moves.",
                 },
                 {
-                icon: "/images/fused-timeline.svg",
+                icon: "/images/facial-liveness.svg",
                 iconAlt: "Signal waves icon",
                 title: "Facial liveness",
                 description:
                     "A third-party liveness check confirms a real person, matched to their ID — not a photo, not a stolen credential.",
                 },
                 {
-                icon: "/images/truck.svg",
+                icon: "/images/cdl-capture.svg",
                 iconAlt: "Truck icon",
                 title: "CDL capture",
                 description:

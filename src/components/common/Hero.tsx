@@ -17,6 +17,14 @@ interface HeroProps {
     ctas?: HeroCTA[];
     backgroundImageSrc?: string;
     videoThumbnailSrc?: string;
+    /**
+     * When true (default), the hero pulls up underneath the fixed header
+     * (cancelling out the layout's `pt-[72px]` on <main>) so the background
+     * image/gradient extends behind the transparent header instead of
+     * showing the page background above the hero. Set to false if this
+     * Hero is ever rendered somewhere other than the very top of the page.
+     */
+    stickToTop?: boolean;
 }
 
 const DEFAULT_CTAS: HeroCTA[] = [
@@ -61,9 +69,16 @@ const Hero: React.FC<HeroProps> = ({
     ctas = DEFAULT_CTAS,
     backgroundImageSrc = "/images/hero-bg.png",
     videoThumbnailSrc = "/images/dashboard-preview.png",
+    stickToTop = true,
 }) => {
     return (
-<section className="relative w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-[1440px] mx-auto my-4 rounded-2xl flex flex-col justify-between pt-8 md:pt-10 lg:pt-12 overflow-hidden bg-gray-900 font-sans shadow-xl">
+<section
+    className={`relative w-full flex flex-col justify-between overflow-hidden bg-gray-900 font-sans shadow-xl ${
+        stickToTop
+            ? "-mt-[72px] pt-[104px] md:pt-[112px] lg:pt-[120px]"
+            : "mt-4 pt-8 md:pt-10 lg:pt-12"
+    }`}
+>
 
     {/* Background Image Asset with Dark Overlay */}
     <div className="absolute inset-0 z-0 select-none pointer-events-none">

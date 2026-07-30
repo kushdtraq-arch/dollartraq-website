@@ -10,6 +10,16 @@ interface SectionIntroProps {
     textColor?: string;
     size?: "sm" | "md" | "lg";
     className?: string;
+    /**
+     * Set to true when this section is the very first thing on the page
+     * (i.e. rendered directly under the header, with no Hero above it).
+     * This cancels out the layout's `pt-[72px]` on <main> and adds it back
+     * as internal top padding, so the section's own background color runs
+     * up behind the transparent header instead of leaving a gap where the
+     * page background shows through. Defaults to false since this component
+     * is more commonly used further down a page.
+     */
+    stickToTop?: boolean;
 }
 
 const SIZE_PADDING: Record<NonNullable<SectionIntroProps["size"]>, string> = {
@@ -41,10 +51,13 @@ const SectionIntro: React.FC<SectionIntroProps> = ({
     textColor = "text-white",
     size = "md",
     className = "",
+    stickToTop = false,
 }) => {
     return (
         <section
-            className={`w-full ${SIZE_PADDING[size]} px-6 sm:px-10 md:px-12 lg:px-16 font-sans ${className}`}
+            className={`w-full ${SIZE_PADDING[size]} px-6 sm:px-10 md:px-12 lg:px-16 font-sans ${
+                stickToTop ? "-mt-[72px] pt-[calc(72px+4rem)]" : ""
+            } ${className}`}
             style={{ backgroundColor }}
         >
             <motion.div

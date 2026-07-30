@@ -29,7 +29,7 @@ export default function ProductIntegration() {
                 categories={[
                     {
                     title: "ELD & telematics",
-                    icon: "/images/icon-1.svg",
+                    icon: "/images/mask-group.svg",
                     items: [
                         { name: "Motive", description: "Live position and hours feed Tracker for real-time load visibility." },
                         { name: "Samsara", description: "ELD position and geofence data fused into the load timeline." },
@@ -37,7 +37,7 @@ export default function ProductIntegration() {
                     },
                     {
                     title: "Inbox & messaging",
-                    icon: "/images/icon-1.svg",
+                    icon: "/images/inbox-message.svg",
                     items: [
                         { name: "Gmail", description: "Carrier emails vetted inline; vet cards render where you already work." },
                         { name: "Microsoft Outlook", description: "Same inbound vetting and drafting inside Outlook." },
@@ -46,7 +46,7 @@ export default function ProductIntegration() {
                     },
                     {
                     title: "TMS",
-                    icon: "/images/icon-1.svg",
+                    icon: "/images/tms.svg",
                     items: [
                         { name: "McLeod", description: "Certification in progress; status and documents flow into your TMS." },
                         { name: "Turvo", description: "214-shaped status webhooks push load milestones automatically." },
@@ -55,7 +55,7 @@ export default function ProductIntegration() {
                     },                    
                     {
                     title: "Rate & market data",
-                    icon: "/images/icon-1.svg",
+                    icon: "/images/rate-market.svg",
                     items: [
                         { name: "DAT RateView", description: "Benchmark quotes against the market under your own license (BYO)." },
                        
@@ -63,7 +63,7 @@ export default function ProductIntegration() {
                     },
                     {
                     title: "Payments",
-                    icon: "/images/icon-1.svg",
+                    icon: "/images/payments.svg",
                     items: [
                         { name: "Stripe", description: "DT Pay runs on Stripe's regulated rails; carriers paid via Stripe Express." },
                         
@@ -71,7 +71,7 @@ export default function ProductIntegration() {
                     },
                     {
                     title: "Carrier data",
-                    icon: "/images/icon-1.svg",
+                    icon: "/images/carrier.svg",
                     items: [
                         { name: "FMCSA", description: "22.7M rows loaded directly into our own PostgreSQL warehouse — not rented." },
                         

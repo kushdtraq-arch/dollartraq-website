@@ -28,9 +28,9 @@ export default function ProductVet() {
                 sectionTitle="A number you can defend to a customer, an insurer, or a courtroom"
                 sectionDescription={`Most "carrier scores" are black boxes. Ours is math you can inspect — and it's deliberately hard to game.`}
                 steps={[
-                    { title: "Exposure-normalized", description: "Crashes and violations are weighed against fleet size and miles of exposure. A two-truck carrier with one incident isn't scored like a 500-truck fleet with one incident.", icon: "/images/icon-1.svg" },
-                    { title: "Confidence caps", description: "Thin-file carriers — new authorities, few inspections — can't earn a top score on absence of evidence. Low data means a capped score and an honest confidence label.", icon: "/images/transit.svg" },
-                    { title: "Hard stops", description: "Some things aren't a weighting question. Lapsed insurance, out-of-service orders, and failed identity checks stop the workflow regardless of the composite number.", icon: "/images/upload.svg" },
+                    { title: "Exposure-normalized", description: "Crashes and violations are weighed against fleet size and miles of exposure. A two-truck carrier with one incident isn't scored like a 500-truck fleet with one incident.", icon: "/images/exposure-normalized.svg" },
+                    { title: "Confidence caps", description: "Thin-file carriers — new authorities, few inspections — can't earn a top score on absence of evidence. Low data means a capped score and an honest confidence label.", icon: "/images/confidence-caps.svg" },
+                    { title: "Hard stops", description: "Some things aren't a weighting question. Lapsed insurance, out-of-service orders, and failed identity checks stop the workflow regardless of the composite number.", icon: "/images/hard-stop.svg" },
                 ]}
             />
 

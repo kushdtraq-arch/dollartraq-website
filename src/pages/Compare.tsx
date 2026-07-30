@@ -11,7 +11,10 @@ export default function Compare() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
 
-            <SectionIntro />
+            <SectionIntro 
+                stickToTop
+                backgroundColor="#015EFF"
+            />
 
             <ComparisonTable />
 

@@ -22,6 +22,14 @@ interface HeroSplitProps {
     mediaWidth?: number;
     mediaHeight?: number;
     className?: string;
+    /**
+     * When true (default), the hero pulls up underneath the fixed header
+     * (cancelling out the layout's `pt-[72px]` on <main>) so the background
+     * image/gradient extends behind the transparent header instead of
+     * showing the page background above the hero. Set to false if this
+     * component is ever rendered somewhere other than the very top of the page.
+     */
+    stickToTop?: boolean;
 }
 
 const DEFAULT_CTAS: HeroCTA[] = [
@@ -70,13 +78,16 @@ const HeroSplit: React.FC<HeroSplitProps> = ({
     mediaWidth = 1600,
     mediaHeight = 1400,
     className = "",
+    stickToTop = true,
 }) => {
     const hasMedia = Boolean(mediaSrc);
     const mediaIsVideo = hasMedia && isVideoSrc(mediaSrc as string);
 
     return (
         <section
-            className={`relative w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-[1560px] mx-auto my-4 rounded-2xl overflow-hidden bg-gray-900 font-sans shadow-xl ${
+            className={`relative w-full overflow-hidden bg-gray-900 font-sans ${
+                stickToTop ? "-mt-[72px] pt-[72px] mb-4" : "my-4"
+            } ${
                 hasMedia
                     ? ""
                     : "flex flex-col justify-center min-h-[380px] sm:min-h-[420px] md:min-h-[460px] lg:min-h-[500px]"
