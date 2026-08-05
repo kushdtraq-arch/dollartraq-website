@@ -13,11 +13,12 @@ export default function Blog() {
     return (
         <main className="w-full min-h-screen bg-[#F6F7F0] ">
 
-            <SectionIntro 
+            <SectionIntro
+                stickToTop 
                 title="Insight and Updates"
                 description="Everything brokers ask before a demo — the product, the data, the payment rail, and the guardrails. If yours isn't here, ask us on the call."
-                backgroundColor="#F6F7F0"
-                textColor="text-black"
+                backgroundColor="#015EFF"
+                
 
             />
             <BlogGridSection

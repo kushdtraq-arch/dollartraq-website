@@ -186,7 +186,7 @@ const TAB_DATA: TabItem[] = [
                 "Fraud scan on every carrier email: domain age, lookalikes, phone-vs-FMCSA",
                 "Authority & insurance change alerts with affected-loads lists",
             ],
-            imageSrc: "/images/Image-1.png",
+            imageSrc: "/images/home/vet.png",
             imageAlt: "Task Mapping Automation",
         },
     },
@@ -202,7 +202,7 @@ const TAB_DATA: TabItem[] = [
                 "Certificate holder verified against your requirement profile",
                 "Hard stops on lapsed coverage or failed identity — before dispatch",
             ],
-            imageSrc: "/images/supplychain.png",
+            imageSrc: "/images/home/onboard.png",
             imageAlt: "Onboard System",
         },
     },
@@ -214,7 +214,7 @@ const TAB_DATA: TabItem[] = [
             title: "The delay your customer never feels.",
             description: "Tracker starts the moment a signed rate con is filed. ELD position, geofences, and the status language inside carrier emails fuse into one timeline — and the late-risk model raises its hand hours before the appointment slips.",
             bullets: ["Motive ELD live today; more providers in the pipeline", "Check-call drafts written for you — a human sends them", "214-shaped status webhooks straight into your customer's TMS"],
-            imageSrc: "/images/why-choose-us.png",
+            imageSrc: "/images/home/track.png",
             imageAlt: "Tracking Interface",
         },
     },
@@ -226,7 +226,7 @@ const TAB_DATA: TabItem[] = [
             title: "Paper becomes facts. Facts feed everything.",
             description: "Every attachment in a connected inbox is classified — COI, W-9, rate con, BOL, POD — parsed with a text-layer-first pipeline, confidence-scored, and filed to the right carrier and load. Vault's facts power Sentinel's judgments, Tracker's start signal, and DT Pay's release.",
             bullets: ["Expiry dates watched from the day of filing — T-15 renewal drafts, T-7 escalation", "Low-confidence extractions routed to a human, never guessed","Every fact traceable back to the source document"],
-            imageSrc: "/images/supply-chain.png",
+            imageSrc: "/images/home/verify.png",
             imageAlt: "Verification Flow",
         },
     },
@@ -238,7 +238,7 @@ const TAB_DATA: TabItem[] = [
             title: "Payment that releases itself — after a human says so.",
             description: "DT Pay is conditional payment release on Stripe rails: the load is funded up front, the AI verifies the proof of delivery, and the release halts at an approval node until your team taps authorize. Carriers get paid in about 90 seconds. You pay a flat 1.2%.",
             bullets: ["No factoring games, no 30–90 day waits for carriers", "Funds committed before pickup — carriers see payment is secured","Receipts and audit trail on both sides of every release"],
-            imageSrc: "/images/Image.png",
+            imageSrc: "/images/home/pay.png",
             imageAlt: "Payment Screen",
         },
     },
@@ -247,7 +247,7 @@ const TRUST_FEATURES = [
   { icon: <Shield size={20} />, title: "SOC 2 in progress", description: "Independent audit underway across our core systems." },
   { icon: <UserCog size={20} />, title: "Human-approved by design", description: "Approval isn't a setting someone can switch off — it's a node in the graph. Nothing sends, pays, or disputes without a person." },
   { icon: <Clock size={20} />, title: "Replayable audit trail", description: "Every session is checkpointed end-to-end. When a customer or auditor asks what happened?, you can show them — step by step." },
-  { icon: <Gem size={20} />, title: "No black-box scoring", description: "Independent audit underway across our core systems." },
+  { icon: <Gem size={20} />, title: "No black-box scoring", description: "Every Trust Score shows its inputs, its weights, and the FMCSA records behind them. If you can't defend a number to a shipper, it isn't a score — it's a guess." },
   { icon: <Lock size={20} />, title: "Role-based answers", description: "Fleetra answers with exactly what the asking user's role permits — and nothing more." },
   { icon: <Table2 size={20} />, title: "Your data stays yours", description: "Rate memory is tenant-siloed. Your lane history never trains a competitor's price." },
 ];
@@ -257,7 +257,7 @@ export default function Homepage() {
         <main className="w-full  bg-[#FAF9F5] ">
             <Hero
                 title="From quote to cash — with an AI team that vets carriers before you can."
-                description="Dollar Traq is the AI operating system for US freight brokers — vet and onboard carriers on a 22.7-million-row FMCSA database we own, then pay them on verified delivery through DT Pay. Five accountable agents, KYC-verified carriers, and no payment or send without a human tap."
+                description="Dollar Traq is the AI operating system for US freight brokers — vet and onboard carriers on a 22.7-million-row FMCSA database we host ourselves, then pay them on verified delivery through DT Pay. Five accountable agents, KYC-verified carriers, and no payment or send without a human tap."
                 backgroundImageSrc="/images/hero-bg.png"
                 videoThumbnailSrc="/banner.mp4"
                 ctas={[
@@ -267,7 +267,7 @@ export default function Homepage() {
                 ]}
             />
 
-            <LogoCloud text="Trusted by 7,000+ top startups, freelancers and studios" />
+            
 
             <StatsSection
                 title={
@@ -349,7 +349,7 @@ export default function Homepage() {
                     
                     <div className="relative w-full max-w-lg aspect-[440/390] mx-auto md:ml-auto md:mr-0">
                         <Image
-                            src="/images/Image-1.png"
+                            src="/images/home/graphic.png"
                             alt="AI-powered task generator connected to your favorite integrations"
                             fill
                             className="object-cover rounded-[12px]"
@@ -419,7 +419,7 @@ export default function Homepage() {
                    
                     <div className="relative w-full max-w-lg aspect-[440/390] mx-auto md:ml-auto md:mr-0">
                         <Image
-                            src="/images/Image-1.png"
+                            src="/images/home/graphic-1.png"
                             alt="AI-powered task generator connected to your favorite integrations"
                             fill
                             className="object-cover rounded-[12px]"
@@ -436,7 +436,7 @@ export default function Homepage() {
                     { title: "In Transit", description: "Tracked via ELD, geofence armed", icon: "/images/transit.svg" },
                     { title: "POD uploaded", description: "Signed BOL, photo, GPS timestamp", icon: "/images/upload.svg" },
                     { title: "AI Verifies", description: "Vault reads and matches the POD to the load", icon: "/images/ai-verifies.svg" },
-                    { title: "Human Authorise", description: "Release halts until your team taps approve", icon: "/images/human-authorize.svg" },
+                    { title: "Human Authorizes", description: "Release halts until your team taps approve", icon: "/images/human-authorize.svg" },
                     { title: "Released - 90s", description: "Carrier paid; receipts both sides", icon: "/images/released.svg" },
                 ]}
             />
@@ -452,12 +452,12 @@ export default function Homepage() {
                     },
                     {
                         icon: "/images/sales-automation.svg",
-                        title: "Sales Automation",
+                        title: "The Document Layer",
                         description: "350,000+ insurance certificates on file plus every rate con, BOL, and POD your inbox receives — read by AI, verified against requirements, never re-keyed.",
                     },
                     {
                         icon: "/images/contact-lead-managment.svg",
-                        title: "Contact And Lead Management",
+                        title: "The Payment Layer",
                         description: "DT Pay on Stripe rails. When vetting, verification, and payment live in one system, trust stops being a PDF report and becomes a release condition.",
                     },
                 ]}

@@ -25,10 +25,10 @@ export default function FreightBroker() {
                 sectionTitle="Built around how you actually work."
                 sectionDescription={`Brokers are the core use case, not an afterthought. Every agent, every guardrail, and the DT Pay rail were designed around the way a booking desk actually works: fast carrier decisions, defensible pricing, real-time visibility, and payment that only moves when delivery is proven.`}
                 steps={[
-                    { title: "Vet in seconds", description: "A 22.7M-row FMCSA warehouse and a Trust Score you can defend — carrier decisions without the wait.", icon: "/images/box.svg" },
-                    { title: "Price with memory", description: "Rate benchmarks every quote against your own lane history and DAT under your license.", icon: "/images/box.svg" },
-                    { title: "Track without calls", description: "Tracker fuses ELD and email into one timeline and drafts the check-calls for you.", icon: "/images/box.svg" },
-                    { title: "Pay on delivery", description: "DT Pay releases funds in ~90 seconds on verified POD — flat 1.2%, human-authorized.", icon: "/images/box.svg" },
+                    { title: "Vet in seconds", description: "A 22.7M-row FMCSA warehouse and a Trust Score you can defend — carrier decisions without the wait.", icon: "/images/vet-in-sec.svg" },
+                    { title: "Price with memory", description: "Rate benchmarks every quote against your own lane history and DAT under your license.", icon: "/images/price-with-memory.svg" },
+                    { title: "Track without calls", description: "Tracker fuses ELD and email into one timeline and drafts the check-calls for you.", icon: "/images/track-without-calls.svg" },
+                    { title: "Pay on delivery", description: "DT Pay releases funds in ~90 seconds on verified POD — flat 1.2%, human-authorized.", icon: "/images/pay-on-delivery.svg" },
                 ]}
             />
 

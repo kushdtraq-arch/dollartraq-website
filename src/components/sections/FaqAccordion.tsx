@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -51,10 +51,24 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
     className = "",
 }) => {
     const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex);
+    const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
 
     const toggleIndex = (index: number) => {
         setOpenIndex((prev) => (prev === index ? null : index));
+
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                itemRefs.current[index]?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                });
+            }, 360); 
+        });
     };
+
+    const safeFaqs = faqs.filter(
+        (faq) => faq.question && faq.question.trim().length > 0
+    );
 
     return (
         <section className={`w-full bg-[#FAF9F5] px-6 py-16 md:py-24 ${className}`}>
@@ -82,13 +96,16 @@ export const FaqAccordion: React.FC<FaqAccordionProps> = ({
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.15 }}
                 >
-                    {faqs.map((faq, index) => {
+                    {safeFaqs.map((faq, index) => {
                         const isOpen = openIndex === index;
                         return (
                             <motion.div
                                 key={`${faq.question}_${index}`}
+                                ref={(el) => {
+                                    itemRefs.current[index] = el;
+                                }}
                                 variants={rowVariants}
-                                className="border-b border-gray-200"
+                                className="border-b border-gray-200 scroll-mt-24"
                             >
                                 <button
                                     type="button"

@@ -51,22 +51,15 @@ const Footer: React.FC = () => {
                 <div className="pointer-events-none absolute right-0 top-20 h-2/3 w-1/3 bg-gradient-to-bl from-purple-400/20 to-transparent blur-[120px]" />
 
                 {/* CTA section */}
-                <div className="relative max-w-[1240px] mx-auto px-8 md:px-16 pt-16 pb-14 md:pt-20 md:pb-16 flex flex-col md:flex-row items-center justify-between z-10">
+                <div className="relative max-w-[1240px] mx-auto px-8 md:px-16 pt-8  md:pt-8  flex flex-col md:flex-row items-center justify-between z-10">
                     <div className="max-w-2xl">
                         {/* Tagline Pill */}
                         <div className="inline-block bg-white text-black text-[10px] md:text-xs font-bold tracking-widest px-4 py-1.5 rounded-full mb-6 uppercase shadow-sm">
                             Join the AI Revolution
                         </div>
+
                         
-                        {/* Headline */}
-                        <h2 className="text-4xl md:text-5xl lg:text-[52px] font-bold leading-[1.15] mb-8 text-white tracking-tight">
-                            Ready to Transform Your<br className="hidden md:block"/> Freight Operations?
-                        </h2>
-                        
-                        {/* CTA Button */}
-                        <button className="bg-white text-black px-6 py-3 rounded-lg font-medium text-[14px] hover:bg-gray-100 transition-colors shadow-md">
-                            Book a Demo
-                        </button>
+
                     </div>
                     
                     {/* 3D Graphic */}
@@ -94,13 +87,13 @@ const Footer: React.FC = () => {
                             <div className="relative w-[150px] h-[50px] mb-3">
                                 <Image
                                     src="/images/dollar-traq-white-logo-cropped.png"
-                                    alt="DollarTraq"
+                                    alt="Dollar Traq"
                                     fill
                                     className="object-contain object-left"
                                 />
                             </div>
                             <p className="text-[14px] text-white/90 mt-5 mb-6">
-                                Manage Ai effortlessly
+                                The AI operating system for US freight brokers
                             </p>
                             
                             <address className="text-[13px] text-white/70 not-italic leading-relaxed mb-6">
@@ -108,24 +101,20 @@ const Footer: React.FC = () => {
                             </address>
                             {/* Social Icons */}
                             <div className="flex items-center gap-3">
-                                <a href="#" aria-label="Facebook" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 hover:border-white transition">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.89h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94Z" />
-                                    </svg>
-                                </a>
-                                <a href="#" aria-label="X" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 hover:border-white transition">
+
+                                <a href="https://x.com/dollartraq?s=11" aria-label="X" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 hover:border-white transition">
                                     <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M18.9 2H22l-7.6 8.68L23 22h-6.9l-5.4-6.9L4.5 22H1.4l8.1-9.3L1 2h7.1l4.9 6.3L18.9 2Zm-1.2 18h1.7L7.4 3.9H5.6L17.7 20Z" />
                                     </svg>
                                 </a>
-                                <a href="#" aria-label="Instagram" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 hover:border-white transition">
+                                <a href="https://www.instagram.com/dollar.traq?igsh=MWJmemxueGFleHZiMA==" aria-label="Instagram" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 hover:border-white transition">
                                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <rect x="2" y="2" width="20" height="20" rx="5" />
                                         <circle cx="12" cy="12" r="4" />
                                         <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                                     </svg>
                                 </a>
-                                <a href="#" aria-label="LinkedIn" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 hover:border-white transition">
+                                <a href="https://www.linkedin.com/company/dollar-traq/" aria-label="LinkedIn" className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/10 hover:border-white transition">
                                     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.5 9.5h5V21h-5V9.5Zm7.5 0h4.8v1.57h.07c.67-1.2 2.3-2.47 4.73-2.47 5.06 0 6 3.06 6 7.04V21h-5v-4.86c0-1.16-.02-2.65-1.62-2.65-1.62 0-1.87 1.26-1.87 2.57V21h-5V9.5Z" />
                                     </svg>

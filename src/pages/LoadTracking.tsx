@@ -29,28 +29,28 @@ export default function LoadTracking() {
                 columns={4}
                 items={[
                     {
-                    icon: "/images/hourglass.svg",
+                    icon: "/images/load-auto-initation.svg",
                     iconAlt: "Hourglass icon",
                     title: "Auto-initiation",
                     description:
                         "The moment Vault files a signed rate con, tracking starts. No setup task, no forgotten load.",
                     },
                     {
-                    icon: "/images/fused-timeline.svg",
+                    icon: "/images/load-fused-timline.svg",
                     iconAlt: "Signal waves icon",
                     title: "Fused timeline",
                     description:
                         "ELD pings, geofence events, and carrier-email status language merge into one truth per load.",
                     },
                     {
-                    icon: "/images/truck.svg",
+                    icon: "/images/load-risk-model.svg",
                     iconAlt: "Truck icon",
                     title: "Late-risk model",
                     description:
                         "ETA continuously tested against appointments. A 92-minute slip gets flagged two hours before it becomes a missed dock.",
                     },
                     {
-                    icon: "/images/box.svg",
+                    icon: "/images/drafted-response.svg",
                     iconAlt: "Package icon",
                     title: "Drafted responses",
                     description:

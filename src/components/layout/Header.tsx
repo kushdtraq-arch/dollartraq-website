@@ -228,7 +228,7 @@ const COMPANY_SUBMENU: SubMenuGroup[] = [
             {
                 icon: Info,
                 title: "About",
-                subtitle: "Built by freight operators",
+                subtitle: "Built for the freight desk",
                 link: "/company/about",
             },
             {
@@ -451,10 +451,10 @@ const Header: React.FC<HeaderProps> = ({ active_page }) => {
                     <Image
                         src={
                             isSolid
-                                ? "/images/dollar-traq-logo.png"
+                                ? "/images/dollar-traq-logo-cropped.png"
                                 : "/images/dollar-traq-white-logo-cropped.png"
                         }
-                        alt="DollarTraq"
+                        alt="Dollar Traq"
                         width={140}
                         height={45}
                         priority

@@ -22,7 +22,7 @@ export default function Compare() {
                 sectionTitle="Rent versus own."
                 sectionDescription={`Most platforms in this space are a friendly interface on top of data someone else controls. That's a fine business — until you need to diff an entire census, show provenance in a dispute, or attach a payment condition to a vetting result. Ownership is what makes those possible.`}
                 steps={[
-                    { title: "We own the data", description: "22.7M FMCSA rows in our warehouse. Census diffs for chameleon detection, provenance on screen, and queries no rate-limited API would ever allow.", icon: "/images/icon-1.svg" },
+                    { title: "We host the data", description: "22.7M FMCSA rows in our warehouse. Census diffs for chameleon detection, provenance on screen, and queries no rate-limited API would ever allow.", icon: "/images/icon-1.svg" },
                     { title: "We read the paper", description: "Vetting vendors check a box that says \"insured.\" We extract the certificate, verify the holder, and watch the expiry — then feed that fact to the payment decision.", icon: "/images/transit.svg" },
                     { title: "We move the money", description: "No incumbent on this page can release a payment. When trust and payment live in one system, \"verified\" stops being a report and becomes a condition.", icon: "/images/upload.svg" },
                 ]}

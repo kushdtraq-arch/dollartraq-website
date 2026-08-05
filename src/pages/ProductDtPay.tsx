@@ -25,6 +25,18 @@ export default function ProductDtPay() {
                 ]}
             />
 
+
+            <LifecycleTimeline
+                title="DT Pay is the last mile of a verified lifecycle."
+                description="Payment isn't a bolt-on. It's the payoff of everything the platform already verified — the carrier's identity, the coverage, the delivery. Here's the full path a dollar travels."
+                steps={[
+                    { label: "Carrier vetted", description: "Change history + Trust Score clear the carrier before you book." },
+                    { label: "KYC onboarded", description: "Identity, liveness, and CDL verified; Stripe Express account created." },
+                    { label: "Load funded", description: "Broker commits carrier pay up front — payment visibly secured." },
+                    { label: "Delivered & verified", description: "Tracked to the dock; POD AI-verified against the load." },
+                    { label: "Paid in ~90s", description: "Human authorizes; funds land in the verified Stripe Express account." },
+                ]}
+            />
             <ProcessSteps
                 sectionTitle="Six steps from tender to paid."
                 sectionDescription="Watch the sequence — step five is the point: the release physically halts until a person on your team taps authorize."
@@ -52,19 +64,35 @@ export default function ProductDtPay() {
                 ]}
             /> 
 
-
-            <LifecycleTimeline
-                title="DT Pay is the last mile of a verified lifecycle."
-                description="Payment isn't a bolt-on. It's the payoff of everything the platform already verified — the carrier's identity, the coverage, the delivery. Here's the full path a dollar travels."
-                steps={[
-                    { label: "Carrier vetted", description: "Change history + Trust Score clear the carrier before you book." },
-                    { label: "KYC onboarded", description: "Identity, liveness, and CDL verified; Stripe Express account created." },
-                    { label: "Load funded", description: "Broker commits carrier pay up front — payment visibly secured." },
-                    { label: "Delivered & verified", description: "Tracked to the dock; POD AI-verified against the load." },
-                    { label: "Paid in ~90s", description: "Human authorizes; funds land in the verified Stripe Express account." },
+            <FeatureSection
+                title="Every payout goes to a verified carrier."
+                description="Every carrier that qualifies was profiled, authority current, and fully insured. Funds move only after proof lines up — no exceptions and no manual overrides."
+                imagePosition="right"
+                features={[
+                    { text: "Every carrier verified — authority checked, not assumed." },
+                    {
+                        text:
+                        "Quote-to-book, funded fast — cleared before the paperwork ages.",
+                    },
+                    {
+                        text:
+                        "Every release logged — nothing moves against an unverified claim.",
+                    },
                 ]}
-            />
 
+                visual={
+                   
+                    <div className="relative w-full max-w-lg aspect-[440/390] mx-auto md:ml-auto md:mr-0">
+                        <Image
+                            src="/images/page-dt-pay-graphic.png"
+                            alt="AI-powered task generator connected to your favorite integrations"
+                            fill
+                            className="object-cover rounded-[12px]"
+                            priority
+                        />
+                    </div>
+                }
+            /> 
         </main>
     );
 }

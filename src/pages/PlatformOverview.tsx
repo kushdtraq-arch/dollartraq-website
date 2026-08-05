@@ -51,7 +51,7 @@ export default function PlatformOverview() {
                     
                     <div className="relative w-full max-w-lg aspect-[440/390] mx-auto md:ml-auto md:mr-0">
                         <Image
-                            src="/images/Image-1.png"
+                            src="/images/home/graphic-1.png"
                             alt="AI-powered task generator connected to your favorite integrations"
                             fill
                             className="object-cover rounded-[12px]"

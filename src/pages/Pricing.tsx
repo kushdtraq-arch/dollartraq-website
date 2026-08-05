@@ -22,7 +22,7 @@ const PRICING_PLANS: PricingPlan[] = [
             { label: "DT Pay access at 1.2% flat", icon: "check" },
             { label: "Email support", icon: "check" },
         ],
-        ctaLabel: "Choose Basic",
+        ctaLabel: "Start with Starter",
         href: "/checkout/start",
     },
     {
@@ -40,7 +40,7 @@ const PRICING_PLANS: PricingPlan[] = [
             { label: "Rate memory + DAT RateView (your license)", icon: "checkCircle2" },
             { label: "Teams alerts · priority support", icon: "checkCircle2" },            
         ],
-        ctaLabel: "Get Started Pro",
+        ctaLabel: "Get Growth",
         href: "/checkout/growth",
         featured: true,
         badge: "Most Recommended",
@@ -81,6 +81,10 @@ export default function Pricing() {
             />
 
             <PricingSection plans={PRICING_PLANS} />
+
+            <p className="max-w-[1200px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 text-center text-[22px] text-gray-800 pt-10 pb-2">
+                Competitor pricing reflects publicly listed or publicly reported entry pricing as of July 2026. Verify current pricing with each vendor.
+            </p>
 
             <ComparisonTable
                 capabilityHeader="CAPABILITY"

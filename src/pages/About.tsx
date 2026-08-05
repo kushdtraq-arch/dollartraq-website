@@ -22,17 +22,17 @@ export default function AboutPage() {
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
             
             <HeroSplit
-                title="Built by people who book freight."
-                description="Dollar Traq didn't start in a lab. It started on a brokerage floor, with a founder tired of stitching four tools together to answer one question: can I trust this carrier with this load? "
+                title="Built for the people who book freight"
+                description="Dollar Traq started with one question that no existing tool answered well: can I trust this carrier with this load? Answering it properly meant owning the data, reading the paper, and putting a person on every consequential decision. That's the product. "
                 backgroundImageSrc="/images/about-banner.png"
                 ctas={[]}
             />
 
             <FeatureBentoGrid
-                sectionTitle={<>A live brokerage, not a<br />pitch deck.</>}
-                sectionDescription="Dollar Traq was built by operators who have lived the freight desk. Every feature on this site was pressure-tested against real loads, real carriers, and real fraud attempts — before it was ever put in front of a customer. That's the difference you feel in the product: the roadmap comes from a dispatch desk under deadline, not a whiteboard. When Sentinel flags a nine-day-old domain, it's because that exact pattern tried to take a real load."
+                sectionTitle={<>Real freight problems, <br />not a pitch deck</>}
+                sectionDescription="Every feature on this site was built against the way fraud and friction actually show up on a freight desk — not against a whiteboard sketch of it. When Sentinel flags a nine-day-old domain, it's because that's a real pattern, documented in our own FMCSA warehouse, that has been used to take real loads. The roadmap is set by the problems brokers hit under deadline, and nothing ships until it survives them."
                 cards={[
-                    { title: "Operators first", description: "We are our own hardest customer. If a workflow annoys the people who actually run freight, it doesn't ship.", icon: "/images/Container.svg", background: "bg-[#3B34E0]", textVariant: "light" },
+                    { title: "Built for the desk", description: "Every workflow is judged by whether it saves a rep time on a real load. If it adds a click without adding a fact, it doesn't ship.", icon: "/images/Container.svg", background: "bg-[#3B34E0]", textVariant: "light" },
                     { title: "Incorporated in Wyoming", description: "US company, US freight focus, built for the American brokerage market and its regulations.", icon: "/images/Circle.svg", background: "bg-[#EFEFEA]", textVariant: "dark" },
                     { title: "Honest by policy", description: "No invented testimonials, no borrowed logos, no stats we can't source. If it's on this site, we stand behind it.", icon: "/images/arrow-scale.svg", background: "bg-[#4CAF50]", textVariant: "light" },
                     { title: "Human-in-the-loop believers", description: "We think the right role for AI in freight is a tireless assistant that never gets the final say. The product enforces that view.", icon: "/images/multiple-circles.svg", background: "bg-[#EFEFEA]", textVariant: "dark" },
@@ -49,8 +49,8 @@ export default function AboutPage() {
 
             <CtaBannerSection
                 backgroundImageSrc="/images/truck.png"
-                title="Come see what a broker built for brokers."
-                description="The demo is run by people who use this product to move real freight every day."
+                title="Bring five MC numbers. Leave with the truth."
+                description="We'll vet your own carriers live on the call — authority, insurance, Trust Score, fraud signals. You keep the report either way."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
                     { label: "Security & trust", href: "/company-trust", variant: "secondary" },

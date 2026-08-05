@@ -4,13 +4,14 @@ import SplitBanner from "@/components/sections/SplitBanner";
 import ContactForm from "@/components/common/forms/ContactForm";
 export default function Demo() {
     return (
-        <main className="w-full min-h-screen bg-[#FAF9F5] ">
+        <main className="w-full min-h-screen  ">
 
         <SplitBanner
+            stickToTop
             eyebrow="Demo"
             title="Request a personalized demo"
             description="As the first and most trusted supply chain visibility platform, we have an unmatched global carrier network."
-            imageSrc="/images/truck.png"
+            imageSrc="/images/hero-bg.png"
             imageAlt="Truck driving through a city at night"
             imagePosition="right"
             backgroundColor="#2f4bf0"

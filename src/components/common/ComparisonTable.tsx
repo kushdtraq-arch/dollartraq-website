@@ -14,11 +14,13 @@ interface CompetitorCell {
     type: CellType;
     
     value?: string;
+    note?: string;
     color?: string;
 }
 
 interface FeaturedCell {
-    value: string;
+    type?: "check" | "cross" | "text";
+    value?: string;
     note?: string;
     
     emphasize?: boolean;
@@ -60,7 +62,7 @@ const DEFAULT_ROWS: ComparisonRow[] = [
     {
         label: "Carrier identity & vetting",
         competitorCells: [{ type: "check" }, { type: "check" }, { type: "check" }],
-        featuredCell: { value: "Yes", note: "on owned FMCSA data" },
+        featuredCell: { value: "Yes", note: "on self hosted FMCSA data" },
     },
     {
         label: "Insurance monitoring",
@@ -70,25 +72,17 @@ const DEFAULT_ROWS: ComparisonRow[] = [
     {
         label: "Fraud / double-brokering detection",
         competitorCells: [
-            { type: "text", value: "Add-on" },
+            { type: "text", value: "Included (Load Lock) · email/VoIP fraud sold as add-ons" },
             { type: "check" },
             { type: "text", value: "Limited" },
         ],
         featuredCell: { value: "Included + chameleon census diffs" },
     },
-    {
-        label: "Owns underlying data warehouse",
-        competitorCells: [
-            { type: "text", value: "Rents" },
-            { type: "text", value: "Partial" },
-            { type: "text", value: "Rents" },
-        ],
-        featuredCell: { value: "22.7M rows, self-hosted" },
-    },
+
     {
         label: "Live ELD load tracking",
-        competitorCells: [{ type: "cross" }, { type: "cross" }, { type: "cross" }],
-        featuredCell: { value: "Motive live, more in pipeline" },
+        competitorCells: [{ type: "check" }, { type: "cross" }, { type: "check" }],
+        featuredCell: { type: "check" },
     },
     {
         label: "AI agents with human-in-the-loop",
@@ -103,11 +97,11 @@ const DEFAULT_ROWS: ComparisonRow[] = [
     {
         label: "Published entry price",
         competitorCells: [
-            { type: "text", value: "~$150-$500/mo" },
+            { type: "text", value: "Quote only — not published", note: "Reported SMB deals $1,500–$2,500/mo" },
             { type: "text", value: "from $515/mo" },
-            { type: "text", value: "~$340/mo" },
+            { type: "text", value: "$340/mo (RMIS Lite) — Pro is quote-only" },
         ],
-        featuredCell: { value: "$299/mo", note: "DT PAY INCLUDED", emphasize: true },
+        featuredCell: { value: "$299/mo", note: "DT PAY AT 1.2% — NO PLATFORM SURCHARGE", emphasize: true },
     },
 ];
 
@@ -234,12 +228,19 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({
                                         {cell.type === "check" && <CheckIcon />}
                                         {cell.type === "cross" && <CrossIcon />}
                                         {cell.type === "text" && (
-                                            <span
-                                                className="text-[13px] sm:text-[14px] text-gray-400"
-                                                style={cell.color ? { color: cell.color } : undefined}
-                                            >
-                                                {cell.value}
-                                            </span>
+                                            <div className="flex flex-col items-center">
+                                                <span
+                                                    className="text-[13px] sm:text-[14px] text-gray-500"
+                                                    style={cell.color ? { color: cell.color } : undefined}
+                                                >
+                                                    {cell.value}
+                                                </span>
+                                                {cell.note && (
+                                                    <span className="mt-1 text-[11px] text-gray-400">
+                                                        {cell.note}
+                                                    </span>
+                                                )}
+                                            </div>
                                         )}
                                     </motion.div>
                                 ))}
@@ -254,27 +255,33 @@ const ComparisonTable: React.FC<ComparisonTableProps> = ({
                                     }`}
                                     style={rowStyle}
                                 >
-                                    <span
-                                        className={
-                                            row.featuredCell.emphasize
-                                                ? "text-[24px] sm:text-[26px] font-bold"
-                                                : "text-[13px] sm:text-[14px] font-medium"
-                                        }
-                                        style={{ color: valueColor }}
-                                    >
-                                        {row.featuredCell.value}
-                                    </span>
-                                    {row.featuredCell.note && (
-                                        <span
-                                            className={`mt-1 ${
-                                                row.featuredCell.emphasize
-                                                    ? "text-[11px] font-semibold tracking-wide uppercase"
-                                                    : "text-[12px]"
-                                            }`}
-                                            style={{ color: valueColor, opacity: row.featuredCell.emphasize ? 1 : 0.8 }}
-                                        >
-                                            {row.featuredCell.note}
-                                        </span>
+                                    {row.featuredCell.type === "check" && <CheckIcon />}
+                                    {row.featuredCell.type === "cross" && <CrossIcon />}
+                                    {(!row.featuredCell.type || row.featuredCell.type === "text") && (
+                                        <>
+                                            <span
+                                                className={
+                                                    row.featuredCell.emphasize
+                                                        ? "text-[24px] sm:text-[26px] font-bold"
+                                                        : "text-[13px] sm:text-[14px] font-medium"
+                                                }
+                                                style={{ color: valueColor }}
+                                            >
+                                                {row.featuredCell.value}
+                                            </span>
+                                            {row.featuredCell.note && (
+                                                <span
+                                                    className={`mt-1 ${
+                                                        row.featuredCell.emphasize
+                                                            ? "text-[11px] font-semibold tracking-wide uppercase"
+                                                            : "text-[12px]"
+                                                    }`}
+                                                    style={{ color: valueColor, opacity: row.featuredCell.emphasize ? 1 : 0.8 }}
+                                                >
+                                                    {row.featuredCell.note}
+                                                </span>
+                                            )}
+                                        </>
                                     )}
                                 </motion.div>
                             </React.Fragment>

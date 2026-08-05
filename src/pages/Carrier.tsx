@@ -25,10 +25,10 @@ export default function Carrier() {
                 sectionTitle="Built around how you actually work."
                 sectionDescription={`Carriers get the other side of the trust equation: a single onboarding link instead of a fax-and-wait, a portal to track loads and payments, and DT Pay releasing funds in about 90 seconds once delivery is verified. Get verified once, then focus on driving — not chasing invoices.`}
                 steps={[
-                    { title: "One-link onboarding", description: "KYC, facial liveness, and CDL capture in minutes — done once, not per broker.", icon: "/images/box.svg" },
-                    { title: "Your own portal", description: "Track loads, manage documents, and watch payment status in one place.", icon: "/images/box.svg" },
-                    { title: "Stripe Express payouts", description: "A verified payout account created at onboarding, wired straight to DT Pay.", icon: "/images/box.svg" },
-                    { title: "Paid in ~90 seconds", description: "On verified delivery, funds land fast — no net-30, no factoring games.", icon: "/images/box.svg" },
+                    { title: "One-link onboarding", description: "KYC, facial liveness, and CDL capture in minutes — done once, not per broker.", icon: "/images/one-link-onboarding.svg" },
+                    { title: "Your own portal", description: "Track loads, manage documents, and watch payment status in one place.", icon: "/images/your-own-portal.svg" },
+                    { title: "Stripe Express payouts", description: "A verified payout account created at onboarding, wired straight to DT Pay.", icon: "/images/stripe-express-payout.svg" },
+                    { title: "Paid in ~90 seconds", description: "On verified delivery, funds land fast — no net-30, no factoring games.", icon: "/images/paid-in-90.svg" },
                 ]}
             />
 

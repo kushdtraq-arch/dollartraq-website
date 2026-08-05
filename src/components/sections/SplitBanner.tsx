@@ -22,6 +22,8 @@ export interface SplitBannerProps {
   mobileImageHeight?: number;
   id?: string;
   className?: string;
+
+  stickToTop?: boolean;
 }
 
 function isCssColor(value: string) {
@@ -42,6 +44,7 @@ export default function SplitBanner({
   mobileImageHeight = 280,
   id,
   className = "",
+  stickToTop = true,
 }: SplitBannerProps) {
   const bgIsColorValue = isCssColor(backgroundColor);
   const panelStyle = bgIsColorValue ? { backgroundColor } : undefined;
@@ -51,7 +54,12 @@ export default function SplitBanner({
   const imageOrderClass = imagePosition === "left" ? "md:order-1" : "md:order-2";
 
   return (
-    <section id={id} className={`w-full ${className}`}>
+    <section
+      id={id}
+      className={`relative w-full overflow-hidden ${
+        stickToTop ? "-mt-[72px]" : ""
+      } ${className}`}
+    >
       <div className="flex flex-col md:flex-row">
         {/* Text / color panel */}
         <div
@@ -60,7 +68,10 @@ export default function SplitBanner({
         >
           <div
             className="md:flex md:flex-col md:justify-center"
-            style={{ minHeight: `${desktopHeight}px` }}
+            style={{
+              minHeight: `${desktopHeight}px`,
+              paddingTop: stickToTop ? 72 : undefined,
+            }}
           >
             {eyebrow && (
               <div className="flex items-center gap-[12px]">

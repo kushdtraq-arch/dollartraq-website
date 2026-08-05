@@ -25,10 +25,10 @@ export default function Shipper() {
                 sectionTitle="Built around how you actually work."
                 sectionDescription={`For shippers, trust usually stops at a broker's assurance. Dollar Traq lets your requirements flow into the vetting profile and gives you verified evidence instead of vouching — the same identity, insurance, and delivery verification the broker's desk runs, visible as proof rather than a promise.`}
                 steps={[
-                    { title: "Verified identity", description: "Carriers are KYC-verified with a facial liveness check — a real, resolved entity, not a claim.", icon: "/images/box.svg" },
-                    { title: "Confirmed coverage", description: "Vault reads the COI and checks limits and holder against your requirements per equipment type.", icon: "/images/box.svg" },
+                    { title: "Verified identity", description: "Carriers are KYC-verified with a facial liveness check — a real, resolved entity, not a claim.", icon: "/images/verified-identity.svg" },
+                    { title: "Confirmed coverage", description: "Vault reads the COI and checks limits and holder against your requirements per equipment type.", icon: "/images/confirmed-coverage.svg" },
                     { title: "Proven delivery", description: "A GPS-stamped, AI-verified POD confirms the freight was delivered as agreed.", icon: "/images/box.svg" },
-                    { title: "On the record", description: "Every check is auditable — proof you can point to, not a phone call you have to trust.", icon: "/images/box.svg" },
+                    { title: "On the record", description: "Every check is auditable — proof you can point to, not a phone call you have to trust.", icon: "/images/on-the-record.svg" },
                 ]}
             />
 
