@@ -1,4 +1,4 @@
-// pages/HomePage.tsx (or app equivalent)
+
 import React from "react";
 import FaqAccordion from "@/components/sections/FaqAccordion";
 import PricingSection, { PricingPlan } from "@/components/sections/PricingSection";
@@ -79,10 +79,10 @@ export default function SecurityAndTrust() {
                 sectionTitle="Built around how you actually work."
                 sectionDescription={`Carriers get the other side of the trust equation: a single onboarding link instead of a fax-and-wait, a portal to track loads and payments, and DT Pay releasing funds in about 90 seconds once delivery is verified. Get verified once, then focus on driving — not chasing invoices.`}
                 steps={[
-                    { title: "Human approval is a graph node, not a setting", description: "Every send, payment release, and dispute action halts at an approval node built into the orchestration graph. It isn't a toggle an admin can switch off or a prompt an agent can be talked past — the workflow physically cannot route around it.", icon: "/images/box.svg" },
-                    { title: "Role-based access on every answer", description: "Fleetra returns exactly what the asking user's role permits — and nothing more. A dispatcher, a compliance manager, and an owner asking the same question get answers scoped to what each is allowed to see.", icon: "/images/box.svg" },
-                    { title: "Checkpointed, replayable sessions", description: "Every run is checkpointed step by step. When a customer, an insurer, or an auditor asks \"why did the system do that?\", you can replay the exact evidence chain — months later, in order.", icon: "/images/box.svg" },
-                    { title: "Guardrails as topology", description: "Rules R1–R6 are edges in the graph. Agents act only in their lane; out-of-lane requests are refused with an explanation and logged. Constraints you can't argue an AI out of, because they aren't instructions.", icon: "/images/box.svg" },
+                    { title: "Human approval is a graph node, not a setting", description: "Every send, payment release, and dispute action halts at an approval node built into the orchestration graph. It isn't a toggle an admin can switch off or a prompt an agent can be talked past — the workflow physically cannot route around it.", icon: "/images/security-1.svg" },
+                    { title: "Role-based access on every answer", description: "Fleetra returns exactly what the asking user's role permits — and nothing more. A dispatcher, a compliance manager, and an owner asking the same question get answers scoped to what each is allowed to see.", icon: "/images/security-2.svg" },
+                    { title: "Checkpointed, replayable sessions", description: "Every run is checkpointed step by step. When a customer, an insurer, or an auditor asks \"why did the system do that?\", you can replay the exact evidence chain — months later, in order.", icon: "/images/security-3.svg" },
+                    { title: "Guardrails as topology", description: "Rules R1–R6 are edges in the graph. Agents act only in their lane; out-of-lane requests are refused with an explanation and logged. Constraints you can't argue an AI out of, because they aren't instructions.", icon: "/images/security-4.svg" },
                 ]}
             />
             <FeatureSection

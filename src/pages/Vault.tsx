@@ -66,25 +66,29 @@ export default function Vault() {
             columns={4}
             items={[
                 {
-                image: "/images/tracker-1.png",
+                video: "/sentinel.mp4",
+                poster: "/images/tracker-1.png",
                 href: "/ai-agents/sentinel",
                 title: "Sentinal",
                 subtitle: "Trust The Carrier",
                 },
                 {
-                image: "/images/rate-1.png",
+                video: "/rate.mp4",
+                poster: "/images/rate-1.png",
                 href: "/ai-agents/rate",
                 title: "RATE",
                 subtitle: "Price the load",
                 },
                 {
-                image: "/images/tracker-1.png",
+                video: "/tracker.mp4",
+                poster: "/images/tracker-1.png",
                 href: "/ai-agents/tracker",
                 title: "Tracker",
                 subtitle: "Follow the load",
                 },
                 {
-                image: "/images/fleetra-1.png",
+                video: "/fleetra.mp4",
+                poster: "/images/fleetra-1.png",
                 href: "/ai-agents/fleetra",
                 title: "Fleetra",
                 subtitle: "The orchestrator",

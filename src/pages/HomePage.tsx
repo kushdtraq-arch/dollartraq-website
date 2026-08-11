@@ -367,7 +367,7 @@ export default function Homepage() {
             <WhyChooseUs
                 sectionTitle="Four specialists. One orchestrator. Zero unsupervised actions."
                 sectionDescription="Every event and command flows through Fleetra, which fans work out to the four agents and merges one sourced answer back. Guardrails aren't prompt suggestions — they're edges in the graph"
-                imageSrc="/images/why-choose-us.png"
+                imageSrc="/images/agent-home-page.gif"
                 complianceTitle="Fleetra — the +1"
                 complianceDescription="The supervisor every request passes through. It plans, fans out to the four agents, merges sourced answers — and its approval nodes are where the human-in-the-loop physically lives."
                 ctaText="Meet all Five"

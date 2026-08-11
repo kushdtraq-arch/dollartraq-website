@@ -76,19 +76,41 @@ const NAV_LINKS: NavLink[] = [
         navigable: false,
         matchPrefix: "/solutions",
     },
-    { page: "pricing", label: "Pricing", link: "/pricing" },
-    { page: "compare", label: "Compare", link: "/compare" },
     {
         page: "company",
         label: "Company",
         link: "/company/about",
         matchPrefix: "/company",
     },
+    { page: "pricing", label: "Pricing", link: "/pricing" },
+    { page: "compare", label: "Compare", link: "/compare" },
+
 ];
 
 const PROMO: SubMenuPromo = {
     image: "/images/sub-menu.png",
     caption: "Bring five MC numbers. Leave with the truth.",
+    ctaLabel: "Book a Demo",
+    ctaLink: "/demo",
+};
+
+const PRODUCT_PROMO: SubMenuPromo = {
+    image: "/images/sub-menu.png",
+    caption: "Bring five MC numbers. Leave with the truth.",
+    ctaLabel: "Book a Demo",
+    ctaLink: "/demo",
+};
+
+const AI_AGENTS_PROMO: SubMenuPromo = {
+    image: "/images/sub-menu-ai-agents.png",
+    caption: "Five agents. One desk. Zero guesswork.",
+    ctaLabel: "Book a Demo",
+    ctaLink: "/demo",
+};
+
+const SOLUTIONS_PROMO: SubMenuPromo = {
+    image: "/images/sub-menu-solutions.png",
+    caption: "Built for every seat at the freight desk.",
     ctaLabel: "Book a Demo",
     ctaLink: "/demo",
 };
@@ -248,10 +270,10 @@ const COMPANY_SUBMENU: SubMenuGroup[] = [
 ];
 
 const SUBMENUS: Partial<Record<string, SubMenuConfig>> = {
-    product: { columns: 2, groups: PRODUCT_SUBMENU, promo: PROMO },
-    "ai-agents": { columns: 1, groups: AI_AGENTS_SUBMENU, promo: PROMO },
-    solutions: { columns: 1, groups: SOLUTIONS_SUBMENU, promo: PROMO },
-    // Company has no promo image panel per design
+    product: { columns: 2, groups: PRODUCT_SUBMENU, promo: PRODUCT_PROMO },
+    "ai-agents": { columns: 1, groups: AI_AGENTS_SUBMENU, promo: AI_AGENTS_PROMO },
+    solutions: { columns: 1, groups: SOLUTIONS_SUBMENU, promo: SOLUTIONS_PROMO },
+   
     company: { columns: 1, groups: COMPANY_SUBMENU },
 };
 

@@ -23,9 +23,9 @@ export default function PlatformOverview() {
                 sectionTitle="Event bus in, review queue out."
                 sectionDescription={`Every email, document, position ping, and typed command becomes an event. Agents subscribe, work in parallel on shared memory, and everything consequential converges on one queue where humans decide.`}
                 steps={[
-                    { title: "One event bus", description: "Inbound email, ELD pings, document arrivals, user commands — a single ordered stream. Nothing happens off the record, so nothing is invisible to audit.", icon: "/images/icon-1.svg" },
-                    { title: "One shared memory", description: "Carrier records, load timelines, document facts, and rate memory live in one store. Vault's extraction is instantly Sentinel's evidence and Tracker's trigger.", icon: "/images/transit.svg" },
-                    { title: "One review queue", description: "Exactly one drafting-and-approval pipeline exists. Every outbound message, payment release, and dispute action passes through it — and through a person.", icon: "/images/upload.svg" },
+                    { title: "One event bus", description: "Inbound email, ELD pings, document arrivals, user commands — a single ordered stream. Nothing happens off the record, so nothing is invisible to audit.", icon: "/images/po-1.svg" },
+                    { title: "One shared memory", description: "Carrier records, load timelines, document facts, and rate memory live in one store. Vault's extraction is instantly Sentinel's evidence and Tracker's trigger.", icon: "/images/po-2.svg" },
+                    { title: "One review queue", description: "Exactly one drafting-and-approval pipeline exists. Every outbound message, payment release, and dispute action passes through it — and through a person.", icon: "/images/po-3.svg" },
                 ]}
             />
 

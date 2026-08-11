@@ -1,4 +1,4 @@
-// pages/HomePage.tsx (or app equivalent)
+
 import React from "react";
 import FaqAccordion from "@/components/sections/FaqAccordion";
 import PricingSection, { PricingPlan } from "@/components/sections/PricingSection";

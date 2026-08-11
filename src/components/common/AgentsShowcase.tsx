@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,11 +6,13 @@ import Link from "next/link";
 export interface AgentCardItem {
   id?: string | number;
   image?: string;
+  video?: string;
+  poster?: string;
   imageAlt?: string;
   graphicNode?: React.ReactNode;
   title: string;
   subtitle: string;
-  href?: string; 
+  href?: string;
 }
 
 export interface AgentShowcaseProps {
@@ -27,6 +30,24 @@ const COLUMN_CLASSES: Record<NonNullable<AgentShowcaseProps["columns"]>, string>
 };
 
 function AgentGraphic({ item }: { item: AgentCardItem }) {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  const handleEnter = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.currentTime = 0;
+    v.play().catch(() => {
+     
+    });
+  };
+
+  const handleLeave = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.pause();
+    v.currentTime = 0;
+  };
+
   if (item.graphicNode) {
     return (
       <div className="relative flex h-[180px] w-full items-center justify-center overflow-hidden bg-gradient-to-b from-[#DCE7FB] to-[#8FA9E8]">
@@ -34,6 +55,28 @@ function AgentGraphic({ item }: { item: AgentCardItem }) {
       </div>
     );
   }
+
+  if (item.video) {
+    return (
+      <div
+        className="relative h-[156px] w-full overflow-hidden bg-gradient-to-b from-[#DCE7FB] to-[#8FA9E8]"
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+      >
+        <video
+          ref={videoRef}
+          src={item.video}
+          poster={item.poster}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="h-full w-full object-cover"
+        />
+      </div>
+    );
+  }
+
   if (item.image) {
     return (
       <div className="relative h-[180px] w-full overflow-hidden bg-gradient-to-b from-[#DCE7FB] to-[#8FA9E8]">
@@ -46,6 +89,7 @@ function AgentGraphic({ item }: { item: AgentCardItem }) {
       </div>
     );
   }
+
   return <div className="h-[180px] w-full bg-gradient-to-b from-[#DCE7FB] to-[#8FA9E8]" />;
 }
 
@@ -85,11 +129,7 @@ export default function AgentShowcase({
               "flex flex-col overflow-hidden rounded-[14px] border border-black/[0.06] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]";
 
             return item.href ? (
-              <Link
-                key={item.id ?? i}
-                href={item.href}
-                className={cardClasses}
-              >
+              <Link key={item.id ?? i} href={item.href} className={cardClasses}>
                 {cardBody}
               </Link>
             ) : (

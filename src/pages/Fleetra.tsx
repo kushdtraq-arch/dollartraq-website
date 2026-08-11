@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import FeatureSection from "@/components/sections/FeatureSection";
 import HeroSplit from "@/components/common/HeroSplit";
@@ -66,25 +67,29 @@ export default function Fleetra() {
             columns={4}
             items={[
                 {
-                image: "/images/tracker-1.png",
+                video: "/sentinel.mp4",   
+                poster: "/images/tracker-1.png",
                 href: "/ai-agents/sentinel",
                 title: "Sentinal",
                 subtitle: "Trust The Carrier",
                 },
                 {
-                image: "/images/rate-1.png",
+                video: "/rate.mp4",
+                poster: "/images/rate-1.png",
                 href: "/ai-agents/rate",
                 title: "RATE",
                 subtitle: "Price the load",
                 },
                 {
-                image: "/images/tracker-1.png",
+                video: "/tracker.mp4",
+                poster: "/images/tracker-1.png",
                 href: "/ai-agents/tracker",
                 title: "Tracker",
                 subtitle: "Follow the load",
                 },
                 {
-                image: "/images/vault-1.png",
+                video: "/vault.mp4",
+                poster: "/images/vault-1.png",
                 href: "/ai-agents/vault",
                 title: "Vault",
                 subtitle: "File the paper",

@@ -126,7 +126,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
                     </motion.div>
 
                     <motion.div
-                        className="relative w-full aspect-square max-w-[440px] mx-auto rounded-2xl overflow-hidden order-1 lg:order-2"
+                        className="relative w-full max-w-[440px] mx-auto rounded-2xl overflow-hidden order-1 lg:order-2"
                         variants={imageVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -135,8 +135,10 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({
                         <Image
                             src={imageSrc}
                             alt={imageAlt}
-                            fill
-                            className="object-cover"
+                            width={440}
+                            height={440}
+                            unoptimized={imageSrc.endsWith(".gif")}
+                            className="w-full h-auto object-contain rounded-2xl"
                         />
                     </motion.div>
 

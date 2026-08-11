@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
                     {/* 3D Graphic */}
                     <div className="mt-16 md:mt-0 md:mr-4 lg:mr-12 flex-shrink-0 relative w-[140px] h-[140px] md:w-[160px] md:h-[160px]">
                         <Image
-                            src="/images/cubical.png"
+                            src="/images/three-d.png"
                             alt="AI Cube"
                             fill
                             className="object-contain drop-shadow-2xl opacity-90"
