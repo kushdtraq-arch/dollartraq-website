@@ -335,7 +335,7 @@ export default function Homepage() {
                 heading={
                     <>
                         One program. Quote to cash.
-                        <br />
+                        
                         Verified at every step.
                     </>
                 }
