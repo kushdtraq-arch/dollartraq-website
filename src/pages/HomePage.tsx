@@ -318,7 +318,7 @@ export default function Homepage() {
                 title={
                     <>
                         One operating system for the whole
-                        <br />
+                       
                         trust problem
                     </>
                 }
