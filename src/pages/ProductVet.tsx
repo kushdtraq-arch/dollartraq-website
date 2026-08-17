@@ -9,6 +9,38 @@ import FeatureBentoGrid from "@/components/common/FeatureBentoGrid";
 import FeatureSplit from "@/components/common/FeatureSplit";
 import Image from "next/image";
 
+const VET_FAQS = [
+    {
+        question: "How is this different from checking SAFER myself?",
+        answer:
+            "SAFER shows you one carrier's current snapshot, one page at a time. Dollar Traq queries the full historical dataset — authority changes, inspection records, insurance filing history — joins it in one card, scores it with exposure-normalized math, and then keeps watching the carrier after you book. It's the difference between a lookup and a system.",
+    },
+    {
+        question: "Do you rent your data from a vetting vendor?",
+        answer:
+            "No. We load FMCSA public data files directly into our own PostgreSQL warehouse — 22.7 million rows, refreshed on a rolling snapshot cycle. Owning the data is what lets us run monthly census diffs for chameleon detection and show provenance for every claim.",
+    },
+    {
+        question: "Can a brand-new carrier get a good Trust Score?",
+        answer:
+            "Not automatically. New authorities have thin evidence, so the score is capped and labeled with its confidence level. That's deliberate: chameleon operations rely on fresh identities looking clean. A new carrier can still be onboarded — with eyes open and tighter controls.",
+    },
+];
+
+const VET_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/product/carrier-vetting#faq",
+    mainEntity: VET_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function ProductVet() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -80,18 +112,13 @@ export default function ProductVet() {
                     </div>
                 }
             />
-
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(VET_FAQ_SCHEMA) }}
+            />
             <FaqAccordion
                 sectionTitle="Carrier vetting, plainly."
-                faqs={[
-                    {
-                    question: "How is this different from checking SAFER myself?",
-                    answer:
-                        "SAFER shows you one carrier's current snapshot, one page at a time. Dollar Traq queries the full historical dataset — authority changes, inspection records, insurance filing history — joins it in one card, scores it with exposure-normalized math, and then keeps watching the carrier after you book. It's the difference between a lookup and a system.",
-                    },
-                    { question: "Do you rent your data from a vetting vendor?", answer: "No. We load FMCSA public data files directly into our own PostgreSQL warehouse — 22.7 million rows, refreshed on a rolling snapshot cycle. Owning the data is what lets us run monthly census diffs for chameleon detection and show provenance for every claim." },
-                    { question: "Can a brand-new carrier get a good Trust Score?", answer: "Not automatically. New authorities have thin evidence, so the score is capped and labeled with its confidence level. That's deliberate: chameleon operations rely on fresh identities looking clean. A new carrier can still be onboarded — with eyes open and tighter controls." },
-                ]}
+                faqs={VET_FAQS}
             /> 
  
  

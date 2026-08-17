@@ -53,7 +53,7 @@ export default function AboutPage() {
                 description="We'll vet your own carriers live on the call — authority, insurance, Trust Score, fraud signals. You keep the report either way."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
-                    { label: "Security & trust", href: "/company-trust", variant: "secondary" },
+                    { label: "Security & trust", href: "/company/security-trust", variant: "secondary" },
                 ]}
             />   
 

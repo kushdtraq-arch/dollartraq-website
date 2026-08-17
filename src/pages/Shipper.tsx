@@ -8,6 +8,38 @@ import FaqAccordion from "@/components/sections/FaqAccordion";
 import FeatureBentoGrid from "@/components/common/FeatureBentoGrid";
 import Image from "next/image";
 
+const SHIPPER_FAQS = [
+    {
+        question: "How does Dollar Traq help shippers?",
+        answer:
+            "It replaces a broker's verbal assurance with verified proof: KYC-checked carrier identity, insurance limits and holder verified against your requirements, and a GPS-stamped, AI-verified proof of delivery — all auditable.",
+    },
+    {
+        question: "Can shippers set their own carrier requirements?",
+        answer:
+            "Yes. Your requirements flow into the vetting profile, and Vault checks each carrier's insurance limits and certificate holder against them per equipment type.",
+    },
+    {
+        question: "How does Dollar Traq verify a load was actually delivered?",
+        answer:
+            "Delivery is confirmed by a GPS-stamped proof of delivery that is AI-verified against the load — the same POD that releases payment through DT Pay.",
+    },
+];
+
+const SHIPPER_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/solutions/shippers#faq",
+    mainEntity: SHIPPER_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function Shipper() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -32,19 +64,14 @@ export default function Shipper() {
                 ]}
             />
 
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(SHIPPER_FAQ_SCHEMA) }}
+            />
             <FaqAccordion
                 sectionTitle="Questions from shippers."
-                faqs={[
-                    {
-                    question: "How does Dollar Traq help shippers?",
-                    answer:
-                        "It replaces a broker's verbal assurance with verified proof: KYC-checked carrier identity, insurance limits and holder verified against your requirements, and a GPS-stamped, AI-verified proof of delivery — all auditable.",
-                    },
-                    { question: "Can shippers set their own carrier requirements?", answer: "Yes. Your requirements flow into the vetting profile, and Vault checks each carrier's insurance limits and certificate holder against them per equipment type." },
-                    { question: "How does Dollar Traq verify a load was actually delivered?", answer: "Delivery is confirmed by a GPS-stamped proof of delivery that is AI-verified against the load — the same POD that releases payment through DT Pay." },
-                ]}
-            /> 
- 
+                faqs={SHIPPER_FAQS}
+            />
  
             <CtaBannerSection
                 backgroundImageSrc="/images/truck.png"

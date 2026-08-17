@@ -167,9 +167,9 @@ const HeroSplit: React.FC<HeroSplitProps> = ({
                         variants={mediaVariants}
                         className="relative w-full h-full md:justify-self-end flex items-end self-stretch"
                     >
-                        <div className="relative w-full h-full rounded-t-2xl md:rounded-b-none overflow-hidden shadow-2xl">
+                        <div className="relative w-full  rounded-t-2xl md:rounded-b-none overflow-hidden shadow-2xl">
                             <div
-                                className="relative w-full h-full bg-gray-900 rounded-t-2xl overflow-hidden"
+                                className="relative w-full bg-gray-900 rounded-t-2xl overflow-hidden"
                                 style={{ aspectRatio: `${mediaWidth} / ${mediaHeight}` }}
                             >
                                 {mediaIsVideo ? (

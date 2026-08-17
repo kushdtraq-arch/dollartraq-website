@@ -8,6 +8,37 @@ import FaqAccordion from "@/components/sections/FaqAccordion";
 import FeatureBentoGrid from "@/components/common/FeatureBentoGrid";
 import WorkflowDiagram from "@/components/common/WorkflowDiagram";
 import Image from "next/image";
+const PL_FORWARDERS_FAQS = [
+    {
+        question: "How does Dollar Traq work for a 3PL with multiple branches?",
+        answer:
+            "It gives every desk the same Trust Score standard, the same document verification bar, and the same audit trail, with role-based access so each branch only sees its own carriers and data — one consistent compliance picture across the network.",
+    },
+    {
+        question: "Can different desks be kept separate in Dollar Traq?",
+        answer:
+            "Yes. Role-based access control filters every answer so each branch sees only its own carriers, loads, and documents, while leadership retains a consistent view across all of them.",
+    },
+    {
+        question: "Is carrier vetting consistent across offices?",
+        answer:
+            "Yes. Every office scores carriers with the same exposure-normalized Trust Score against the same self-hosted FMCSA warehouse, so decisions hold to one standard regardless of desk.",
+    },
+];
+
+const PL_FORWARDERS_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/solutions/3pls-forwarders#faq",
+    mainEntity: PL_FORWARDERS_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
 
 export default function PlForwards() {
     return (
@@ -32,18 +63,14 @@ export default function PlForwards() {
                 ]}
             />
 
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(PL_FORWARDERS_FAQ_SCHEMA) }}
+            />
             <FaqAccordion
                 sectionTitle="Questions from 3pls & forwarders."
-                faqs={[
-                    {
-                    question: "How does Dollar Traq work for a 3PL with multiple branches?",
-                    answer:
-                        "It gives every desk the same Trust Score standard, the same document verification bar, and the same audit trail, with role-based access so each branch only sees its own carriers and data — one consistent compliance picture across the network.",
-                    },
-                    { question: "Can different desks be kept separate in Dollar Traq?", answer: "Yes. Role-based access control filters every answer so each branch sees only its own carriers, loads, and documents, while leadership retains a consistent view across all of them." },
-                    { question: "Is carrier vetting consistent across offices?", answer: "Yes. Every office scores carriers with the same exposure-normalized Trust Score against the same self-hosted FMCSA warehouse, so decisions hold to one standard regardless of desk." },
-                ]}
-            /> 
+                faqs={PL_FORWARDERS_FAQS}
+            />
  
  
             <CtaBannerSection

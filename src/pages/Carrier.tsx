@@ -8,6 +8,38 @@ import FaqAccordion from "@/components/sections/FaqAccordion";
 import FeatureBentoGrid from "@/components/common/FeatureBentoGrid";
 import Image from "next/image";
 
+const CARRIER_FAQS = [
+    {
+        question: "How does a carrier get paid through Dollar Traq?",
+        answer:
+            "Through DT Pay: once delivery is verified and a human authorizes the release, funds land in the carrier's Stripe Express account in about 90 seconds — not net-30.",
+    },
+    {
+        question: "What does carrier onboarding involve?",
+        answer:
+            "A single link that runs KYC, a facial liveness check, and CDL capture in minutes, then creates a Stripe Express payout account — done once rather than repeated for every broker.",
+    },
+    {
+        question: "Do carriers get access to track their own loads and payments?",
+        answer:
+            "Yes. Every onboarded carrier gets a portal login to track loads, manage documents, and see payment status, backed by the Stripe Express account created during onboarding.",
+    },
+];
+
+const CARRIER_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/solutions/carriers#faq",
+    mainEntity: CARRIER_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function Carrier() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -32,19 +64,12 @@ export default function Carrier() {
                 ]}
             />
 
-            <FaqAccordion
-                faqs={[
-                    {
-                    question: "How does a carrier get paid through Dollar Traq?",
-                    answer:
-                        "Through DT Pay: once delivery is verified and a human authorizes the release, funds land in the carrier's Stripe Express account in about 90 seconds — not net-30.",
-                    },
-                    { question: "What does carrier onboarding involve?", answer: "A single link that runs KYC, a facial liveness check, and CDL capture in minutes, then creates a Stripe Express payout account — done once rather than repeated for every broker." },
-                    { question: "Do carriers get access to track their own loads and payments?", answer: "Yes. Every onboarded carrier gets a portal login to track loads, manage documents, and see payment status, backed by the Stripe Express account created during onboarding." },
-                ]}
-            /> 
- 
- 
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(CARRIER_FAQ_SCHEMA) }}
+            />
+            <FaqAccordion faqs={CARRIER_FAQS} />
+
             <CtaBannerSection
                 backgroundImageSrc="/images/truck.png"
                 title="Onboard once. Get paid fast."

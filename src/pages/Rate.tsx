@@ -10,6 +10,39 @@ import WorkflowDiagram from "@/components/common/WorkflowDiagram";
 import AgentShowcase from "@/components/common/AgentsShowcase";
 import Image from "next/image";
 
+
+const RATE_FAQS = [
+    {
+        question: "Where does Rate get its pricing data?",
+        answer:
+            "Rate builds a tenant-siloed rate memory from the quotes your own desk receives, extracted from carrier emails, and benchmarks against DAT RateView under your own license. Nothing is shared with other brokers.",
+    },
+    {
+        question: "Is my rate data shared with other Dollar Traq customers?",
+        answer:
+            "Never. Rate memory is tenant-siloed and does not train or inform anyone else's pricing. Your negotiation history stays yours.",
+    },
+    {
+        question: "What is a rate anomaly flag?",
+        answer:
+            "When a quote sits well outside your lane's history — for example 2.1 standard deviations above what carriers usually quote — Rate marks it so your rep can push back before accepting an off-market number.",
+    },
+];
+
+const RATE_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/ai-agents/rate#faq",
+    mainEntity: RATE_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function Rate() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -95,18 +128,14 @@ export default function Rate() {
                 },
             ]}
         />        
-            <FaqAccordion
-                sectionTitle="Rate, plainly."
-                faqs={[
-                    {
-                    question: "Where does Rate get its pricing data?",
-                    answer:
-                        "Rate builds a tenant-siloed rate memory from the quotes your own desk receives, extracted from carrier emails, and benchmarks against DAT RateView under your own license. Nothing is shared with other brokers.",
-                    },
-                    { question: "Is my rate data shared with other Dollar Traq customers?", answer: "Never. Rate memory is tenant-siloed and does not train or inform anyone else's pricing. Your negotiation history stays yours." },
-                    { question: "What is a rate anomaly flag?", answer: "When a quote sits well outside your lane's history — for example 2.1 standard deviations above what carriers usually quote — Rate marks it so your rep can push back before accepting an off-market number." },
-                ]}
-            /> 
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(RATE_FAQ_SCHEMA) }}
+        />
+        <FaqAccordion
+            sectionTitle="Rate, plainly."
+            faqs={RATE_FAQS}
+        />
         </main>
     );
 }

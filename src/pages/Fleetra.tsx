@@ -11,6 +11,39 @@ import WorkflowDiagram from "@/components/common/WorkflowDiagram";
 import AgentShowcase from "@/components/common/AgentsShowcase";
 import Image from "next/image";
 
+
+const FLEETRA_FAQS = [
+    {
+        question: "What is Fleetra in Dollar Traq?",
+        answer:
+            "Fleetra is the orchestrator — the +1 in the 4+1 agent team. It plans each request, fans work out to Sentinel, Rate, Tracker, and Vault in parallel, merges their sourced answers into one recommendation, and hosts the human-approval gates.",
+    },
+    {
+        question: "Does Fleetra ever take an action on its own?",
+        answer:
+            "No. Fleetra drafts and recommends, but every send, payment release, and dispute halts at a human-approval node built into the orchestration graph. A person always executes the final step.",
+    },
+    {
+        question: "How is Fleetra different from the other four agents?",
+        answer:
+            "The four specialists each own a domain — trust, pricing, tracking, documents. Fleetra owns coordination: it decides which agents a request needs, runs them together, reconciles the results, and keeps the human in the loop.",
+    },
+];
+
+const FLEETRA_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/ai-agents/fleetra#faq",
+    mainEntity: FLEETRA_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function Fleetra() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -96,21 +129,14 @@ export default function Fleetra() {
                 },
             ]}
         />        
-            <FaqAccordion
-                sectionTitle="Fleetra, plainly."
-                faqs={[
-                    {
-                    question: "What is Fleetra in Dollar Traq?",
-                    answer:
-                        "Fleetra is the orchestrator — the +1 in the 4+1 agent team. It plans each request, fans work out to Sentinel, Rate, Tracker, and Vault in parallel, merges their sourced answers into one recommendation, and hosts the human-approval gates.",
-                    },
-                    { question: "Does Fleetra ever take an action on its own?", answer: "No. Fleetra drafts and recommends, but every send, payment release, and dispute halts at a human-approval node built into the orchestration graph. A person always executes the final step." },
-                    { question: "How is Fleetra different from the other four agents?", answer: "The four specialists each own a domain — trust, pricing, tracking, documents. Fleetra owns coordination: it decides which agents a request needs, runs them together, reconciles the results, and keeps the human in the loop." },
-                ]}
-            /> 
- 
- 
-
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(FLEETRA_FAQ_SCHEMA) }}
+        />
+        <FaqAccordion
+            sectionTitle="Fleetra, plainly."
+            faqs={FLEETRA_FAQS}
+        />
         </main>
     );
 }

@@ -120,7 +120,7 @@ export default function SecurityAndTrust() {
                 description="The demo is the negotiation. A 30-day pilot with the fee credited back, and your carriers vetted live — all starting on one 25-minute call."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
-                    { label: "Security & trust", href: "/security", variant: "secondary" },
+                    { label: "Security & trust", href: "/company/security-trust", variant: "secondary" },
                 ]}
             />            
         </main>

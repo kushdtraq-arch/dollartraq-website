@@ -10,6 +10,39 @@ import WorkflowDiagram from "@/components/common/WorkflowDiagram";
 import AgentShowcase from "@/components/common/AgentsShowcase";
 import Image from "next/image";
 
+
+const SENTINEL_FAQS = [
+    {
+        question: "What does Sentinel actually check a carrier against?",
+        answer:
+            "Sentinel checks carriers against Dollar Traq's self-hosted FMCSA warehouse of 22.7 million rows — authority history, inspections, out-of-service orders, and insurance filings — plus monthly authority census diffs and the facts Vault extracts from documents.",
+    },
+    {
+        question: "How does Sentinel detect double brokering and chameleon carriers?",
+        answer:
+            "It scans every carrier email for fraud signals like domain age, lookalike domains, and phone-vs-FMCSA mismatches, and diffs the FMCSA authority census monthly to surface reincarnated carriers that share officers, addresses, or phones with revoked MCs.",
+    },
+    {
+        question: "Does Sentinel block carriers automatically?",
+        answer:
+            "No. Sentinel flags risk and routes it to a human. Hard stops exist for lapsed insurance or out-of-service orders, but a person reviews flagged carriers — the system never bans a carrier on a guess.",
+    },
+];
+
+const SENTINEL_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/ai-agents/sentinel#faq",
+    mainEntity: SENTINEL_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function Sentinel() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -96,19 +129,15 @@ export default function Sentinel() {
                 },
             ]}
         />
-      
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(SENTINEL_FAQ_SCHEMA) }}
+            />
             <FaqAccordion
                 sectionTitle="Sentinel, plainly."
-                faqs={[
-                    {
-                    question: "What does Sentinel actually check a carrier against?",
-                    answer:
-                        "Sentinel checks carriers against Dollar Traq's self-hosted FMCSA warehouse of 22.7 million rows — authority history, inspections, out-of-service orders, and insurance filings — plus monthly authority census diffs and the facts Vault extracts from documents.",
-                    },
-                    { question: "How does Sentinel detect double brokering and chameleon carriers?", answer: "It scans every carrier email for fraud signals like domain age, lookalike domains, and phone-vs-FMCSA mismatches, and diffs the FMCSA authority census monthly to surface reincarnated carriers that share officers, addresses, or phones with revoked MCs." },
-                    { question: "Does Sentinel block carriers automatically?", answer: "No. Sentinel flags risk and routes it to a human. Hard stops exist for lapsed insurance or out-of-service orders, but a person reviews flagged carriers — the system never bans a carrier on a guess." },
-                ]}
-            /> 
+                faqs={SENTINEL_FAQS}
+            />
+            
         </main>
     );
 }

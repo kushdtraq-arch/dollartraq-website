@@ -31,17 +31,21 @@ const COLUMN_CLASSES: Record<NonNullable<AgentShowcaseProps["columns"]>, string>
 
 function AgentGraphic({ item }: { item: AgentCardItem }) {
   const videoRef = React.useRef<HTMLVideoElement>(null);
+  const [isHovering, setIsHovering] = React.useState(false);
 
   const handleEnter = () => {
+    setIsHovering(true);
     const v = videoRef.current;
     if (!v) return;
+    v.muted = true;
     v.currentTime = 0;
-    v.play().catch(() => {
-     
+    v.play().catch((err) => {
+      console.error("Video play failed:", err);
     });
   };
 
   const handleLeave = () => {
+    setIsHovering(false);
     const v = videoRef.current;
     if (!v) return;
     v.pause();
@@ -59,20 +63,32 @@ function AgentGraphic({ item }: { item: AgentCardItem }) {
   if (item.video) {
     return (
       <div
-        className="relative h-[156px] w-full overflow-hidden bg-gradient-to-b from-[#DCE7FB] to-[#8FA9E8]"
+        className="relative h-[180px] w-full overflow-hidden bg-gradient-to-b from-[#DCE7FB] to-[#8FA9E8]"
         onMouseEnter={handleEnter}
         onMouseLeave={handleLeave}
       >
         <video
           ref={videoRef}
-          src={item.video}
-          poster={item.poster}
           muted
           loop
           playsInline
           preload="metadata"
           className="h-full w-full object-cover"
-        />
+        >
+          <source src={item.video} type="video/mp4" />
+        </video>
+
+        {/* Poster overlay: shown whenever not hovering, hides the frozen last frame */}
+        {item.poster && (
+          <Image
+            src={item.poster}
+            alt={item.imageAlt ?? ""}
+            fill
+            className={`object-cover transition-opacity duration-150 ${
+              isHovering ? "opacity-0 pointer-events-none" : "opacity-100"
+            }`}
+          />
+        )}
       </div>
     );
   }

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import SectionIntro from "@/components/common/SectionIntro";
 export interface PrivacyPolicyProps {
     className?: string;
     lastUpdated?: string;
@@ -12,6 +12,15 @@ export function PrivacyPolicy({
     lastUpdated = "30 Sept, 2025",
 }: PrivacyPolicyProps) {
     return (
+          <>
+            <SectionIntro
+                stickToTop
+                title="Your data, protected end to end."
+                description="Here's exactly what we collect, how we use it, and the controls you have over it — no fine print surprises."
+                backgroundColor="#015EFF"
+            />
+
+
         <div
             className={`max-w-5xl mx-auto mt-6 mb-16 px-4 sm:px-6 lg:px-8 ${className}`}
         >
@@ -258,6 +267,7 @@ export function PrivacyPolicy({
                 </section>
             </div>
         </div>
+        </>
     );
 }
 

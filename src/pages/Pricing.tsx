@@ -8,64 +8,96 @@ import ComparisonTable from "@/components/common/ComparisonTable";
 
 const PRICING_PLANS: PricingPlan[] = [
     {
-        id: "start",
-        name: "Starter",
-        price: "$299",
+        id: "individual",
+        name: "Individual",
+        price: "$249",
         priceSuffix: "/mo",
-        description: "For small brokerages getting vetting and documents under control.",
+        description: "One desk, one operator, full platform.",
         features: [
-            { label: "Carrier vetting on the full FMCSA warehouse", icon: "check" },
-            { label: "Trust Score with confidence labels", icon: "check" },
-            { label: "Inbox vet cards (Gmail + Outlook)", icon: "check" },
-            { label: "COI intake & expiry watch", icon: "check" },
-            { label: "Batch CSV vetting", icon: "check" },
-            { label: "DT Pay access at 1.2% flat", icon: "check" },
-            { label: "Email support", icon: "check" },
+            { label: "100 loads per month", icon: "package" },
+            { label: "Driver app", icon: "smartphone" },
+            { label: "Single user, no sub-users", icon: "userX" },
+            { label: "DT Pay at 1.9%", icon: "creditCard" },
+            { label: "Chrome extension", icon: "appWindow" },
         ],
-        ctaLabel: "Start with Starter",
-        href: "/checkout/start",
+        note: "Extra loads billed at $2.75 each",
+        ctaLabel: "Start with Individual",
+        href: "/checkout/individual",
     },
     {
-        id: "growth",
-        name: "Growth",
-        price: "$599",
+        id: "team",
+        name: "Team",
+        price: "$499",
         priceSuffix: "/mo",
-        description: "For active brokerages that want the full agent team on every load.",
+        description: "A whole desk on one queue, cheaper per load.",
         features: [
-            { label: "Everything in Starter", icon: "checkCircle2" },
-            { label: "All five AI agents, full workflows", icon: "checkCircle2" },
-            { label: "Fraud scans on every carrier email + chameleon alerts", icon: "checkCircle2" },
-            { label: "Live ELD tracking (Motive) with late-risk prediction", icon: "checkCircle2" },
-            { label: "214-shaped status webhooks to your customer's TMS", icon: "checkCircle2" },
-            { label: "Rate memory + DAT RateView (your license)", icon: "checkCircle2" },
-            { label: "Teams alerts · priority support", icon: "checkCircle2" },            
+            { label: "250 loads per month", icon: "package" },
+            { label: "Driver app", icon: "smartphone" },
+            { label: "Up to 10 sub-users", icon: "userPlus" },
+            { label: "DT Pay at 1.5%", icon: "creditCard" },
+            { label: "Chrome extension", icon: "appWindow" },
         ],
-        ctaLabel: "Get Growth",
-        href: "/checkout/growth",
+        note: "Extra loads billed at $2.25 each",
+        ctaLabel: "Get Team",
+        href: "/checkout/team",
         featured: true,
-        badge: "Most Recommended",
+        badge: "Popular",
     },
     {
         id: "enterprise",
         name: "Enterprise",
-        price: "$999",
-        priceSuffix: "/mo",
-        description: "For multi-desk operations with compliance and integration requirements.",
+        price: "Contact for price",
+        priceSuffix: "",
+        description: "Multi-desk volume, sized to your book.",
         features: [
-            { label: "Everything in Growth", icon: "check" },
-            { label: "Role-based access across desks", icon: "check" },
-            { label: "Replayable audit exports", icon: "check" },
-            { label: "TMS & EDI integration support", icon: "check" },
-            { label: "Custom vetting thresholds & hard stops", icon: "check" },
-            { label: "White-glove onboarding", icon: "check" }, 
-             { label: "Dedicated success contact", icon: "check" },               
+            { label: "Load volume to fit", icon: "package" },
+            { label: "Driver app", icon: "smartphone" },
+            { label: "Unlimited users", icon: "infinity" },
+            { label: "DT Pay at negotiated rate", icon: "creditCard" },
+            { label: "Chrome extension", icon: "appWindow" },
         ],
-        ctaLabel: "Contact Sales",
+        note: "No overage, volume set in contract",
+        ctaLabel: "Contact sales",
         href: "/contact-sales",
     },
 ];
 
-
+const FAQS = [
+    {
+        question: "Is there a free trial?",
+        answer:
+            "Better: we run a 30-day paid pilot and credit the fee back when you continue. You start in test mode, vet your own carriers live, and go live once you're ready. Ask about pilot terms on your demo call.",
+    },
+    {
+        question: "Are there per-load or per-user charges?",
+        answer:
+            "No per-load fees on vetting, tracking, or documents. Plans include team seats appropriate to each tier; DT Pay is the only usage-based fee, at its flat published rate.",
+    },
+    {
+        question: "Do I need my own DAT license for rate benchmarks?",
+        answer:
+            "Yes — Rate pulls DAT RateView under your existing license (bring-your-own). Your proprietary lane memory builds on top of it and stays tenant-siloed, always.",
+    },
+    {
+        question: "What does implementation cost?",
+        answer:
+            "Nothing extra. Onboarding is white-glove: inbox connection, carrier-list import, threshold setup, and your first DT Pay test release, guided live.",
+    },
+];
+ 
+const FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/pricing#faq",
+    mainEntity: FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
 
 export default function Pricing() {
     return (
@@ -130,19 +162,12 @@ export default function Pricing() {
                     },
                 ]}
             />
-            <FaqAccordion
-                sectionTitle="Asked and answered"
-                faqs={[
-                    {
-                    question: "Is there a free trial?",
-                    answer:
-                        "Better: we run a 30-day paid pilot and credit the fee back when you continue. You start in test mode, vet your own carriers live, and go live once you're ready. Ask about pilot terms on your demo call.",
-                    },
-                    { question: "Are there per-load or per-user charges?", answer: "No per-load fees on vetting, tracking, or documents. Plans include team seats appropriate to each tier; DT Pay is the only usage-based fee, at its flat published rate." },
-                    { question: "Do I need my own DAT license for rate benchmarks?", answer: "Yes — Rate pulls DAT RateView under your existing license (bring-your-own). Your proprietary lane memory builds on top of it and stays tenant-siloed, always." },
-                    { question: "What does implementation cost?", answer: "Nothing extra. Onboarding is white-glove: inbox connection, carrier-list import, threshold setup, and your first DT Pay test release, guided live." },
-                ]}
-            /> 
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+            />
+            <FaqAccordion sectionTitle="Asked and answered" faqs={FAQS} />
 
             <CtaBannerSection
                 backgroundImageSrc="/images/truck.png"

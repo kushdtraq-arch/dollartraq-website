@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import SectionIntro from "@/components/common/SectionIntro";
 export interface TermsOfServiceProps {
     className?: string;
     lastUpdated?: string;
@@ -12,6 +12,13 @@ export function TermsOfService({
     lastUpdated = "30 Sept, 2025",
 }: TermsOfServiceProps) {
     return (
+        <>
+            <SectionIntro
+                stickToTop
+                title="The fine print, plainly stated."
+                description="What you're agreeing to when you use Dollar Traq — your responsibilities, ours, and the boundaries in between."
+                backgroundColor="#015EFF"
+            />
         <div
             className={`max-w-5xl mx-auto mt-6 mb-16 px-4 sm:px-6 lg:px-8 ${className}`}
         >
@@ -242,6 +249,7 @@ export function TermsOfService({
                 </section>
             </div>
         </div>
+        </>
     );
 }
 

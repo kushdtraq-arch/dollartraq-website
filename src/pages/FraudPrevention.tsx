@@ -9,6 +9,48 @@ import FeatureSplit from "@/components/common/FeatureSplit";
 import FeatureBentoGrid from "@/components/common/FeatureBentoGrid";
 import Image from "next/image";
 
+const FRAUD_FAQS = [
+    {
+        question: "What kinds of freight fraud does Sentinel catch?",
+        answer:
+            "Three main patterns: identity impersonation (a scammer posing as a legitimate carrier), chameleon carriers (revoked authorities re-registering under a fresh MC), and double brokering (a load re-tendered to an unvetted party). Each has a dedicated automated counter-check.",
+    },
+    {
+        question: "How does Sentinel scan carrier emails for fraud?",
+        answer:
+            "Every inbound carrier email is checked for domain age, lookalike domains, phone-number-vs-FMCSA mismatches, and signature-vs-MC conflicts. Risk chips render on the vet card before anyone on your team replies.",
+    },
+    {
+        question: "What is a chameleon carrier?",
+        answer:
+            "An operator whose authority was revoked and who re-registers under a new MC number to appear clean. Sentinel diffs the full FMCSA authority census every month to surface shared officers, addresses, and phone numbers tied to revoked authorities.",
+    },
+    {
+        question: "How many signals does it take before a carrier gets flagged?",
+        answer:
+            "A fraud flag is never based on a single signal or a vibe — it requires three or more independent evidence lines. Every flag is resolved by a human, and the decision is logged for audit.",
+    },
+    {
+        question: "How does Dollar Traq prevent double brokering?",
+        answer:
+            "Through identity resolution at every touchpoint, ELD tracking that must match the carrier that was actually vetted and booked, and DT Pay releases that require verified delivery by that same party — not whoever the load was quietly re-tendered to.",
+    },
+];
+
+const FRAUD_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/product/fraud-prevention#faq",
+    mainEntity: FRAUD_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function FraudPrevention() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -50,19 +92,12 @@ export default function FraudPrevention() {
                 ]}
             />
 
-            <FaqAccordion
-                faqs={[
-                    {
-                    question: "What exactly is Dollar Traq?",
-                    answer:
-                        "Dollar Traq is an operating system for freight brokerages — carrier vetting, fraud detection, load tracking, and payment, unified behind one set of AI agents instead of four separate tools.",
-                    },
-                    { question: "How does carrier vetting work?", answer: "Dollar Traq is an operating system for freight brokerages — carrier vetting, fraud detection, load tracking, and payment, unified behind one set of AI agents instead of four separate tools." },
-                    { question: "Is my data secure?", answer: "Dollar Traq is an operating system for freight brokerages — carrier vetting, fraud detection, load tracking, and payment, unified behind one set of AI agents instead of four separate tools." },
-                ]}
-            /> 
- 
- 
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(FRAUD_FAQ_SCHEMA) }}
+            />
+            <FaqAccordion faqs={FRAUD_FAQS} />
+            
             <CtaBannerSection
                 backgroundImageSrc="/images/truck.png"
                 title="Bring five MC numbers Leave with the truth"

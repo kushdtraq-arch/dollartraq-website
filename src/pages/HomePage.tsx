@@ -251,13 +251,58 @@ const TRUST_FEATURES = [
   { icon: <Lock size={20} />, title: "Role-based answers", description: "Fleetra answers with exactly what the asking user's role permits — and nothing more." },
   { icon: <Table2 size={20} />, title: "Your data stays yours", description: "Rate memory is tenant-siloed. Your lane history never trains a competitor's price." },
 ];
-
+const FAQS = [
+    {
+        question: "What exactly is Dollar Traq?",
+        answer:
+            "Dollar Traq is an AI operating system for US freight brokers. It combines carrier vetting on a self-hosted 22.7-million-row FMCSA database, a Trust Score risk engine, AI-read insurance verification, ELD-based load tracking, and DT Pay — conditional payment release at a flat 1.2% — run by five AI agents with human approval required on every consequential action.",
+    },
+    {
+        question: "Does AI ever send money or messages on its own?",
+        answer:
+            "No. Every send, payment release, and dispute action halts at a human-approval node built into the orchestration graph itself. The AI drafts, verifies, and prepares; a person on your team taps to execute. This is enforced by architecture, not by policy.",
+    },
+    {
+        question: "Where does the carrier data come from?",
+        answer:
+            "Directly from FMCSA public data files, loaded into our own PostgreSQL warehouse — 22.7 million rows covering carriers, authority history, inspections, out-of-service orders, and insurance filings, refreshed on a rolling snapshot cycle. We can show the provenance of any claim on screen during a demo.",
+    },
+    {
+        question: "What does \"quote to cash\" mean here?",
+        answer:
+            "It means Dollar Traq covers the entire load lifecycle in one system: vetting the carrier, scoring trust, onboarding with KYC and CDL verification, tracking the load, verifying delivery, and paying the carrier through DT Pay. Instead of stitching a vetting tool, a tracking product, and a payment program together, the whole path from quoting a load to the carrier getting cash runs on one platform with one audit trail.",
+    },
+    {
+        question: "Are carriers identity-verified before they get paid?",
+        answer:
+            "Yes. Every carrier paid through DT Pay is KYC-verified during onboarding, passes a third-party facial liveness check, and has its CDL captured — then gets a Stripe Express payout account. Payment can't move to an unverified party.",
+    },
+    {
+        question: "Do I have to replace my current tools to start?",
+        answer:
+            "No. Dollar Traq runs alongside your existing stack — it connects to your inbox (Gmail or Outlook), posts alerts where your team lives, and pushes 214-shaped status webhooks to your TMS. Most brokers start with a free carrier-list audit and expand from there.",
+    },
+];
+ 
+const FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/#faq",
+    mainEntity: FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
 export default function Homepage() {
     return (
         <main className="w-full  bg-[#FAF9F5] ">
             <Hero
-                title="From quote to cash — with an AI team that vets carriers before you can."
-                description="Dollar Traq is the AI operating system for US freight brokers — vet and onboard carriers on a 22.7-million-row FMCSA database we host ourselves, then pay them on verified delivery through DT Pay. Five accountable agents, KYC-verified carriers, and no payment or send without a human tap."
+                title="Trust, then enforce it."
+                description="Vet, onboard, track, and pay carriers — with AI agents that do the chasing."
                 backgroundImageSrc="/images/hero-bg.png"
                 videoThumbnailSrc="/banner.mp4"
                 ctas={[
@@ -489,25 +534,11 @@ export default function Homepage() {
                 ctaHref="/company/security-trust"
                 features={TRUST_FEATURES} 
             />  
-
-            <FaqAccordion
-                faqs={[
-                    {
-                    question: "What exactly is Dollar Traq?",
-                    answer:
-                        "Dollar Traq is an AI operating system for US freight brokers. It combines carrier vetting on a self-hosted 22.7-million-row FMCSA database, a Trust Score risk engine, AI-read insurance verification, ELD-based load tracking, and DT Pay — conditional payment release at a flat 1.2% — run by five AI agents with human approval required on every consequential action.",
-                    },
-                    { question: "Does AI ever send money or messages on its own?", answer: "No. Every send, payment release, and dispute action halts at a human-approval node built into the orchestration graph itself. The AI drafts, verifies, and prepares; a person on your team taps to execute. This is enforced by architecture, not by policy." },
-                    { question: "Where does the carrier data come from?", answer: "Directly from FMCSA public data files, loaded into our own PostgreSQL warehouse — 22.7 million rows covering carriers, authority history, inspections, out-of-service orders, and insurance filings, refreshed on a rolling snapshot cycle. We can show the provenance of any claim on screen during a demo." },
-                    {
-                    question: "What does \"quote to cash\" mean here?",
-                    answer:
-                        "It means Dollar Traq covers the entire load lifecycle in one system: vetting the carrier, scoring trust, onboarding with KYC and CDL verification, tracking the load, verifying delivery, and paying the carrier through DT Pay. Instead of stitching a vetting tool, a tracking product, and a payment program together, the whole path from quoting a load to the carrier getting cash runs on one platform with one audit trail.",
-                    },
-                    { question: "Are carriers identity-verified before they get paid?", answer: "Yes. Every carrier paid through DT Pay is KYC-verified during onboarding, passes a third-party facial liveness check, and has its CDL captured — then gets a Stripe Express payout account. Payment can't move to an unverified party." },
-                    { question: "Do I have to replace my current tools to start?", answer: "No. Dollar Traq runs alongside your existing stack — it connects to your inbox (Gmail or Outlook), posts alerts where your team lives, and pushes 214-shaped status webhooks to your TMS. Most brokers start with a free carrier-list audit and expand from there." },
-                ]}
-            /> 
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+            />
+            <FaqAccordion faqs={FAQS} />
 
             <AppShowcaseSection
                 title={<>A driver app that does the last<br />mile of trust.</>}

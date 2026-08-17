@@ -38,7 +38,8 @@ interface NavLink {
 }
 
 interface SubMenuItem {
-    icon: React.ElementType;
+    icon?: React.ElementType;
+    image?: string;
     title: string;
     subtitle: string;
     link: string;
@@ -95,21 +96,21 @@ const PROMO: SubMenuPromo = {
 };
 
 const PRODUCT_PROMO: SubMenuPromo = {
-    image: "/images/sub-menu.png",
+    image: "/images/product-sub-menu.png",
     caption: "Bring five MC numbers. Leave with the truth.",
     ctaLabel: "Book a Demo",
     ctaLink: "/demo",
 };
 
 const AI_AGENTS_PROMO: SubMenuPromo = {
-    image: "/images/sub-menu-ai-agents.png",
+    image: "/images/ai-agents-sub-menu.png",
     caption: "Five agents. One desk. Zero guesswork.",
     ctaLabel: "Book a Demo",
     ctaLink: "/demo",
 };
 
 const SOLUTIONS_PROMO: SubMenuPromo = {
-    image: "/images/sub-menu-solutions.png",
+    image: "/images/solutions-sub-menu.png",
     caption: "Built for every seat at the freight desk.",
     ctaLabel: "Book a Demo",
     ctaLink: "/demo",
@@ -180,25 +181,25 @@ const AI_AGENTS_SUBMENU: SubMenuGroup[] = [
     {
         items: [
             {
-                icon: Shield,
+                image: "/images/sentinel-ico.svg",
                 title: "Sentinel",
                 subtitle: "Trust the carrier",
                 link: "/ai-agents/sentinel",
             },
             {
-                icon: Target,
+                image: "/images/rate-ico.svg",
                 title: "Rate",
                 subtitle: "Price the load",
                 link: "/ai-agents/rate",
             },
             {
-                icon: Radar,
+                image: "/images/tracker-ico.svg",
                 title: "Tracker",
                 subtitle: "Follow the load",
                 link: "/ai-agents/tracker",
             },
             {
-                icon: Archive,
+                image: "/images/vault-ico.svg",
                 title: "Vault",
                 subtitle: "File the paper",
                 link: "/ai-agents/vault",
@@ -288,19 +289,31 @@ const SubMenuRow: React.FC<{ item: SubMenuItem; onClick: () => void; compact?: b
     compact,
 }) => {
     const Icon = item.icon;
+    const size = compact ? 24 : 29;
+
     return (
         <Link
             href={item.link}
             className="flex items-start gap-3 rounded-lg p-2.5 -mx-2.5 hover:bg-white transition-colors"
             onClick={onClick}
         >
-            <span className="shrink-0 w-9 h-9 flex items-center justify-center">
-                <Icon
-                    width={compact ? 24 : 29}
-                    height={compact ? 24 : 29}
-                    strokeWidth={1.5}
-                    className="text-gray-800"
-                />
+            <span className="shrink-0 w-9 h-9 flex items-center justify-center relative overflow-hidden rounded-md">
+                {item.image ? (
+                    <Image
+                        src={item.image}
+                        alt=""
+                        width={size}
+                        height={size}
+                        className="object-cover w-full h-full"
+                    />
+                ) : Icon ? (
+                    <Icon
+                        width={size}
+                        height={size}
+                        strokeWidth={1.5}
+                        className="text-gray-800"
+                    />
+                ) : null}
             </span>
             <span className="min-w-0">
                 <span className="block text-[14.5px] font-semibold text-black leading-snug">
@@ -721,13 +734,23 @@ const Header: React.FC<HeaderProps> = ({ active_page }) => {
                                                                 className="flex items-start gap-3 rounded-lg p-2.5 hover:bg-gray-50 transition-colors"
                                                                 onClick={toggleMobileMenu}
                                                             >
-                                                                <span className="shrink-0 w-8 h-8 flex items-center justify-center">
-                                                                    <Icon
-                                                                        width={22}
-                                                                        height={22}
-                                                                        strokeWidth={1.5}
-                                                                        className="text-gray-800"
-                                                                    />
+                                                                <span className="shrink-0 w-8 h-8 flex items-center justify-center relative overflow-hidden rounded-md">
+                                                                    {item.image ? (
+                                                                        <Image
+                                                                            src={item.image}
+                                                                            alt=""
+                                                                            width={22}
+                                                                            height={22}
+                                                                            className="object-cover w-full h-full"
+                                                                        />
+                                                                    ) : Icon ? (
+                                                                        <Icon
+                                                                            width={22}
+                                                                            height={22}
+                                                                            strokeWidth={1.5}
+                                                                            className="text-gray-800"
+                                                                        />
+                                                                    ) : null}
                                                                 </span>
                                                                 <span className="min-w-0">
                                                                     <span className="block text-[14px] font-semibold text-black leading-snug">

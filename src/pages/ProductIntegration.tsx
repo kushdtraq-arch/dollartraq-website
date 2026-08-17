@@ -10,6 +10,49 @@ import LifecycleTimeline from "@/components/common/LifecycleTimeline";
 import IntegrationCategories from "@/components/common/IntegrationCategories";
 import Image from "next/image";
 
+
+const INTEGRATION_FAQS = [
+    {
+        question: "Does Dollar Traq replace my TMS?",
+        answer:
+            "No. Dollar Traq runs alongside your existing stack and pushes 214-shaped status webhooks into your TMS. McLeod certification is in progress, and an EDI 214 rail is mapped for customer integrations.",
+    },
+    {
+        question: "Which ELD providers does Dollar Traq support?",
+        answer:
+            "Tracker fuses live ELD position and geofence data — including from Motive and Samsara — with carrier email status into one load timeline.",
+    },
+    {
+        question: "Does Dollar Traq connect to my email?",
+        answer:
+            "Yes. Dollar Traq connects to Gmail and Microsoft Outlook so carrier vetting and drafting happen inline where your team already works, with alerts available in Microsoft Teams.",
+    },
+    {
+        question: "What payment rails does DT Pay use?",
+        answer:
+            "DT Pay runs on Stripe's regulated payment infrastructure, paying carriers through Stripe Express accounts. Dollar Traq is not a bank or factor and does not take custody of funds.",
+    },
+    {
+        question: "Where does carrier data come from?",
+        answer:
+            "Directly from FMCSA public data files loaded into Dollar Traq's own PostgreSQL warehouse — 22.7 million rows, refreshed on a rolling snapshot cycle, rather than rented from an aggregator.",
+    },
+];
+
+const INTEGRATION_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/product/integrations#faq",
+    mainEntity: INTEGRATION_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function ProductIntegration() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -79,22 +122,16 @@ export default function ProductIntegration() {
                     },                                        
                 ]}
             />
+
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(INTEGRATION_FAQ_SCHEMA) }}
+            />
             <FaqAccordion
                 sectionTitle="Integration questions."
-                faqs={[
-                    {
-                    question: "Does Dollar Traq replace my TMS?",
-                    answer:
-                        "No. Dollar Traq runs alongside your existing stack and pushes 214-shaped status webhooks into your TMS. McLeod certification is in progress, and an EDI 214 rail is mapped for customer integrations.",
-                    },
-                    { question: "Which ELD providers does Dollar Traq support?", answer: "Tracker fuses live ELD position and geofence data — including from Motive and Samsara — with carrier email status into one load timeline." },
-                    { question: "Does Dollar Traq connect to my email?", answer: "Yes. Dollar Traq connects to Gmail and Microsoft Outlook so carrier vetting and drafting happen inline where your team already works, with alerts available in Microsoft Teams." },
-                    { question: "What payment rails does DT Pay use?", answer: "DT Pay runs on Stripe's regulated payment infrastructure, paying carriers through Stripe Express accounts. Dollar Traq is not a bank or factor and does not take custody of funds." },
-                    { question: "Where does carrier data come from?", answer: "Directly from FMCSA public data files loaded into Dollar Traq's own PostgreSQL warehouse — 22.7 million rows, refreshed on a rolling snapshot cycle, rather than rented from an aggregator." },                    
-                ]}
-            /> 
- 
- 
+                faqs={INTEGRATION_FAQS}
+            />
+            
             <CtaBannerSection
                 backgroundImageSrc="/images/truck.png"
                 title="Bring your stack to the demo."

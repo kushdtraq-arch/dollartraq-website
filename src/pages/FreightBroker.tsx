@@ -8,6 +8,37 @@ import FaqAccordion from "@/components/sections/FaqAccordion";
 import FeatureBentoGrid from "@/components/common/FeatureBentoGrid";
 import Image from "next/image";
 
+const FREIGHT_BROKER_FAQS = [
+    {
+        question: "How does Dollar Traq help a freight brokerage specifically?",
+        answer:
+            "It unifies carrier vetting, fraud detection, insurance verification, load tracking, and DT Pay conditional payment release on one platform — so a broker can vet, book, track, and pay from one queue, with a human approving every consequential action.",
+    },
+    {
+        question: "Do I have to replace my TMS to use Dollar Traq?",
+        answer:
+            "No. Dollar Traq runs alongside your existing stack, connects to Gmail or Outlook, and pushes 214-shaped status webhooks into your TMS.",
+    },
+    {
+        question: "How fast can a broker vet a carrier?",
+        answer:
+            "In seconds. Carriers are checked against Dollar Traq's self-hosted 22.7-million-row FMCSA warehouse and scored with a defensible, exposure-normalized Trust Score.",
+    },
+];
+
+const FREIGHT_BROKER_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/solutions/freight-broker#faq",
+    mainEntity: FREIGHT_BROKER_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
 export default function FreightBroker() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -31,21 +62,16 @@ export default function FreightBroker() {
                     { title: "Pay on delivery", description: "DT Pay releases funds in ~90 seconds on verified POD — flat 1.2%, human-authorized.", icon: "/images/pay-on-delivery.svg" },
                 ]}
             />
-
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(FREIGHT_BROKER_FAQ_SCHEMA) }}
+            />
             <FaqAccordion
                 sectionTitle="Questions from freight brokers."
-                faqs={[
-                    {
-                    question: "How does Dollar Traq help a freight brokerage specifically?",
-                    answer:
-                        "It unifies carrier vetting, fraud detection, insurance verification, load tracking, and DT Pay conditional payment release on one platform — so a broker can vet, book, track, and pay from one queue, with a human approving every consequential action.",
-                    },
-                    { question: "Do I have to replace my TMS to use Dollar Traq?", answer: "No. Dollar Traq runs alongside your existing stack, connects to Gmail or Outlook, and pushes 214-shaped status webhooks into your TMS." },
-                    { question: "How fast can a broker vet a carrier?", answer: "In seconds. Carriers are checked against Dollar Traq's self-hosted 22.7-million-row FMCSA warehouse and scored with a defensible, exposure-normalized Trust Score." },
-                ]}
-            /> 
- 
- 
+                faqs={FREIGHT_BROKER_FAQS}
+            />
+
             <CtaBannerSection
                 backgroundImageSrc="/images/truck.png"
                 title="Bring five MC numbers. Leave with the truth."

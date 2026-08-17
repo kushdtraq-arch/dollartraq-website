@@ -10,6 +10,39 @@ import WorkflowDiagram from "@/components/common/WorkflowDiagram";
 import AgentShowcase from "@/components/common/AgentsShowcase";
 import Image from "next/image";
 
+
+const VAULT_FAQS = [
+    {
+        question: "What documents can Vault process?",
+        answer:
+            "Vault classifies, extracts, and files certificates of insurance (COIs), rate confirmations, bills of lading (BOLs), and proofs of delivery (PODs), with more than 350,000 insurance certificates already on file.",
+    },
+    {
+        question: "How does Vault verify a certificate of insurance?",
+        answer:
+            "Vault reads coverage lines and limits, checks them against your requirements per equipment type, and verifies that your company is actually named as the certificate holder — a common and expensive silent failure.",
+    },
+    {
+        question: "What happens when Vault isn't confident about a field?",
+        answer:
+            "Every extracted field carries a confidence score. Low-confidence extractions are routed to a human for review rather than filed automatically — Vault never guesses.",
+    },
+];
+
+const VAULT_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/ai-agents/vault#faq",
+    mainEntity: VAULT_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function Vault() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -95,20 +128,14 @@ export default function Vault() {
                 },
             ]}
         />        
-            <FaqAccordion
-                sectionTitle="Vault, plainly."
-                faqs={[
-                    {
-                    question: "What documents can Vault process?",
-                    answer:
-                        "Vault classifies, extracts, and files certificates of insurance (COIs), rate confirmations, bills of lading (BOLs), and proofs of delivery (PODs), with more than 350,000 insurance certificates already on file.",
-                    },
-                    { question: "How does Vault verify a certificate of insurance?", answer: "Vault reads coverage lines and limits, checks them against your requirements per equipment type, and verifies that your company is actually named as the certificate holder — a common and expensive silent failure." },
-                    { question: "What happens when Vault isn't confident about a field?", answer: "Every extracted field carries a confidence score. Low-confidence extractions are routed to a human for review rather than filed automatically — Vault never guesses." },
-                ]}
-            /> 
- 
- 
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(VAULT_FAQ_SCHEMA) }}
+        />
+        <FaqAccordion
+            sectionTitle="Vault, plainly."
+            faqs={VAULT_FAQS}
+        />
 
         </main>
     );

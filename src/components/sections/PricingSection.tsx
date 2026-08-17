@@ -9,6 +9,13 @@ import {
     Server,
     Users,
     ShieldCheck,
+    Package,
+    Smartphone,
+    UserX,
+    UserPlus,
+    CreditCard,
+    Infinity,
+    AppWindow,
 } from "lucide-react";
 
 const ICON_MAP: Record<string, LucideIcon> = {
@@ -17,6 +24,13 @@ const ICON_MAP: Record<string, LucideIcon> = {
     server: Server,
     users: Users,
     shieldCheck: ShieldCheck,
+    package: Package,
+    smartphone: Smartphone,
+    userX: UserX,
+    userPlus: UserPlus,
+    creditCard: CreditCard,
+    infinity: Infinity,
+    appWindow: AppWindow,
 };
 
 export type PricingIconName = keyof typeof ICON_MAP;
@@ -39,6 +53,8 @@ export interface PricingPlan {
     href: string;
     featured?: boolean;
     badge?: string;
+    /** Small callout under the feature list, e.g. "Extra loads billed at $2.75 each" */
+    note?: string;
 }
 
 export interface PricingSectionProps {
@@ -142,6 +158,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                                             );
                                         })}
                                     </ul>
+
+                                    {plan.note && (
+                                        <div className="mt-[24px] rounded-[14px] bg-[#00133F] border border-[#0033AA] px-[18px] py-[14px] text-[12.5px] text-[#93C5FD] leading-[1.5]">
+                                            {plan.note}
+                                        </div>
+                                    )}
                                 </div>
 
                                 <button
@@ -202,6 +224,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
                                         );
                                     })}
                                 </ul>
+
+                                {plan.note && (
+                                    <div className="mt-[24px] rounded-[14px] bg-[#0B1424] border border-[#1E293B] px-[18px] py-[14px] text-[12.5px] text-[#94A3B8] leading-[1.5]">
+                                        {plan.note}
+                                    </div>
+                                )}
                             </div>
 
                             <button

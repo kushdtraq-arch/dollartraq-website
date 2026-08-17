@@ -10,6 +10,48 @@ import IconFeatureGrid from "@/components/common/IconFeatureGrid";
 import FeatureSplit from "@/components/common/FeatureSplit";
 import Image from "next/image";
 
+const ONBOARDING_FAQS = [
+    {
+        question: "What identity checks do you run on a carrier?",
+        answer:
+            "During onboarding we run KYC on the business and its officers, a third-party facial liveness check to confirm a real person matched to their ID, and CDL capture with class and expiry validation. Results feed the carrier record, and anything uncertain is routed to a human rather than auto-approved.",
+    },
+    {
+        question: "How does the liveness check work?",
+        answer:
+            "It's a facial liveness verification performed through a trusted third-party provider — confirming the person completing onboarding is live and present, and matches the identity document, rather than using a stolen photo or credential.",
+    },
+    {
+        question: "What is a Stripe Express account and why do carriers need one?",
+        answer:
+            "Stripe Express is a payout account created for each carrier during onboarding. It's how DT Pay sends money to a verified destination the moment a delivery is confirmed and authorized — on regulated payment rails, with the carrier's payout history in their own portal.",
+    },
+    {
+        question: "Do carriers get their own login?",
+        answer:
+            "Yes. Every onboarded carrier gets a portal login to track their loads, manage documents, and see payment status — backed by the Stripe Express account linked to DT Pay. It cuts down status calls and gives carriers a real reason to prefer your freight.",
+    },
+    {
+        question: "How long does onboarding actually take?",
+        answer:
+            "For a prepared carrier, minutes. The link collects documents and runs KYC, liveness, and CDL capture in the background, so your team reviews a finished, verified file instead of chasing one over days.",
+    },
+];
+
+const ONBOARDING_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/product/carrier-onboarding#faq",
+    mainEntity: ONBOARDING_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function CarrierOnboarding() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -17,7 +59,9 @@ export default function CarrierOnboarding() {
                 title="Onboard a carrier in minutes — verified to the payout."
                 description="One link turns a cold carrier into a dispatch-ready, KYC-verified, payment-ready partner. Identity checks, facial liveness, CDL capture, and AI-read documents run automatically — then each carrier gets a login and a Stripe Express payout account wired straight to DT Pay."
                 backgroundImageSrc="/images/carrier-banner.png"
-                mediaSrc="/images/control-tower.png"   
+                mediaSrc="/carrier-onboarding.webm"
+                mediaWidth={1280}
+                mediaHeight={678}   
                 mediaAlt="Dollar Traq Control Tower dashboard"
                 ctas={[
                     { label: "DT Pay", href: "/product/dt-pay", variant: "primary" },
@@ -109,20 +153,14 @@ export default function CarrierOnboarding() {
                 }
             />
 
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(ONBOARDING_FAQ_SCHEMA) }}
+            />
             <FaqAccordion
                 sectionTitle="KYC, liveness & payouts, plainly."
-                faqs={[
-                    {
-                    question: "What identity checks do you run on a carrier?",
-                    answer:
-                        " During onboarding we run KYC on the business and its officers, a third-party facial liveness check to confirm a real person matched to their ID, and CDL capture with class and expiry validation. Results feed the carrier record, and anything uncertain is routed to a human rather than auto-approved.",
-                    },
-                    { question: "How does the liveness check work?", answer: "It's a facial liveness verification performed through a trusted third-party provider — confirming the person completing onboarding is live and present, and matches the identity document, rather than using a stolen photo or credential." },
-                    { question: "What is a Stripe Express account and why do carriers need one?", answer: "Stripe Express is a payout account created for each carrier during onboarding. It's how DT Pay sends money to a verified destination the moment a delivery is confirmed and authorized — on regulated payment rails, with the carrier's payout history in their own portal." },
-                    { question: "Do carriers get their own login?", answer: "Yes. Every onboarded carrier gets a portal login to track their loads, manage documents, and see payment status — backed by the Stripe Express account linked to DT Pay. It cuts down status calls and gives carriers a real reason to prefer your freight." },
-                    { question: "How long does onboarding actually take?", answer: "For a prepared carrier, minutes. The link collects documents and runs KYC, liveness, and CDL capture in the background, so your team reviews a finished, verified file instead of chasing one over days." },                    
-                ]}
-            />  
+                faqs={ONBOARDING_FAQS}
+            /> 
 
             <CtaBannerSection
                 backgroundImageSrc="/images/truck.png"

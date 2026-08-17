@@ -10,6 +10,39 @@ import WorkflowDiagram from "@/components/common/WorkflowDiagram";
 import AgentShowcase from "@/components/common/AgentsShowcase";
 import Image from "next/image";
 
+
+const TRACKER_FAQS = [
+    {
+        question: "How does Tracker know where a load is?",
+        answer:
+            "Tracker fuses live ELD position and geofence crossings with the status language inside carrier emails into a single load timeline, so visibility doesn't depend on any one source.",
+    },
+    {
+        question: "Does Tracker integrate with my TMS?",
+        answer:
+            "Yes. Tracker pushes load status to your customer's TMS as 214-shaped webhooks, and tracking starts automatically the moment a signed rate confirmation is filed.",
+    },
+    {
+        question: "How early can Tracker predict a late delivery?",
+        answer:
+            "Tracker continuously tests the ETA against the delivery appointment and can flag a slip hours before the missed dock — in one real example, 92 minutes of delay was surfaced two hours early.",
+    },
+];
+
+const TRACKER_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://dollartraq.com/ai-agents/tracker#faq",
+    mainEntity: TRACKER_FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+        },
+    })),
+};
+
 export default function Tracker() {
     return (
         <main className="w-full min-h-screen bg-[#FAF9F5] ">
@@ -96,20 +129,15 @@ export default function Tracker() {
                 },
             ]}
         />
-            <FaqAccordion
-                sectionTitle="Tracker, plainly."
-                faqs={[
-                    {
-                    question: "How does Tracker know where a load is?",
-                    answer:
-                        "Tracker fuses live ELD position and geofence crossings with the status language inside carrier emails into a single load timeline, so visibility doesn't depend on any one source.",
-                    },
-                    { question: "Does Tracker integrate with my TMS?", answer: "Yes. Tracker pushes load status to your customer's TMS as 214-shaped webhooks, and tracking starts automatically the moment a signed rate confirmation is filed." },
-                    { question: "How early can Tracker predict a late delivery?", answer: "Tracker continuously tests the ETA against the delivery appointment and can flag a slip hours before the missed dock — in one real example, 92 minutes of delay was surfaced two hours early." },
-                ]}
-            /> 
- 
- 
+
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(TRACKER_FAQ_SCHEMA) }}
+        />
+        <FaqAccordion
+            sectionTitle="Tracker, plainly."
+            faqs={TRACKER_FAQS}
+        />
 
         </main>
     );
