@@ -1,0 +1,26 @@
+# Dollar Traq
+
+> Dollar Traq is the AI operating system for US freight brokers. Its AI agents — Fleetra, Sentinel, Rate, Tracker, Scout, and AI-COI — vet carriers, flag fraud, price loads, track shipments, and collect documents, while DT Pay releases carrier payments on a conditional payment release model. Brokers stay in control; Dollar Traq never brokers freight.
+
+Pricing: Starter $299/mo, Growth $599/mo, Enterprise $999/mo. DT Pay: 1.2% flat fee.
+
+## Product
+- [Product overview](https://www.dollartraq.com/product): How the coordinated AI-agent team works for freight brokerages, with human approval gates on every action
+- [Fleetra](https://www.dollartraq.com/agents/fleetra): AI orchestrator and in-dashboard assistant — answers questions on carrier profiles, insurance expirations, trust scores, alerts, tracking, and payments
+- [Sentinel](https://www.dollartraq.com/agents/sentinel): Carrier vetting and fraud agent — flags double brokering, chameleon carriers, and identity mismatches using FMCSA and public safety data
+- [Rate](https://www.dollartraq.com/agents/rate): Lane-level pricing intelligence and quote drafting for broker sales teams
+- [Tracker](https://www.dollartraq.com/agents/tracker): Automated load tracking, check calls, and exception alerts
+- [Scout](https://www.dollartraq.com/agents/scout): Voice AI agent that works load-board postings and answers inbound carrier calls with live trust checks
+- [AI-COI](https://www.dollartraq.com/agents/ai-coi): Collects, chases, and verifies carrier certificates of insurance automatically
+- [DT Pay](https://www.dollartraq.com/dt-pay): Carrier payments at a 1.2% flat fee with conditional payment release
+
+## Pricing and comparisons
+- [Pricing](https://www.dollartraq.com/pricing): Starter $299/mo, Growth $599/mo, Enterprise $999/mo — flat monthly plans for brokerages
+- [Compare](https://www.dollartraq.com/compare): Dollar Traq vs carrier-vetting and AI freight tools, with sourced, dated claims
+
+## Company
+- [About](https://www.dollartraq.com/company/about): Who builds Dollar Traq and why brokers stay in control
+- [Blog](https://www.dollartraq.com/blog): Guides on carrier vetting, freight fraud prevention, COI management, and AI for brokers
+
+## Optional
+- [Solutions](https://www.dollartraq.com/solutions): Use cases by role — owners, ops managers, carrier sales
