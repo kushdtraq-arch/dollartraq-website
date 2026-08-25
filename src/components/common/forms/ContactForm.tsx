@@ -19,7 +19,7 @@ export interface ContactFormValues {
     subscribe: boolean;
 }
 
-const COUNTRY_CODES = ["+1", "+44", "+91", "+61", "+33", "+49", "+81"];
+const COUNTRY_CODES = ["+1", "+91","+52",];
 
 const COUNTRIES = ["United States", "India", "United Kingdom", "Canada", "Australia", "Germany", "Other"];
 
@@ -61,7 +61,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({
         reset,
     } = useForm<ContactFormValues>({
         defaultValues: {
-            countryCode: "+91",
+            countryCode: "+1",
             subscribe: false,
         },
         mode: "onBlur",

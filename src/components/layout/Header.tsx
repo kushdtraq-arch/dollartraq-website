@@ -279,6 +279,7 @@ const SUBMENUS: Partial<Record<string, SubMenuConfig>> = {
 };
 
 const APPLICATION_URL = process.env.NEXT_PUBLIC_APPLICATION_URL || "#";
+const CARRIER_LOGIN_URL = "https://carrier.dollartraq.com";
 
 const SCROLL_THRESHOLD = 24;
 
@@ -475,7 +476,7 @@ const Header: React.FC<HeaderProps> = ({ active_page }) => {
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
                 isSolid
                     ? "bg-white border-b border-gray-100/80 shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
-                    : "bg-white/10 backdrop-blur-[51.7px] "
+                    : "bg-white/10 backdrop-blur-[51.7px]"
             }`}
             onMouseLeave={handleDesktopMouseLeave}
         >
@@ -626,17 +627,43 @@ const Header: React.FC<HeaderProps> = ({ active_page }) => {
 
                 {/* Main Action Terminals */}
                 <div className="hidden lg:flex items-center gap-4 xl:gap-5">
-                    <Link
-                        href={APPLICATION_URL}
-                        target="_blank"
-                        className={`text-[15px] font-medium transition-colors px-1 ${
-                            isSolid
-                                ? "text-black hover:text-gray-600"
-                                : "text-white hover:text-white/80"
-                        }`}
-                    >
-                        Login
-                    </Link>
+<div className="relative group">
+    <button
+        type="button"
+        className={`text-[15px] font-medium transition-colors px-1 py-2 ${
+            isSolid
+                ? "text-black hover:text-gray-600"
+                : "text-white hover:text-white/80"
+        }`}
+    >
+        Login
+    </button>
+
+    <div className="absolute right-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+        <div className="w-[190px] bg-[#FAF9F5] rounded-xl shadow-xl border border-gray-100 p-2">
+            <Link
+                href={APPLICATION_URL}
+                target="_blank"
+                className="block px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+                <span className="block text-sm font-semibold text-gray-900">
+                    Login as Broker
+                </span>
+            </Link>
+
+            <a
+                href={CARRIER_LOGIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-3 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+                <span className="block text-sm font-semibold text-gray-900">
+                    Login as Carrier
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
 
                     <Link href="/demo">
                         <button className="bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white rounded-lg px-5 py-2.5 text-[14px] font-medium whitespace-nowrap transition-all shadow-sm">
@@ -772,14 +799,26 @@ const Header: React.FC<HeaderProps> = ({ active_page }) => {
                         })}
 
                         <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-100">
+                        <div className="flex flex-col gap-1">
                             <Link
                                 href={APPLICATION_URL}
                                 target="_blank"
-                                className="py-2 px-2 text-center rounded-md hover:bg-gray-50 transition-colors text-[15px]"
+                                className="py-3 px-3 rounded-md hover:bg-gray-50 transition-colors text-[15px]"
                                 onClick={toggleMobileMenu}
                             >
-                                Login
+                                Login as Broker
                             </Link>
+
+                            <a
+                                href={CARRIER_LOGIN_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="py-3 px-3 rounded-md hover:bg-gray-50 transition-colors text-[15px]"
+                                onClick={toggleMobileMenu}
+                            >
+                                Login as Carrier
+                            </a>
+                        </div>
 
                             <Link href="/contact" onClick={toggleMobileMenu} className="w-full">
                                 <button className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-lg w-full py-3 font-medium transition-all">

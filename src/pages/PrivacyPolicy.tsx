@@ -9,7 +9,7 @@ export interface PrivacyPolicyProps {
 
 export function PrivacyPolicy({
     className = "",
-    lastUpdated = "30 Sept, 2025",
+    lastUpdated = "August 25, 2026",
 }: PrivacyPolicyProps) {
     return (
           <>
@@ -25,7 +25,7 @@ export function PrivacyPolicy({
             className={`max-w-5xl mx-auto mt-6 mb-16 px-4 sm:px-6 lg:px-8 ${className}`}
         >
             <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
-                Privacy Policy
+                Dollar Traq Privacy Policy
             </h1>
 
             <p className="mt-3 text-sm text-gray-600 sm:text-base">
@@ -33,238 +33,253 @@ export function PrivacyPolicy({
             </p>
 
             <div className="mt-6 space-y-8 sm:mt-8 sm:space-y-10">
-                <p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                    {`This Privacy Policy describes how Dollar Traq Corp (“Dollar Traq”, “we”, “us”, or “our”) collects, uses, stores, discloses, and protects personal information of users of our services (website, mobile apps, APIs, etc.). By using our services, you agree to the practices described here.`}
-                </p>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        1. Scope &amp; Applicability
-                    </h2>
-                    <ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        <li>{`This Policy applies to all personal information collected from users (e.g. customers, carriers, drivers) in their capacity as natural persons.`}</li>
-                        <li>{`Employee or employment applicant data may be handled under a separate “Employee Privacy Policy.”`}</li>
-                        <li>{`We may adapt or supplement this Policy to comply with local data protection laws (GDPR, CCPA, India’s data laws, etc.).`}</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        2. Definitions
-                    </h2>
-                    <ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        <li>
-                            <strong className="font-semibold text-gray-900">
-                                Personal Information / Personal Data:
-                            </strong>{" "}
-                            {`any information relating to an identified or identifiable natural person (e.g. name, email, phone, device identifiers, location).`}
-                        </li>
-                        <li>
-                            <strong className="font-semibold text-gray-900">
-                                Processing:
-                            </strong>{" "}
-                            {`any operation performed on personal data (collecting, storing, using, disclosing, combining, deleting).`}
-                        </li>
-                        <li>
-                            <strong className="font-semibold text-gray-900">
-                                Anonymized / Aggregated Data:
-                            </strong>{" "}
-                            {`data that has been stripped of identifiers such that individuals cannot be identified.`}
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        3. Information We Collect
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`We collect information from you in various ways:`}
-                    </p>
-
-                    <div className="mt-5 space-y-5 pl-5">
-                        <div>
-                            <h3 className="text-base font-semibold text-gray-800 sm:text-lg">
-                                {`a) Information You Provide`}
-                            </h3>
-                            <ul className="mt-2 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                                <li>{`Account registration: name, email, phone number, address, company name`}</li>
-                                <li>{`Payment or billing information”`}</li>
-                                <li>{`Customer support communications or feedback`}</li>
-                                <li>{`Any data you input or upload (e.g. shipment IDs, instructions)`}</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3 className="text-base font-semibold text-gray-800 sm:text-lg">
-                                {`b) Location & Telemetry Data`}
-                            </h3>
-                            <ul className="mt-2 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                                <li>{`Device GPS/location (latitude, longitude, altitude, accuracy)`}</li>
-                                <li>{`Movement, heading, speed, timestamps`}</li>
-                                <li>{`Other device metadata (device type, OS version, battery status)`}</li>
-                                <li>{`We collect this when the Service is active (e.g. during shipments)`}</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3 className="text-base font-semibold text-gray-800 sm:text-lg">
-                                {`c) Automatically Collected / Log Data`}
-                            </h3>
-                            <ul className="mt-2 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                                <li>{`IP address`}</li>
-                                <li>{`Browser or app usage (pages visited, feature use)`}</li>
-                                <li>{`Cookies and similar technologies`}</li>
-                                <li>{`Crash logs, diagnostics`}</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3 className="text-base font-semibold text-gray-800 sm:text-lg">
-                                {`d) From Third Parties`}
-                            </h3>
-                            <ul className="mt-2 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                                <li>{`Integration partners (e.g. GPS / ELD vendors, telematics systems)`}</li>
-                                <li>{`Public or commercial data sources`}</li>
-                                <li>{`Affiliates or business partners`}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        4. How We Use Personal Information
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        We use your data for the following purposes:
-                    </p>
-                    <ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        <li>{`to provide, maintain, and improve our Service`}</li>
-                        <li>{`to authenticate users, manage accounts, and provide support`}</li>
-                        <li>{`to transmit location data or tracking information to authorized parties`}</li>
-                        <li>{`to analyze usage, generate insights, reports, and aggregated analytics`}</li>
-                        <li>{`to communicate with you (notifications, updates, marketing, security alerts)`}</li>
-                        <li>{`to detect, prevent, and address technical or security issues`}</li>
-                        <li>{`to comply with legal obligations, enforce policies, or respond to legal requests`}</li>
-                        <li>{`for internal research, development, or business intelligence`}</li>
-                    </ul>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`Where required by law, we will obtain your consent before using your data for certain purposes (e.g. marketing).`}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        5. Sharing &amp; Disclosure of Data
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`We may share personal information with:`}
-                    </p>
-                    <ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        <li>{`Our affiliates, subsidiaries, contractors, and service providers (e.g. hosting, analytics, communications)`}</li>
-                        <li>{`Authorized business partners and customers (for enabling shipment tracking)`}</li>
-                        <li>{`Legal or regulatory authorities if required by law or in response to valid legal processes`}</li>
-                        <li>{`In connection with mergers, acquisitions, restructuring (with appropriate safeguards)`}</li>
-                        <li>{`If you consent, to third parties for marketing or other purposes`}</li>
-                    </ul>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`We will require third parties to maintain confidentiality and only use the data for permitted purposes. We do not sell personal data for direct marketing without your explicit consent (subject to applicable law).`}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        6. International Transfers
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`Because we may operate across national borders, your data may be transferred, stored, and processed in jurisdictions different from your residence. We will ensure such transfers comply with applicable legal standards (e.g. EU standard contractual clauses, data localization laws, etc.).`}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        7. Data Retention
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`We retain personal information only as long as needed for the purposes set forth, unless longer retention is required by law. After that, we will delete, anonymize, or de-identify the data.`}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        8. Security
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`We implement appropriate technical, organizational, and administrative safeguards to protect data against unauthorized access, disclosure, alteration, or destruction. Access is limited to personnel who require it for their job. However, no method of transmission or storage is 100% secure; we cannot guarantee absolute security.`}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        9. Your Rights &amp; Choices
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`Subject to applicable law, you may have rights including:`}
-                    </p>
-                    <ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        <li>{`Access: request a copy of your data`}</li>
-                        <li>{`Correction: request corrections to inaccurate or incomplete data`}</li>
-                        <li>{`Deletion: ask us to delete your personal data`}</li>
-                        <li>{`Restriction or objection: limit or object to certain processing`}</li>
-                        <li>{`Portability: receive your data in a machine-readable format`}</li>
-                        <li>{`Withdraw consent: where processing is consent-based`}</li>
-                        <li>{`Oppose profiling / automated decision-making`}</li>
-                    </ul>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`To exercise any of these rights, contact us as described below. We may need to verify your identity before granting requests.`}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        10. Cookies &amp; Tracking Technologies
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`We use cookies, beacons, and similar technologies to:`}
-                    </p>
-                    <ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        <li>{`distinguish users`}</li>
-                        <li>{`improve user experience`}</li>
-                        <li>{`analyze usage and performance`}</li>
-                        <li>{`deliver relevant content`}</li>
-                    </ul>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`You may disable cookies via your browser settings, but some features of the Service may not function properly if you do so.`}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        11. Minors
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`Our Service is not intended for minors (e.g. under 13). We do not knowingly collect personal data from minors. If you become aware of such data being collected, contact us so we can remove it.`}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        12. Changes to This Policy
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`We may update this Privacy Policy from time to time. When we make material changes, we will notify users (e.g. via email or in-app notification). Your continued use after the changes means you accept the updated policy.`}
-                    </p>
-                </section>
-
-                <section>
-                    <h2 className="text-lg font-bold text-gray-900 sm:text-xl">
-                        13. Contact Information
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">
-                        {`If you have questions, concerns, or wish to exercise your rights, contact us at`}
-                    </p>
-                </section>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Effective Date:`}</strong>{` August 25, 2026`}<br/><strong className="font-semibold text-gray-900">{`Last Updated:`}</strong>{` August 25, 2026`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`Dollar Traq Corp ("`}<strong className="font-semibold text-gray-900">{`Dollar Traq`}</strong>{`," "`}<strong className="font-semibold text-gray-900">{`we`}</strong>{`," "`}<strong className="font-semibold text-gray-900">{`us`}</strong>{`," or "`}<strong className="font-semibold text-gray-900">{`our`}</strong>{`") is a Wyoming corporation with its principal office at Suite 304, 1560 Wall Street, Naperville, Illinois 60563. We build an AI operating system for U.S. freight brokers. This Privacy Policy explains how we collect, use, disclose, retain, and protect personal information when you use our websites (including www.dollartraq.com), web application, mobile applications (including the Dollar Traq Driver App), browser extensions, application programming interfaces, voice and messaging services, DT Pay, and related services (collectively, the "`}<strong className="font-semibold text-gray-900">{`Services`}</strong>{`").`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Plain-language summary.`}</strong>{` We are a business-to-business platform. We collect information about freight brokers and their staff, motor carriers, drivers, insurance producers, and other parties involved in moving freight, and we combine it with public regulatory data to help brokers verify carriers, track loads, communicate, and pay carriers. We do not sell personal information. We do not use it for advertising other than limited cookies on our marketing website. We do not share customer data with any freight brokerage that our founders own or operate. Drivers using our app are tracked only while a load is active, and identity checks are performed by a specialist vendor, not by us. Everyone can ask us to access, correct, or delete their information, and carriers can dispute a score or report that concerns them.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`By using the Services you acknowledge this Privacy Policy. If you are a broker, shipper, or other paying customer, this Privacy Policy applies together with the Dollar Traq Terms of Service and any Data Processing Addendum in place between us.`}</p>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">Table of Contents</h2>
+<ol className="mt-3 list-decimal space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li>{`Scope and Our Roles`}</li>
+<li>{`Information We Collect`}</li>
+<li>{`Driver App Disclosures (Location, Camera, Identity)`}</li>
+<li>{`Connected Mailboxes and Google API Services`}</li>
+<li>{`Voice Calls, AI Voice Agents, Call Recording, and Text Messages`}</li>
+<li>{`How We Use Information`}</li>
+<li>{`Artificial Intelligence, Trust Scores, and Review Rights`}</li>
+<li>{`How We Disclose Information`}</li>
+<li>{`Affiliate Brokerage Firewall`}</li>
+<li>{`Cookies, Analytics, and Tracking Technologies`}</li>
+<li>{`Data Retention`}</li>
+<li>{`Biometric Information Privacy Notice and Retention Schedule`}</li>
+<li>{`Security`}</li>
+<li>{`International Transfers and Processing in India`}</li>
+<li>{`Your Privacy Rights and Choices`}</li>
+<li>{`Additional Disclosures for U.S. States`}</li>
+<li>{`Canada and Other Jurisdictions`}</li>
+<li>{`Children`}</li>
+<li>{`Third-Party Services and Links`}</li>
+<li>{`Communications Preferences`}</li>
+<li>{`Changes to This Policy`}</li>
+<li>{`Contact Us`}</li></ol>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`1. Scope and Our Roles`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Who this Policy covers.`}</strong>{` This Policy applies to personal information about:`}</p>
+<ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li><strong className="font-semibold text-gray-900">{`Customers and Authorized Users`}</strong>{` — freight brokers, third-party logistics providers, shippers, and their employees, agents, and contractors who purchase or use the Services ("Customers").`}</li>
+<li><strong className="font-semibold text-gray-900">{`Carriers`}</strong>{` — motor carriers, owner-operators, dispatchers, and their personnel who onboard with a Customer, claim a carrier profile, receive rate confirmations, respond to verification requests, or otherwise interact with the Services ("Carriers").`}</li>
+<li><strong className="font-semibold text-gray-900">{`Drivers`}</strong>{` — individuals who use the Dollar Traq Driver App or receive tracking, check-in, or one-time-passcode messages from us ("Drivers").`}</li>
+<li><strong className="font-semibold text-gray-900">{`Insurance Producers`}</strong>{` — insurance agents, brokers, and carriers we contact to verify a Carrier's coverage.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Shippers, consignees, and facility contacts`}</strong>{` whose information appears in load documents, bills of lading, or tracking links.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Website visitors, prospects, and people who communicate with us`}</strong>{`, including callers to Dollar Traq-provisioned phone numbers.`}</li></ul>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Our roles.`}</strong>{` We act in two capacities:`}</p>
+<ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li><strong className="font-semibold text-gray-900">{`As a business (controller).`}</strong>{` We decide how and why to process information when you interact with our website, register an account, call or message us, use the Driver App, claim a carrier profile, or when we compile carrier intelligence from public regulatory records and other sources. This Policy governs that processing.`}</li>
+<li><strong className="font-semibold text-gray-900">{`As a service provider (processor).`}</strong>{` When a Customer uploads, connects, or generates data through the Services — for example, a broker's shipment records, connected mailbox content, carrier packets collected on the broker's behalf, or a broker's rate history — we process that data on the Customer's instructions under our Terms of Service and Data Processing Addendum. The Customer's own privacy policy governs its use of that data. If you have questions about data a Customer has provided to us, or wish to exercise rights over it, please contact that Customer; we will assist as their service provider.`}</li></ul>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Publicly available information.`}</strong>{` A substantial portion of the carrier data we process is drawn from public government records, including Federal Motor Carrier Safety Administration ("FMCSA") registration, authority, insurance filing, inspection, crash, and safety measurement data, and similar federal and state sources. Some privacy laws exclude lawfully obtained public records from the definition of personal information. We nevertheless handle such data with the safeguards described in this Policy.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`2. Information We Collect`}</h2>
+<h3 className="text-base font-semibold text-gray-800 sm:text-lg mt-4">{`2.1 Information you provide to us`}</h3>
+<div className="mt-3 overflow-x-auto">
+<table className="min-w-full text-sm leading-6 text-gray-600 sm:text-base border-collapse">
+<thead><tr><th className="px-3 py-2 text-left font-semibold text-gray-900 border-b border-gray-200">{`Who you are`}</th><th className="px-3 py-2 text-left font-semibold text-gray-900 border-b border-gray-200">{`What we may collect`}</th></tr></thead>
+<tbody><tr><td className="px-3 py-2 align-top border-b border-gray-100"><strong className="font-semibold text-gray-900">{`Customers and Authorized Users`}</strong></td><td className="px-3 py-2 align-top border-b border-gray-100">{`Name, work email, work phone, job title, employer, MC and DOT numbers, business address, login credentials, multi-factor authentication data, billing contact, payment method (processed by our payment processor; we do not store full card numbers), configuration settings, guardrails and feature preferences, support requests, survey responses, and any content you submit through the Services (shipment data, notes, incident reports, chat prompts to Fleetra).`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100"><strong className="font-semibold text-gray-900">{`Carriers and carrier personnel`}</strong></td><td className="px-3 py-2 align-top border-b border-gray-100">{`Legal and DBA names, MC and DOT numbers, EIN or TIN and W-9 information, addresses, phone numbers and email addresses, principals' and dispatchers' names, insurance certificates and policy details, insurance producer contact details, equipment and Vehicle Identification Numbers (VINs), factoring company and notice-of-assignment details, bank account or payment preferences, executed broker-carrier agreements and packet responses, rate offers and lane preferences, responses to verification requests, and information you submit to claim or correct a profile.`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100"><strong className="font-semibold text-gray-900">{`Drivers`}</strong></td><td className="px-3 py-2 align-top border-b border-gray-100">{`Name, mobile phone number, carrier affiliation, government-issued identification (captured by our identity verification vendor), live selfie and liveness check (processed by our vendor), tractor and trailer numbers, VIN photographs, load photographs, bill of lading and proof-of-delivery images, electronic signatures, check-in confirmations and one-time passcodes, notes and damage documentation, and device permissions you grant.`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100"><strong className="font-semibold text-gray-900">{`Insurance Producers`}</strong></td><td className="px-3 py-2 align-top border-b border-gray-100">{`Business name, agent name, email, phone, license information appearing on certificates, and the content of your responses to our verification requests.`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100"><strong className="font-semibold text-gray-900">{`Website visitors and prospects`}</strong></td><td className="px-3 py-2 align-top border-b border-gray-100">{`Name, company, email, phone, business type, message content, demo requests, newsletter sign-ups, and event registrations.`}</td></tr></tbody>
+</table>
+</div>
+<h3 className="text-base font-semibold text-gray-800 sm:text-lg mt-4">{`2.2 Information we collect automatically`}</h3>
+<ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li><strong className="font-semibold text-gray-900">{`Device and usage data`}</strong>{` — IP address, browser type, operating system, device identifiers, mobile network, language, pages viewed, features used, clicks, timestamps, referring pages, crash logs, and diagnostic data.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Driver App telemetry`}</strong>{` — precise geolocation (including background location during an active trip), speed and heading derived from location, motion and activity state, device time, battery and connectivity status, camera captures with embedded GPS and time watermarks, and app events (check-in, loaded, arrived, delivered). See Section 3.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Browser extension data`}</strong>{` — When you install the Dollar Traq browser extension, it reads carrier identifiers (MC, DOT, and carrier names) on the transportation-management-system page you are viewing in order to display trust and compliance information. The extension does not collect your browsing history, page content unrelated to carrier identification, or keystrokes.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Communications metadata`}</strong>{` — For emails, calls, and text messages sent or received through the Services: sender, recipient, phone numbers, timestamps, duration, delivery status, and caller line-type and carrier information used for fraud detection (for example, whether a number is a VoIP line).`}</li>
+<li><strong className="font-semibold text-gray-900">{`Cookies and similar technologies`}</strong>{` — described in Section 10.`}</li></ul>
+<h3 className="text-base font-semibold text-gray-800 sm:text-lg mt-4">{`2.3 Information we receive from other sources`}</h3>
+<ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li><strong className="font-semibold text-gray-900">{`Government and regulatory sources`}</strong>{` — FMCSA (including its registration, licensing and insurance, safety measurement, inspection, crash, and out-of-service data), the U.S. Department of Transportation, the National Highway Traffic Safety Administration (VIN decoding), state agencies (for example, California Air Resources Board registrations and Secretary of State filings), court and bankruptcy records, and sanctions and watch lists (for example, OFAC).`}</li>
+<li><strong className="font-semibold text-gray-900">{`Insurance sources`}</strong>{` — insurance producers, insurers, and public insurance filings, including certificates of insurance and responses to our verification emails.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Customers`}</strong>{` — carrier contacts, performance history, incident reports, documents, and shipment data that a Customer uploads or connects.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Telematics and ELD providers`}</strong>{` — with the Carrier's authorization, location and vehicle data from electronic logging devices and telematics platforms, either directly or through a telematics aggregation partner.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Transportation management systems, load boards, and rate-data providers`}</strong>{` — shipment, capacity, posting, and market-rate data that a Customer connects to the Services.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Email and calendar providers`}</strong>{` — the content of mailboxes a Customer connects (Section 4).`}</li>
+<li><strong className="font-semibold text-gray-900">{`Identity verification vendor`}</strong>{` — verification outcomes, document authenticity results, and fraud signals (Section 12).`}</li>
+<li><strong className="font-semibold text-gray-900">{`Payment processor and KYC/KYB vendors`}</strong>{` — identity verification results, account status, risk signals, and transaction data for DT Pay.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Fraud-prevention and data-enrichment partners`}</strong>{` — signals about phone numbers, email domains, addresses, and known fraud patterns, and business contact enrichment.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Other users`}</strong>{` — for example, a Carrier's identity-theft report about its own MC number, or a Customer's report about a load.`}</li></ul>
+<h3 className="text-base font-semibold text-gray-800 sm:text-lg mt-4">{`2.4 Sensitive information`}</h3>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`Depending on how you use the Services, we may process the following categories that some laws treat as sensitive: precise geolocation (Drivers, Carrier vehicles); government identification numbers and images (Drivers and Carrier principals, via our vendor); biometric information (via our vendor, Section 12); Social Security or taxpayer identification numbers (W-9 collection for Carriers); financial account information (DT Pay payouts, processed by our payment processor); and account log-in credentials. We use sensitive information only to provide the specific Service for which it was collected, to verify identity, to prevent fraud, and as otherwise permitted by law. We do not use sensitive information to infer characteristics about individuals, and we do not sell it.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`3. Driver App Disclosures (Location, Camera, Identity)`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`The Dollar Traq Driver App is built to prevent freight fraud and to document a shipment from pickup through delivery. Because of this, it collects more data than a typical app, and we want to be direct about what it does.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Precise and background location.`}</strong>{` With your permission, the Driver App collects your device's precise location, including when the app is closed or not in use, from the time a load is assigned to you until the load is completed and closed out by the broker, plus a short close-out window. Location is used to: provide live tracking to the broker (and, if the broker chooses, to the shipper or consignee through a tracking link); confirm arrival at pickup and delivery using geofences; detect route deviations and location anomalies that indicate fraud or theft; time-stamp and geo-stamp photographs; and calculate ETAs. The app requires "Always" (background) location permission to function during an active trip. You may withdraw permission at any time in your device settings, but the app will not allow a trip to progress without it, and the broker who assigned the load may be unable to work with you on that load. We do not collect your location when no load is active, and we do not use Driver location for advertising.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Camera and photographs.`}</strong>{` The Driver App uses your camera to capture live photographs of the VIN, tractor, trailer, cargo, bills of lading, seals, damage, and proof of delivery. To prevent tampering, the app allows live captures only; it does not access your photo gallery, and each capture is watermarked with GPS coordinates and a timestamp burned into the image. Photographs may be processed with optical character recognition and AI to extract text (such as VIN or BOL numbers).`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Identity verification.`}</strong>{` Before a Driver's first load, and periodically thereafter or when a fraud signal appears, you may be asked to complete identity verification with our specialist vendor, which compares a live selfie to your government-issued ID and checks that the ID is authentic. We receive the verification outcome, document data fields we request, and fraud signals; the biometric processing is described in Section 12.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Phone number matching.`}</strong>{` Loads are matched to Drivers by mobile phone number. Brokers provide driver phone numbers when assigning a load; we use that number to deliver one-time passcodes and to associate your app session with the correct shipment.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Equipment verification.`}</strong>{` The app may require VIN and equipment photographs before pickup so the broker can confirm the truck and trailer at the shipper match the equipment the carrier represented and that the equipment is insured.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Who sees Driver App data.`}</strong>{` Driver App data is shared with the broker that assigned the load, with the carrier you drive for, and, at the broker's election, with the shipper, consignee, or the broker's transportation management system. Location history is also used, in de-identified or aggregated form, to improve fraud detection and ETA models.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`4. Connected Mailboxes and Google API Services`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`Customers may connect business email accounts (for example, Google Workspace or Microsoft 365) so that Fleetra, Vault, and related agents can read and draft shipment quotes, carrier correspondence, proof-of-delivery and invoice emails, insurance verification replies, and tracking updates. When a mailbox is connected:`}</p>
+<ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li>{`We access only the mailbox scopes the Customer authorizes, through an email-integration provider, and we encrypt access tokens at rest.`}</li>
+<li>{`We use mailbox content solely to provide and improve the features the Customer has enabled (for example, classifying a shipper's quote request, extracting a rate confirmation, matching a POD to a load, or drafting a reply for human approval).`}</li>
+<li>{`We do not use mailbox content for advertising, and we do not sell it.`}</li>
+<li>{`Humans at Dollar Traq do not read mailbox content except (a) with the Customer's explicit consent for support or troubleshooting, (b) for security review, (c) to comply with law, or (d) where the data has been aggregated or de-identified for internal operations.`}</li>
+<li>{`We do not use data obtained through Google APIs to develop, improve, or train generalized or non-personalized artificial-intelligence or machine-learning models.`}</li>
+<li>{`We do not transfer mailbox data to third parties except as necessary to provide or improve the connected feature, for security, to comply with law, or as part of a merger or acquisition with notice.`}</li></ul>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`Dollar Traq's use and transfer to any other application of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements. A Customer may disconnect a mailbox at any time from the Integrations settings, which revokes our access; retained extractions are handled under Section 11.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`5. Voice Calls, AI Voice Agents, Call Recording, and Text Messages`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Dollar Traq-provisioned phone numbers.`}</strong>{` Customers may use phone numbers we provision to post loads, receive carrier calls, and run inbound carrier screening. Calls to these numbers may be answered by an AI voice agent (such as Scout) acting on the Customer's behalf. At the start of such calls, the caller is told that they are speaking with an automated assistant and that the call is recorded. If you do not consent, you may hang up or ask to be transferred to a person where available.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`What we collect on calls.`}</strong>{` Caller phone number and line type, call audio, transcripts, extracted data (for example, the carrier's MC number, equipment, rate offer, and availability), and AI-generated summaries. We use this to verify the caller against our carrier database, check for fraud indicators, record rate offers, and surface a summary to the Customer. Recordings and transcripts are shared with the Customer whose number was called.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Outbound calls and texts.`}</strong>{` Customers control outbound calls and text messages sent through the Services and are responsible for obtaining any consent required by law. Dollar Traq sends the following messages directly: one-time passcodes for login and Driver check-in, security and account alerts, verification requests to insurance producers, and transactional notices about a shipment or payment. Message frequency varies. Message and data rates may apply. Reply `}<strong className="font-semibold text-gray-900">{`STOP`}</strong>{` to opt out of a text program and `}<strong className="font-semibold text-gray-900">{`HELP`}</strong>{` for help. Consent to receive marketing texts is never a condition of purchase.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`No sharing of mobile opt-in data.`}</strong>{` Mobile phone numbers and text-messaging opt-in data and consent are not shared with third parties or affiliates for marketing or promotional purposes.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Recording laws.`}</strong>{` Some states require the consent of all parties to record a call. Our voice agents announce recording at the start of calls. If you use your own telephony with our Services, you are responsible for providing required notices.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`6. How We Use Information`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`We use personal information to:`}</p>
+<ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li><strong className="font-semibold text-gray-900">{`Provide the Services`}</strong>{` — create and administer accounts; build and maintain carrier profiles; compute compliance status and trust scores; run onboarding packets and e-signatures; verify insurance with producers; track loads; verify Drivers and equipment; operate voice and messaging channels; draft and send communications on a Customer's instruction; process payments through DT Pay; and integrate with the Customer's TMS, ELD, load board, and email systems.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Prevent fraud, theft, and abuse`}</strong>{` — detect identity theft, double brokering, chameleon carriers, spoofed domains, VoIP-originated calls, location anomalies, altered documents, and duplicate or synthetic identities; share fraud signals within the Dollar Traq network as described in Section 8.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Verify identity and eligibility`}</strong>{` — including Know-Your-Business and Know-Your-Customer checks required for DT Pay and sanctions screening.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Communicate`}</strong>{` — send transactional, security, and service messages; respond to support requests; and, with your consent where required, send marketing communications.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Improve and develop the Services`}</strong>{` — analyze usage, test features, train and evaluate our proprietary scoring, extraction, matching, and fraud models (subject to the restrictions in Sections 4 and 7 and our Terms of Service), and produce aggregated statistics.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Personalize`}</strong>{` — remember your settings, guardrails, and preferences.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Comply with law and protect rights`}</strong>{` — meet regulatory, tax, and recordkeeping obligations (including broker recordkeeping rules), respond to lawful requests, enforce our Terms, and protect the safety and property of users, Dollar Traq, and the public.`}</li></ul>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Legal bases.`}</strong>{` Where a law requires a legal basis, we rely on performance of a contract, our legitimate interests (operating and securing a fraud-prevention platform, improving the Services, and marketing to businesses), compliance with legal obligations, and consent (for example, for background location and biometric verification).`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`7. Artificial Intelligence, Trust Scores, and Review Rights`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`The Services use artificial intelligence, including large language models provided by third-party model providers under contracts that prohibit them from training on your data, and proprietary rules-based and statistical models.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Trust scores and compliance status.`}</strong>{` Our Sentinel engine generates carrier trust scores, tiers, and hard-stop flags using exposure-normalized safety, inspection, crash, authority-history, insurance, and identity data, together with data-confidence caps and rules aligned with published FMCSA thresholds. A score is our opinion about risk based on the data available to us. It is not an FMCSA safety rating, not a determination that a carrier is safe or unsafe, and not a credit, employment, or insurance eligibility decision. Customers configure their own thresholds and make their own decisions about whom to hire.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Human decision-making.`}</strong>{` Our agents are designed with human-in-the-loop controls: they draft, flag, and recommend; a Customer's personnel approve actions that affect a third party, such as tendering a load, sending a counteroffer, or releasing a payment. We do not make legally significant decisions about individuals solely by automated means.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Carrier review and dispute.`}</strong>{` If you are a Carrier or Driver and believe that a score, status, flag, or report about you is inaccurate, incomplete, or based on an error, you may request a review by emailing `}<strong className="font-semibold text-gray-900">{`disputes@dollartraq.com`}</strong>{` with your MC or DOT number, a description of the item, and any supporting documentation. We will acknowledge your request within 5 business days, investigate, correct data we determine to be inaccurate, add a notation where a matter is contested, and tell you the outcome within 30 days (extendable once by 30 days for complex matters). Public government data can only be corrected by the agency that maintains it; we will tell you where to go. We may also notify Customers who accessed the item.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`8. How We Disclose Information`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`We disclose personal information to the following categories of recipients:`}</p>
+<ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li><strong className="font-semibold text-gray-900">{`Customers.`}</strong>{` Carrier, Driver, insurance, and shipment information is disclosed to the Customer(s) with whom you are onboarding, hauling, corresponding, or transacting, at your direction or as necessary to provide the Services. A broker sees the Carrier packet completed for that broker, that Carrier's public compliance profile, verification results, tracking data for its own loads, and DT Pay payment status for its own transactions.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Carriers and Drivers.`}</strong>{` Customers' business contact details, load details, rate confirmations, and payment information are disclosed to the Carrier and Driver assigned to a load.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Insurance Producers.`}</strong>{` A Carrier's identifying information, VINs, and the requesting broker's name are disclosed to the Carrier's insurance producer to verify coverage and request certificates.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Service providers and subprocessors.`}</strong>{` Cloud hosting and storage (United States regions), email-integration, telephony, speech and voice, AI model providers, identity verification, payment processing and KYC, telematics aggregation, VIN decoding, analytics, customer support, e-signature, and security vendors. Each is bound by contract to use information only to perform services for us and to protect it. A current list of subprocessors is available at www.dollartraq.com/subprocessors or on request.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Integration partners at your direction.`}</strong>{` When a Customer connects a TMS, ELD, load board, factoring, accounting, or other third-party system, we exchange data with that system as the Customer instructs. The third party's privacy policy governs its use.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Network fraud-prevention signals.`}</strong>{` To protect all users, we may make certain fraud-relevant signals available to Customers across the Dollar Traq network — for example, that an MC number has been reported by multiple brokers for double brokering, that a Carrier reported its own identity as stolen, that a phone number or email domain is associated with impersonation, or that a Carrier's authority, insurance, or safety status changed. Incident reports submitted by Customers are attributed to the reporting Customer only where that Customer consents; the subject Carrier may respond and dispute under Section 7.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Payment processor.`}</strong>{` DT Pay transactions are processed by Stripe, Inc. and its affiliates, which act as the licensed custodian of funds. Stripe collects and processes identity, bank, and transaction information under its own privacy policy and the Stripe Connected Account Agreement.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Affiliates.`}</strong>{` Dollar Traq's subsidiaries and affiliates, including our engineering and business-development affiliate in India, may access personal information to provide services to us under this Policy and binding intercompany agreements — subject to the firewall in Section 9.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Professional advisors, auditors, and insurers.`}</strong></li>
+<li><strong className="font-semibold text-gray-900">{`Legal, safety, and enforcement.`}</strong>{` Courts, regulators, law enforcement, and other parties when we believe disclosure is required by law or legal process, necessary to investigate or prevent fraud or theft (including cargo theft), necessary to enforce our Terms or protect the rights, property, or safety of Dollar Traq, our users, or the public, or requested by a governmental authority.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Corporate transactions.`}</strong>{` In connection with a merger, acquisition, financing, reorganization, or sale of all or part of our business, subject to customary confidentiality and, where required, notice.`}</li>
+<li><strong className="font-semibold text-gray-900">{`With your consent or at your direction.`}</strong></li>
+<li><strong className="font-semibold text-gray-900">{`De-identified and aggregated data`}</strong>{` that cannot reasonably be linked to you, which we may use and disclose for any purpose, including benchmarks, industry reports, and product improvement.`}</li></ul>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`We do not sell personal information`}</strong>{`, and we do not disclose it to third parties for their own direct marketing. Our marketing website uses advertising cookies that may qualify as "sharing" for cross-context behavioral advertising under some state laws; you can opt out as described in Sections 10 and 15. We do not sell or share sensitive personal information, precise location, or biometric information for any purpose.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`9. Affiliate Brokerage Firewall`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`Dollar Traq's founders have owned and operated freight brokerage and forwarding businesses. Customers reasonably want assurance that their shipper relationships, lanes, rates, and carrier networks will never be used to compete with them. We commit that:`}</p>
+<ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li>{`Customer Data (as defined in our Terms of Service), including shipper identities, lanes, rates, margins, carrier lists, and mailbox content, is not disclosed to, accessed by, or used for the benefit of any freight brokerage, forwarder, or carrier owned, operated, or controlled by Dollar Traq's founders, officers, or affiliates.`}</li>
+<li>{`Access to Customer Data is restricted to Dollar Traq personnel with a need to know for support, engineering, and security, is logged, and is reviewed as part of our SOC 2 controls.`}</li>
+<li>{`Any affiliated brokerage that uses the Services is treated as an ordinary Customer with the same segregation from every other Customer's data.`}</li>
+<li>{`Aggregated, de-identified benchmarks are constructed so that no individual Customer's non-public pricing or shipper relationships can be identified or reverse-engineered.`}</li></ul>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`10. Cookies, Analytics, and Tracking Technologies`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`We and our vendors use cookies, pixels, local storage, and software development kits to operate the Services, keep you signed in, remember preferences, measure performance, detect fraud, and, on our marketing website only, measure and target advertising. Categories:`}</p>
+<ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li><strong className="font-semibold text-gray-900">{`Strictly necessary`}</strong>{` — authentication, session management, security, load balancing.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Functional`}</strong>{` — preferences, language, feature settings.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Analytics`}</strong>{` — usage measurement and product analytics (for example, page views and feature adoption).`}</li>
+<li><strong className="font-semibold text-gray-900">{`Advertising (marketing website only)`}</strong>{` — cookies from advertising and social-media platforms used to measure campaigns and show Dollar Traq ads on other sites.`}</li></ul>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`You can manage cookies through the cookie banner or preferences link on our website and through your browser settings. We honor Global Privacy Control signals as an opt-out of sale/sharing and targeted advertising for the browser sending the signal. We do not respond to "Do Not Track" signals, for which there is no common standard. Opting out of advertising cookies does not stop you from seeing ads; it stops them from being personalized based on your visit to our site.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`11. Data Retention`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`We keep personal information only as long as needed for the purposes described in this Policy, to satisfy legal, regulatory, tax, accounting, and recordkeeping requirements (including broker and payment recordkeeping obligations), to resolve disputes, and to enforce agreements. Typical periods:`}</p>
+<div className="mt-3 overflow-x-auto">
+<table className="min-w-full text-sm leading-6 text-gray-600 sm:text-base border-collapse">
+<thead><tr><th className="px-3 py-2 text-left font-semibold text-gray-900 border-b border-gray-200">{`Data`}</th><th className="px-3 py-2 text-left font-semibold text-gray-900 border-b border-gray-200">{`Retention`}</th></tr></thead>
+<tbody><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Customer account and billing records`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Life of the account plus 7 years`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Carrier profiles compiled from public regulatory data`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Maintained as a historical record, refreshed on each regulatory update; change history retained to detect authority and identity changes`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Carrier packets, agreements, W-9s, certificates of insurance, verification correspondence`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Life of the Customer relationship with the Carrier plus 3 years, or longer at the Customer's configuration or as law requires`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Driver App location history`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`18 months, then deleted or de-identified`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Trip photographs, BOL/POD images, signatures, equipment verification`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`3 years after delivery (freight-claim limitation periods), or longer at the Customer's configuration`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Government ID images captured for verification`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Deleted by us within 30 days of verification completion; our verification vendor retains under its own schedule and our instructions`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Biometric information`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`See Section 12`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Call recordings and transcripts`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`12 months, then deleted; extracted structured data (rate offers, MC numbers) retained with the carrier record`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Connected-mailbox content`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Not copied wholesale; messages and attachments linked to a shipment, quote, carrier, or verification are retained with that record; other messages are not retained beyond transient processing`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`DT Pay transaction records`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`7 years, as required for payment and tax recordkeeping`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Website analytics and marketing data`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Up to 26 months`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Security and audit logs`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`12 to 24 months`}</td></tr></tbody>
+</table>
+</div>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`When a Customer terminates, we return or delete Customer Data as described in the Terms of Service, except for copies retained in routine backups (purged on the backup cycle) and records we must keep by law.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`12. Biometric Information Privacy Notice and Retention Schedule`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`This Section is our written, publicly available biometric policy and retention schedule under the Illinois Biometric Information Privacy Act, the Texas Capture or Use of Biometric Identifier Act, the Washington biometric identifier law, and similar laws.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`What is collected and by whom.`}</strong>{` To verify a Driver's or Carrier principal's identity and prevent fraud, our identity verification vendor captures a live selfie and images of a government-issued photo ID and generates a facial geometry comparison to confirm that the person presenting the ID is its holder and is physically present (liveness). The scan of facial geometry may be a "biometric identifier" and the data derived from it "biometric information" under these laws. Dollar Traq receives the verification outcome (pass, fail, referred), document data fields, and fraud signals. Dollar Traq does not itself create, store, or receive facial geometry templates.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Purpose.`}</strong>{` Identity verification, fraud prevention, and security, at the request of the Customer who assigns the load or onboards the Carrier.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Consent.`}</strong>{` Before any biometric identifier is captured, you are informed of the specific purpose and retention period and asked to provide a written release (electronic acceptance) on the verification screen. You may decline; if you decline, you may not be able to complete verification, and the Customer may decline to work with you on that basis.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Retention and destruction.`}</strong>{` Biometric identifiers and biometric information are permanently destroyed when the initial purpose for collection has been satisfied, and in all cases no later than `}<strong className="font-semibold text-gray-900">{`three (3) years after your last interaction with the Services`}</strong>{` or the completion of verification, whichever occurs first, unless a shorter period is required by law or a longer period is required by a valid warrant or subpoena. Our vendor is contractually required to apply this schedule and to destroy data on our instruction. Destruction is performed using secure deletion methods that render the data unrecoverable.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`No sale; limited disclosure.`}</strong>{` We do not sell, lease, trade, or otherwise profit from biometric identifiers or biometric information. We do not disclose them except (a) to our verification vendor and its subprocessors to perform verification, (b) with your consent, (c) to complete a transaction you requested, or (d) as required by law, warrant, or subpoena.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Security.`}</strong>{` Biometric data is stored and transmitted using a reasonable standard of care within our industry and at least as protective as the manner in which we store other confidential and sensitive information, including encryption in transit and at rest and role-based access.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`13. Security`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`We maintain an information-security program with administrative, technical, and physical safeguards designed to protect personal information, including encryption in transit and at rest, encrypted storage of integration tokens, role-based access controls with multi-factor authentication, private cloud storage with short-lived signed links for documents, logging and monitoring, vulnerability management, secure development practices, background checks and confidentiality obligations for personnel, and incident-response procedures. A SOC 2 examination of our controls is in progress; a bridge letter is available to Customers under NDA. No system is perfectly secure, and we cannot guarantee absolute security. If we confirm a breach of security affecting your personal information, we will notify affected Customers without undue delay and, where required, notify individuals and regulators in accordance with applicable law. Report suspected vulnerabilities to `}<strong className="font-semibold text-gray-900">{`security@dollartraq.com`}</strong>{`.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`14. International Transfers and Processing in India`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`We are headquartered in the United States and store personal information on servers located in the United States. Our engineering, product, and business-development personnel, including those employed by our affiliate in India, may access personal information from India under binding intercompany agreements, access controls, logging, and the security program described in Section 13. By using the Services you acknowledge that your information may be accessed from and processed in the United States and India. If you are located outside the United States, the laws of the United States and India may differ from those of your jurisdiction; where required by law, we implement appropriate transfer safeguards.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`15. Your Privacy Rights and Choices`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`Regardless of where you live, you may:`}</p>
+<ul className="mt-3 list-disc space-y-2 pl-10 text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><li><strong className="font-semibold text-gray-900">{`Access`}</strong>{` the personal information we hold about you and receive a copy in a portable format.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Correct`}</strong>{` inaccurate or incomplete information.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Delete`}</strong>{` your personal information, subject to exceptions (for example, records we must keep for fraud prevention, legal compliance, recordkeeping, or to complete a transaction).`}</li>
+<li><strong className="font-semibold text-gray-900">{`Opt out`}</strong>{` of marketing communications, cookie-based advertising, and any sale or sharing of personal information (we do not sell).`}</li>
+<li><strong className="font-semibold text-gray-900">{`Limit`}</strong>{` use of sensitive personal information to the purposes permitted by law.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Withdraw consent`}</strong>{` for location or biometric processing (Sections 3 and 12), understanding that certain features will stop working.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Dispute`}</strong>{` a score, status, or report about you (Section 7).`}</li>
+<li><strong className="font-semibold text-gray-900">{`Appeal`}</strong>{` a decision we make on your request by replying to our response; we will respond to appeals within 45 days and tell you how to contact your state's Attorney General if you remain unsatisfied.`}</li>
+<li><strong className="font-semibold text-gray-900">{`Not be discriminated against`}</strong>{` for exercising your rights.`}</li></ul>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`How to exercise rights.`}</strong>{` Email `}<strong className="font-semibold text-gray-900">{`privacy@dollartraq.com`}</strong>{`, use the privacy request form at www.dollartraq.com/privacy-request, or write to Dollar Traq Corp, Attn: Privacy, Suite 304, 1560 Wall Street, Naperville, IL 60563. We will verify your identity using your account credentials, a one-time code to your email or phone on file, or other reasonable means, and we may ask for information sufficient to locate your records. An authorized agent may submit a request with written proof of authority; we may still verify directly with you. We respond within 45 days (extendable once by 45 days with notice). Requests are free unless manifestly unfounded or excessive.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Requests about Customer Data.`}</strong>{` If your information was provided to us by a Customer (for example, a broker that onboarded you), we will forward your request to that Customer and assist them in responding, unless the data is also held by us as a business, in which case we will respond directly.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`16. Additional Disclosures for U.S. States`}</h2>
+<h3 className="text-base font-semibold text-gray-800 sm:text-lg mt-4">{`16.1 California Notice at Collection and Privacy Rights`}</h3>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`This section supplements the Policy for California residents and serves as our notice at collection under the California Consumer Privacy Act as amended by the California Privacy Rights Act ("CCPA").`}</p>
+<div className="mt-3 overflow-x-auto">
+<table className="min-w-full text-sm leading-6 text-gray-600 sm:text-base border-collapse">
+<thead><tr><th className="px-3 py-2 text-left font-semibold text-gray-900 border-b border-gray-200">{`Category (Cal. Civ. Code § 1798.140)`}</th><th className="px-3 py-2 text-left font-semibold text-gray-900 border-b border-gray-200">{`Examples`}</th><th className="px-3 py-2 text-left font-semibold text-gray-900 border-b border-gray-200">{`Sources`}</th><th className="px-3 py-2 text-left font-semibold text-gray-900 border-b border-gray-200">{`Business/commercial purposes`}</th><th className="px-3 py-2 text-left font-semibold text-gray-900 border-b border-gray-200">{`Disclosed to`}</th><th className="px-3 py-2 text-left font-semibold text-gray-900 border-b border-gray-200">{`Sold or shared`}</th></tr></thead>
+<tbody><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Identifiers`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Name, email, phone, address, MC/DOT, IP address, device ID`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`You; Customers; public records; vendors`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Provide Services; fraud prevention; communications; security`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Customers; Carriers; service providers; integration partners; affiliates`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Website identifiers may be shared for advertising; otherwise no`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Customer records (§ 1798.80(e))`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Bank account (via processor), tax ID, signature, insurance policy details`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`You; Customers; producers`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Provide Services; payments; recordkeeping`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Customers; processor; service providers`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`No`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Commercial information`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Loads, rates, transactions, payment history`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`You; Customers`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Provide Services; analytics`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Customers; Carriers; processor`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`No`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Internet or network activity`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Usage, pages viewed, extension events`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Automatic`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Operate and improve Services; security`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Service providers; advertising partners (website only)`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Website only`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Geolocation (precise)`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Driver App and ELD location`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`You; ELD providers`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Tracking; geofence; fraud prevention`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Customers; Carriers; service providers`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`No`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Audio, electronic, visual`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Call recordings, transcripts, photos, signatures, selfie/ID (vendor)`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`You; vendors`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Verification; documentation; fraud prevention`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Customers; service providers`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`No`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Professional or employment information`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Job title, employer, carrier affiliation, CDL-related data`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`You; Customers; public records`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Provide Services; verification`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Customers; service providers`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`No`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Inferences`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Trust scores, compliance status, fraud risk indicators`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Derived`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Provide Services; fraud prevention`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Customers`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`No`}</td></tr><tr><td className="px-3 py-2 align-top border-b border-gray-100">{`Sensitive personal information`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Government ID, precise geolocation, account credentials, financial account, biometric (vendor), SSN/TIN`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`You; vendors`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Verification; payments; security; fraud prevention`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`Service providers; processor; Customers (location, ID outcome)`}</td><td className="px-3 py-2 align-top border-b border-gray-100">{`No`}</td></tr></tbody>
+</table>
+</div>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`We retain each category for the periods in Section 11. We do not use or disclose sensitive personal information for purposes other than those permitted by Cal. Code Regs. tit. 11, § 7027(m). We do not knowingly sell or share the personal information of anyone under 16. California residents have the rights described in Section 15, including the right to know, delete, correct, opt out of sale/sharing, limit use of sensitive personal information, and non-discrimination. To opt out of sharing for cross-context behavioral advertising, use the "Your Privacy Choices" link on our website or enable Global Privacy Control. California's "Shine the Light" law: we do not disclose personal information to third parties for their direct marketing purposes.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Notice of financial incentive.`}</strong>{` We do not offer financial incentives in exchange for personal information.`}</p>
+<h3 className="text-base font-semibold text-gray-800 sm:text-lg mt-4">{`16.2 Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Kentucky, Maryland, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Rhode Island, Tennessee, Texas, Utah, Virginia, and other states with comprehensive privacy laws`}</h3>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`To the extent these laws apply to our processing (many exclude business-to-business and employment data and apply only above volume thresholds), residents have the rights to access, correct, delete, obtain a portable copy, opt out of targeted advertising, sale, and profiling in furtherance of decisions that produce legal or similarly significant effects, and appeal a denial. Where required, we obtain consent before processing sensitive data, and we honor universal opt-out signals such as Global Privacy Control. Oregon residents may request a list of specific third parties to which we have disclosed their personal data. Minnesota residents may question the result of profiling and request the personal data used. Exercise these rights as described in Section 15.`}</p>
+<h3 className="text-base font-semibold text-gray-800 sm:text-lg mt-4">{`16.3 Texas and Washington biometric laws; Illinois BIPA`}</h3>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`See Section 12. Texas residents: we do not sell, lease, or disclose biometric identifiers except as permitted by Tex. Bus. & Com. Code § 503.001, and they are destroyed within a reasonable time and not later than the first anniversary of the date the purpose for collecting them expires, except as that statute otherwise permits. Illinois residents: we and our vendor comply with 740 ILCS 14, including informed written consent, no profit, and the retention schedule above.`}</p>
+<h3 className="text-base font-semibold text-gray-800 sm:text-lg mt-4">{`16.4 Nevada`}</h3>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`We do not sell covered information as defined by Nevada law. Nevada residents may submit a verified request to opt out of any future sale to privacy@dollartraq.com.`}</p>
+<h3 className="text-base font-semibold text-gray-800 sm:text-lg mt-4">{`16.5 Washington My Health My Data Act`}</h3>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`We do not collect consumer health data as defined by that Act.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`17. Canada and Other Jurisdictions`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`Canada.`}</strong>{` If you are a Canadian Carrier or Driver hauling for a U.S. Customer, we collect, use, and disclose your personal information with your consent (express or implied by the onboarding or hauling relationship) for the purposes above, store and process it in the United States and India, and give you the rights of access, correction, and withdrawal of consent under PIPEDA and applicable provincial law. Commercial electronic messages are sent only with express or implied consent and include an unsubscribe mechanism.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`United Kingdom, European Economic Area, and Switzerland.`}</strong>{` The Services are not directed to individuals in these regions. If we nonetheless process your personal data, you have the rights to access, rectification, erasure, restriction, portability, objection, and to lodge a complaint with a supervisory authority, and we transfer data under standard contractual clauses or another lawful mechanism.`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8"><strong className="font-semibold text-gray-900">{`India.`}</strong>{` Personal data of Indian residents processed by our affiliate is handled in accordance with the Digital Personal Data Protection Act, 2023, where applicable.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`18. Children`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`The Services are intended for adults engaged in commercial transportation. We do not knowingly collect personal information from anyone under 18, and we do not direct the Services to children under 13. If you believe a child has provided us information, contact privacy@dollartraq.com and we will delete it.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`19. Third-Party Services and Links`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`The Services link to and integrate with third-party websites, apps, and services (for example, load boards, ELD portals, TMS platforms, payment processors, and app stores). Their privacy practices are governed by their own policies. Downloads from the Apple App Store or Google Play are also subject to those platforms' terms and privacy policies.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`20. Communications Preferences`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`You can opt out of marketing emails by clicking "unsubscribe" in any message or emailing privacy@dollartraq.com; opt out of text programs by replying STOP; and manage push notifications in your device settings. You cannot opt out of transactional and security messages (for example, one-time passcodes, fraud alerts, payment notices, and legal notices) while you maintain an account or an active load.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`21. Changes to This Policy`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`We may update this Policy to reflect changes in law, technology, or our practices. We will post the updated Policy with a new "Last Updated" date and, for material changes, provide at least 30 days' notice by email to account holders or a prominent notice in the Services before the change takes effect. Changes do not apply retroactively to information collected under a prior version without your consent where consent is required.`}</p>
+</section>
+<section>
+<h2 className="text-lg font-bold text-gray-900 sm:text-xl">{`22. Contact Us`}</h2>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`Dollar Traq Corp`}<br/>{`Attn: Privacy Office`}<br/>{`Suite 304, 1560 Wall Street`}<br/>{`Naperville, IL 60563, United States`}</p>
+<p className="text-sm leading-7 text-gray-600 sm:text-base sm:leading-8">{`Privacy requests and questions: `}<strong className="font-semibold text-gray-900">{`privacy@dollartraq.com`}</strong><br/>{`Score, status, or report disputes: `}<strong className="font-semibold text-gray-900">{`disputes@dollartraq.com`}</strong><br/>{`Security vulnerabilities: `}<strong className="font-semibold text-gray-900">{`security@dollartraq.com`}</strong><br/>{`Legal notices: `}<strong className="font-semibold text-gray-900">{`legal@dollartraq.com`}</strong><br/>{`Website: www.dollartraq.com`}</p>
+</section>
             </div>
         </div>
         </>
