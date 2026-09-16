@@ -14,7 +14,9 @@ export default function PlatformOverview() {
                 title="Not five tools. One operating system."
                 description="Everything on this site — vetting, fraud detection, documents, tracking, payment — runs on one event bus, one shared memory, and one review queue. This page is the architecture, in plain English."
                 backgroundImageSrc="/images/platform-banner.png"
-                mediaSrc="/images/control-tower.png"   
+                mediaSrc="/platform-overview.webm"
+                mediaWidth={1280}
+                mediaHeight={678}
                 mediaAlt="Dollar Traq Control Tower dashboard"
                 
             />

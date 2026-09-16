@@ -16,7 +16,9 @@ export default function LoadTracking() {
                 title="Visibility that acts, not just watches."
                 description="Tracker fuses live ELD position, geofences, and the status language inside carrier emails into one load timeline — then does something about it: late risk predicted hours early, check-calls drafted for one-tap sending, and 214-shaped webhooks keeping your customer's TMS current without a phone call."
                 backgroundImageSrc="/images/load-banner.png"
-                mediaSrc="/images/control-tower.png"   
+                mediaSrc="/load-tracking.webm"
+                mediaWidth={1280}
+                mediaHeight={678}   
                 mediaAlt="Dollar Traq Control Tower dashboard"
                 ctas={[
                     { label: "Meet Tracker", href: "/ai-agents/tracker", variant: "primary" },

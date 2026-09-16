@@ -17,7 +17,9 @@ export default function CoiVerification() {
                 title="Certificates that read themselves — and never lapse quietly."
                 description="Vault turns insurance paperwork into verified facts: every certificate of insurance entering a connected inbox is classified, extracted, checked against your requirements, filed to the right carrier — and watched until renewal. 350,000+ carrier insurance records already on file."
                 backgroundImageSrc="/images/coi-banner.png"
-                mediaSrc="/images/control-tower.png"   
+                mediaSrc="/coi-verification.webm"
+                mediaWidth={1280}
+                mediaHeight={678}     
                 mediaAlt="Dollar Traq Control Tower dashboard"
                 ctas={[
                     { label: "Meet Vault", href: "/ai-agents/vault", variant: "primary" },
@@ -58,7 +60,7 @@ export default function CoiVerification() {
                 description="Most brokerages find out the hard way. Send a sample batch and we'll show you — verified, flagged, and filed — on your demo."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
-                    { label: "Security & trust", href: "/security", variant: "secondary" },
+                    { label: "Security & trust", href: "/company/security-trust", variant: "secondary" },
                 ]}
             />   
 

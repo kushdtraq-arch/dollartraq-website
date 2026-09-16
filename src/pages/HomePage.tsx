@@ -418,24 +418,24 @@ export default function Homepage() {
                 ctaText="Meet all Five"
                 leftFeatures={[
                     {
-                        icon: "/images/sentinel.svg",
+                        icon: "/images/sentinel-ico.svg",
                         title: "Sentinel",
                         description: "Can I trust this carrier for this load — and is that still true tomorrow? Vet cards, fraud scans, chameleon detection, 24/7 network watch",
                     },
                     {
-                        icon: "/images/rate.svg",
+                        icon: "/images/rate-ico.svg",
                         title: "Rate",
                         description: "What's the right number — both directions? Quote extraction into tenant-siloed rate memory, DAT benchmarks under your license, 2.1σ anomaly flags",
                     },
                 ]}
                 rightFeatures={[
                     {
-                        icon: "/images/tracker.svg",
+                        icon: "/images/tracker-ico.svg",
                         title: "Tracker",
                         description: "Where's the load, and will it be on time? ELD fusion, late-risk prediction, drafted check-calls, 214-shaped webhooks to the customer's TMS.",
                     },
                     {
-                        icon: "/images/vault.svg",
+                        icon: "/images/vault-ico.svg",
                         title: "Vault",
                         description: "Turn paper into facts. Every COI, rate con, BOL and POD classified, extracted, confidence-scored, and filed — feeding every other agent.",
                     },

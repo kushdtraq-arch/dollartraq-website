@@ -76,7 +76,7 @@ export default function Carrier() {
                 description="On the demo we'll run a full carrier onboarding — KYC, liveness, CDL, Stripe Express — and show the ~90-second payout on verified delivery."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
-                    { label: "Security & trust", href: "/security", variant: "secondary" },
+                    { label: "Security & trust", href: "/company/security-trust", variant: "secondary" },
                 ]}
             />   
 

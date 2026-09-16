@@ -78,7 +78,7 @@ export default function FreightBroker() {
                 description="Book a 25-minute demo and we'll vet your own carriers live — authority, insurance, Trust Score, fraud signals. You keep the report either way."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
-                    { label: "Security & trust", href: "/security", variant: "secondary" },
+                    { label: "Security & trust", href: "/company/security-trust", variant: "secondary" },
                 ]}
             />   
 

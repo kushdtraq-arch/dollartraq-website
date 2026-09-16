@@ -33,7 +33,7 @@ interface HeroSplitProps {
 }
 
 const DEFAULT_CTAS: HeroCTA[] = [
-    { label: "Get Started", href: "/get-started", variant: "primary" },
+    { label: "Get Started", href: "/contact", variant: "primary" },
     { label: "Book a Demo", href: "/demo", variant: "secondary" },
 ];
 

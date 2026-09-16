@@ -22,7 +22,7 @@ const PRICING_PLANS: PricingPlan[] = [
         ],
         note: "Extra loads billed at $2.75 each",
         ctaLabel: "Start with Individual",
-        href: "/checkout/individual",
+        href: "https://broker.dollartraq.com/signup",
     },
     {
         id: "team",
@@ -39,7 +39,7 @@ const PRICING_PLANS: PricingPlan[] = [
         ],
         note: "Extra loads billed at $2.25 each",
         ctaLabel: "Get Team",
-        href: "/checkout/team",
+        href: "https://broker.dollartraq.com/signup",
         featured: true,
         badge: "Popular",
     },
@@ -58,7 +58,7 @@ const PRICING_PLANS: PricingPlan[] = [
         ],
         note: "No overage, volume set in contract",
         ctaLabel: "Contact sales",
-        href: "/contact-sales",
+        href: "/contact",
     },
 ];
 

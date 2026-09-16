@@ -79,7 +79,7 @@ export default function Shipper() {
                 description="On the demo we'll show the identity, insurance, and delivery proof a shipper can rely on — verified, not vouched."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
-                    { label: "Security & trust", href: "/security", variant: "secondary" },
+                    { label: "Security & trust", href: "/company/security-trust", variant: "secondary" },
                 ]}
             />   
 

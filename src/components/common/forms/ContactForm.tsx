@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 export interface ContactFormValues {
@@ -13,13 +13,15 @@ export interface ContactFormValues {
     company: string;
     country: string;
     businessType: string;
-    featuresOfInterest: string;
+    featuresOfInterest: string[];
     hearAboutUs: string;
     message: string;
     subscribe: boolean;
 }
 
-const COUNTRY_CODES = ["+1", "+91","+52",];
+const API_URL = "https://staggingapi.dollartraq.com/api/v1/contact-us";
+
+const COUNTRY_CODES = ["+1", "+91", "+52"];
 
 const COUNTRIES = ["United States", "India", "United Kingdom", "Canada", "Australia", "Germany", "Other"];
 
@@ -43,6 +45,47 @@ const labelClass = "block text-[14px] font-semibold text-gray-700 mb-2";
 
 const errorClass = "mt-1 text-[13px] text-red-600";
 
+// Maps camelCase form values -> the snake_case body the API expects
+function toApiPayload(values: ContactFormValues) {
+    return {
+        first_name: values.firstName,
+        last_name: values.lastName,
+        email: values.email,
+        phone_country_code: values.countryCode,
+        phone: values.phone,
+        job_title: values.jobTitle,
+        company: values.company,
+        country: values.country,
+        business_type: values.businessType,
+        features_of_interest: values.featuresOfInterest,
+        hear_about_us: values.hearAboutUs,
+        message: values.message,
+        subscribe_updates: values.subscribe,
+    };
+}
+
+async function submitContactForm(values: ContactFormValues) {
+    const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(toApiPayload(values)),
+    });
+
+    let json: any = null;
+    try {
+        json = await res.json();
+    } catch {
+        
+    }
+
+    if (!res.ok || json?.status !== "success") {
+        const msg = json?.message || `Request failed with status ${res.status}`;
+        throw new Error(msg);
+    }
+
+    return json;
+}
+
 export const ContactForm: React.FC<ContactFormProps> = ({
     heading = "How can we help you ?",
     subtext = (
@@ -54,6 +97,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     onSubmit,
     className = "",
 }) => {
+    const [submitError, setSubmitError] = useState<string | null>(null);
+
     const {
         register,
         handleSubmit,
@@ -62,19 +107,26 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     } = useForm<ContactFormValues>({
         defaultValues: {
             countryCode: "+1",
+            featuresOfInterest: [],
             subscribe: false,
         },
         mode: "onBlur",
     });
 
     const submitHandler: SubmitHandler<ContactFormValues> = async (values) => {
-   
-        if (onSubmit) {
-            await onSubmit(values);
-        } else {
-            console.log("Contact form submitted:", values);
+        setSubmitError(null);
+        try {
+            if (onSubmit) {
+                await onSubmit(values);
+            } else {
+                await submitContactForm(values);
+            }
+            reset();
+        } catch (err) {
+            setSubmitError(
+                err instanceof Error ? err.message : "Something went wrong. Please try again."
+            );
         }
-        reset();
     };
 
     return (
@@ -229,35 +281,34 @@ export const ContactForm: React.FC<ContactFormProps> = ({
                         </select>
                     </div>
 
-                    {/* Features / hear about us */}
-                    <div>
-                        <label className={labelClass} htmlFor="featuresOfInterest">
-                            Please select features of interest:
-                        </label>
-                        <select
-                            id="featuresOfInterest"
-                            className={`${inputClass} w-full cursor-pointer`}
-                            defaultValue=""
-                            {...register("featuresOfInterest")}
-                        >
-                            <option value="" disabled>
-                                Select...
-                            </option>
+                    {/* Features of interest — checkboxes, since the API expects an array */}
+                    <div className="md:col-span-2">
+                        <label className={labelClass}>Please select features of interest:</label>
+                        <div className="flex flex-wrap gap-x-6 gap-y-2">
                             {FEATURES.map((f) => (
-                                <option key={f} value={f}>
+                                <label
+                                    key={f}
+                                    className="flex items-center gap-2 text-[14px] text-gray-700 cursor-pointer"
+                                >
+                                    <input
+                                        type="checkbox"
+                                        value={f}
+                                        className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+                                        {...register("featuresOfInterest")}
+                                    />
                                     {f}
-                                </option>
+                                </label>
                             ))}
-                        </select>
+                        </div>
                     </div>
 
-                    <div>
+                    <div className="md:col-span-2">
                         <label className={labelClass} htmlFor="hearAboutUs">
                             How did you hear about us?
                         </label>
                         <select
                             id="hearAboutUs"
-                            className={`${inputClass} w-full cursor-pointer`}
+                            className={`${inputClass} w-full max-w-sm cursor-pointer`}
                             defaultValue=""
                             {...register("hearAboutUs")}
                         >
@@ -309,10 +360,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({
                             {isSubmitting ? "Sending..." : "Send Request"}
                         </button>
 
-                        {isSubmitSuccessful && (
+                        {isSubmitSuccessful && !submitError && (
                             <p className="mt-3 text-[14px] text-green-700">
                                 Thanks — we&apos;ve received your request and will be in touch shortly.
                             </p>
+                        )}
+
+                        {submitError && (
+                            <p className="mt-3 text-[14px] text-red-600">{submitError}</p>
                         )}
                     </div>
                 </div>

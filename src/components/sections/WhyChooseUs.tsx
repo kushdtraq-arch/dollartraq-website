@@ -73,7 +73,7 @@ const barVariants = {
 
 const FeatureRow: React.FC<{ feature: FeaturePoint; fromLeft: boolean }> = ({ feature, fromLeft }) => (
     <motion.div variants={rowVariants(fromLeft)} className="flex flex-col gap-3">
-        <span className="w-11 h-11 rounded-lg bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 overflow-hidden">
+        <span className="w-11 h-11  flex items-center justify-center flex-shrink-0 overflow-hidden">
             <Image
                 src={feature.icon}
                 alt={`${feature.title} icon`}

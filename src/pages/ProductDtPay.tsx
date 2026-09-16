@@ -17,7 +17,9 @@ export default function ProductDtPay() {
                 title="Payment that releases on proof, not on promises."
                 description="DT Pay is the cash end of a quote-to-cash program — conditional payment release for freight, built on Stripe rails. Every carrier is KYC-verified at onboarding; the load is funded before pickup; the AI verifies the proof of delivery; a human authorizes — and the carrier is paid in about 90 seconds. Flat 1.2% for subscribers. No factoring games, no 30–90 day waits."
                 backgroundImageSrc="/images/dt-pay-banner.png"
-                mediaSrc="/images/control-tower.png"   
+                mediaSrc="/dt-pay.webm"
+                mediaWidth={1280}
+                mediaHeight={678} 
                 mediaAlt="Dollar Traq Control Tower dashboard"
                 ctas={[
                     { label: "Pricing", href: "/pricing", variant: "primary" },

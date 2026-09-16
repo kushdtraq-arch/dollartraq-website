@@ -48,7 +48,9 @@ export default function ProductVet() {
                 title="Vet any carrier in seconds on data you can audit"
                 description="Dollar Traq vets carriers against a 22.7-million-row FMCSA warehouse we host ourselves — authority history, inspections, out-of-service orders, insurance filings — and compresses it into one Trust Score built for a booking decision, not a research project."
                 backgroundImageSrc="/images/vetting-banner.png"
-                mediaSrc="/images/control-tower.png"   
+                mediaSrc="/carrier-vetting.webm"
+                mediaWidth={1280}
+                mediaHeight={678}    
                 mediaAlt="Dollar Traq Control Tower dashboard"
                 ctas={[
                     { label: "Fraud prevention", href: "/product/fraud-prevention", variant: "primary" },
@@ -128,7 +130,7 @@ export default function ProductVet() {
                 description="We'll have the vet cards on screen when you join — your carriers, our data, live. You keep the report either way."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
-                    { label: "Security & trust", href: "/security", variant: "secondary" },
+                    { label: "Security & trust", href: "/company/security-trust", variant: "secondary" },
                 ]}
             />   
 

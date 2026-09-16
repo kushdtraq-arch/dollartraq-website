@@ -138,7 +138,7 @@ export default function ProductIntegration() {
                 description="Tell us what you run today — inbox, ELD, TMS — and we'll show exactly how Dollar Traq slots in alongside it."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
-                    { label: "Security & trust", href: "/security", variant: "secondary" },
+                    { label: "Security & trust", href: "/company/security-trust", variant: "secondary" },
                 ]}
             /> 
 

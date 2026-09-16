@@ -58,7 +58,9 @@ export default function FraudPrevention() {
                 title="Freight fraud has a pattern. Sentinel knows it."
                 description="Double brokering, identity theft, and chameleon carriers cost the industry hundreds of millions a year — and they almost always announce themselves in small signals first. Sentinel reads every carrier email for those signals and diffs the entire FMCSA authority census every month to catch reincarnated bad actors."
                 backgroundImageSrc="/images/fraud-banner.png"
-                mediaSrc="/images/control-tower.png"   
+                mediaSrc="/fraud-preventation.webm"
+                mediaWidth={1280}
+                mediaHeight={678}      
                 mediaAlt="Dollar Traq Control Tower dashboard"
                 ctas={[
                     { label: "Carrier vetting", href: "/product/carrier-vetting", variant: "primary" },
@@ -104,7 +106,7 @@ export default function FraudPrevention() {
                 description="See exactly how Sentinel scores a real carrier, how Compass coordinates the other agents, and how NorthPay releases funds against verified proof — live, on your data, in 20 minutes."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
-                    { label: "Security & trust", href: "/security", variant: "secondary" },
+                    { label: "Security & trust", href: "/company/security-trust", variant: "secondary" },
                 ]}
             />   
 

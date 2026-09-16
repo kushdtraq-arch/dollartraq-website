@@ -79,7 +79,7 @@ export default function PlForwards() {
                 description="On the demo we'll show how one Trust Score standard, RBAC, and a shared audit trail work across multiple branches."
                 buttons={[
                     { label: "Book a demo", href: "/demo", variant: "primary" },
-                    { label: "Security & trust", href: "/security", variant: "secondary" },
+                    { label: "Security & trust", href: "/company/security-trust", variant: "secondary" },
                 ]}
             />   
 
