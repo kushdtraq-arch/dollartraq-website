@@ -25,10 +25,7 @@ const solutionLinks = [
 const resourceLinks = [
     { label: "Blog & Insights", link: "/blogs" },
     { label: "FAQs", link: "/company/faqs" },
-    { label: "Whitepapers", link: "/whitepapers-ebooks" },
-    { label: "Videos & Webinars", link: "/videos-webinars" },
-    { label: "All Features", link: "/all-features" },
-    { label: "Integrations", link: "/api-webhooks" },
+
 ];
 
 const companyLinks = [
@@ -37,6 +34,9 @@ const companyLinks = [
     { label: "Contact", link: "/contact" },
     { label: "Privacy Policy", link: "/privacy-policy" },
     { label: "Terms of Service", link: "/terms-of-service" },
+     { label: "Data Processing Addendum", link: "/dpa" },
+     { label: "SubProcessors", link: "/subprocessors" },
+     { label: "Privacy Request", link: "/privacy-request" },
    
 ];
 
