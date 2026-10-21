@@ -25,6 +25,7 @@ const solutionLinks = [
 const resourceLinks = [
     { label: "Blog & Insights", link: "/blogs" },
     { label: "FAQs", link: "/company/faqs" },
+    { label: "Developers", link: "https://developers.dollartraq.com/", external: true },
 
 ];
 
@@ -153,14 +154,29 @@ const Footer: React.FC = () => {
                             </div>
 
                             {/* Resources */}
+                            
                             <div>
                                 <h4 className="text-white text-[15px] font-semibold mb-5">Resources</h4>
                                 <ul className="flex flex-col gap-4">
                                     {resourceLinks.map((item, index) => (
                                         <li key={index}>
-                                            <Link href={item.link} className="text-[13px] text-white/70 hover:text-white transition-colors duration-200">
-                                                {item.label}
-                                            </Link>
+                                            {item.external ? (
+                                                <a
+                                                    href={item.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-[13px] text-white/70 hover:text-white transition-colors duration-200"
+                                                >
+                                                    {item.label}
+                                                </a>
+                                            ) : (
+                                                <Link
+                                                    href={item.link}
+                                                    className="text-[13px] text-white/70 hover:text-white transition-colors duration-200"
+                                                >
+                                                    {item.label}
+                                                </Link>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>
