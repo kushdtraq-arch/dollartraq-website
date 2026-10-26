@@ -1,4 +1,4 @@
-import type { Viewport } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Montserrat } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -9,6 +9,12 @@ const montserrat = Montserrat({
   weight: ["400", "500", "600", "700"],
   variable: "--font-montserrat", 
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://www.dollartraq.com'),
+  // './' resolves against each page's own path -> self-referencing canonical
+  alternates: { canonical: './' },
+}
 
 export const viewport: Viewport = {
   themeColor: '#000000',

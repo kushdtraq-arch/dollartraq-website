@@ -276,6 +276,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         title: { absolute: post.metaTitle },
         description: post.metaDescription,
         keywords: post.tags,
+        alternates: { canonical: `/blogs/${slug}` },
         openGraph: {
             type: "article",
             title: post.metaTitle,
