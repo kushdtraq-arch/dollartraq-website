@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { verifyRecaptcha } from "@/lib/recaptcha";
-import { Recaptcha, type RecaptchaHandle } from "./forms/Recaptcha";
+import { getRecaptchaToken, useRecaptcha, verifyRecaptcha } from "@/lib/recaptcha-client";
 
 /**
  * `value` is sent to the API exactly as written (must match the backend enum).
@@ -279,8 +278,7 @@ export function PrivacyRequestForm({
     const [phoneOtpError, setPhoneOtpError] = useState<string | null>(null);
     const [otpError, setOtpError] = useState<string | null>(null); // server / network errors
     const [verifying, setVerifying] = useState(false);
-    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-    const captchaRef = useRef<RecaptchaHandle>(null);
+    useRecaptcha();
 
     const {
         register,
@@ -338,17 +336,14 @@ export function PrivacyRequestForm({
             );
             return;
         }
-        if (!captchaToken) {
-            setSubmitError("Please confirm you're not a robot.");
-            return;
-        }
 
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 30_000);
 
         try {
-            if (!(await verifyRecaptcha(captchaToken))) {
-                throw new Error("reCAPTCHA verification failed. Please try again.");
+            const token = await getRecaptchaToken("privacy_request");
+            if (!(await verifyRecaptcha(token, "privacy_request"))) {
+                throw new Error("We couldn't verify your request.");
             }
 
             // Agent -> multipart/form-data (file attached).
@@ -412,9 +407,6 @@ export function PrivacyRequestForm({
             );
         } finally {
             clearTimeout(timeout);
-            // Tokens are single-use, so every attempt needs a fresh check.
-            captchaRef.current?.reset();
-            setCaptchaToken(null);
         }
     };
 
@@ -1049,8 +1041,6 @@ export function PrivacyRequestForm({
                     </p>
                 )}
             </div>
-
-            <Recaptcha ref={captchaRef} onChange={setCaptchaToken} className="mt-5" />
 
             {submitError && (
                 <p
