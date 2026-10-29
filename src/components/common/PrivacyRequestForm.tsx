@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
+import { verifyRecaptcha } from "@/lib/recaptcha";
+import { Recaptcha, type RecaptchaHandle } from "./forms/Recaptcha";
 
 /**
  * `value` is sent to the API exactly as written (must match the backend enum).
@@ -277,6 +279,8 @@ export function PrivacyRequestForm({
     const [phoneOtpError, setPhoneOtpError] = useState<string | null>(null);
     const [otpError, setOtpError] = useState<string | null>(null); // server / network errors
     const [verifying, setVerifying] = useState(false);
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const captchaRef = useRef<RecaptchaHandle>(null);
 
     const {
         register,
@@ -334,11 +338,19 @@ export function PrivacyRequestForm({
             );
             return;
         }
+        if (!captchaToken) {
+            setSubmitError("Please confirm you're not a robot.");
+            return;
+        }
 
         const controller = new AbortController();
         const timeout = setTimeout(() => controller.abort(), 30_000);
 
         try {
+            if (!(await verifyRecaptcha(captchaToken))) {
+                throw new Error("reCAPTCHA verification failed. Please try again.");
+            }
+
             // Agent -> multipart/form-data (file attached).
             // Non-agent -> application/json.
             // Don't set Content-Type for FormData; the browser adds the boundary.
@@ -400,6 +412,9 @@ export function PrivacyRequestForm({
             );
         } finally {
             clearTimeout(timeout);
+            // Tokens are single-use, so every attempt needs a fresh check.
+            captchaRef.current?.reset();
+            setCaptchaToken(null);
         }
     };
 
@@ -1034,6 +1049,8 @@ export function PrivacyRequestForm({
                     </p>
                 )}
             </div>
+
+            <Recaptcha ref={captchaRef} onChange={setCaptchaToken} className="mt-5" />
 
             {submitError && (
                 <p

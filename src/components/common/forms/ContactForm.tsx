@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { verifyRecaptcha } from "@/lib/recaptcha";
+import { Recaptcha, type RecaptchaHandle } from "./Recaptcha";
 
 export interface ContactFormValues {
     firstName: string;
@@ -98,6 +100,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({
     className = "",
 }) => {
     const [submitError, setSubmitError] = useState<string | null>(null);
+    const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+    const captchaRef = useRef<RecaptchaHandle>(null);
 
     const {
         register,
@@ -115,7 +119,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({
 
     const submitHandler: SubmitHandler<ContactFormValues> = async (values) => {
         setSubmitError(null);
+        if (!captchaToken) {
+            setSubmitError("Please confirm you're not a robot.");
+            return;
+        }
         try {
+            if (!(await verifyRecaptcha(captchaToken))) {
+                throw new Error("reCAPTCHA verification failed. Please try again.");
+            }
             if (onSubmit) {
                 await onSubmit(values);
             } else {
@@ -126,6 +137,10 @@ export const ContactForm: React.FC<ContactFormProps> = ({
             setSubmitError(
                 err instanceof Error ? err.message : "Something went wrong. Please try again."
             );
+        } finally {
+            // Tokens are single-use, so every attempt needs a fresh check.
+            captchaRef.current?.reset();
+            setCaptchaToken(null);
         }
     };
 
@@ -349,6 +364,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({
                             Subscribe to email updates. Opt out at any time.
                         </label>
                     </div>
+
+                    {/* reCAPTCHA */}
+                    <Recaptcha
+                        ref={captchaRef}
+                        onChange={setCaptchaToken}
+                        className="md:col-span-2"
+                    />
 
                     {/* Submit */}
                     <div className="md:col-span-2 mt-2">
