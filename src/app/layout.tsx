@@ -1,8 +1,13 @@
 import type { Metadata, Viewport } from 'next'
 import { Montserrat } from "next/font/google";
+import Script from "next/script";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
+
+// Fleetra chat widget. The site key is public; the domains it may run on are set in Sarthi
+// (Widget & SDK -> Allowed websites). Its script and connections are allowed in next.config.ts.
+const SARTHI_SITE_KEY = process.env.NEXT_PUBLIC_SARTHI_SITE_KEY || "ws_dollar_c5e1d8";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -40,6 +45,11 @@ export default function RootLayout({
 
           <Footer />
         </div>
+        <Script
+          src="https://api.mysarthi.tech/widget/v1.js"
+          data-site-key={SARTHI_SITE_KEY}
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
